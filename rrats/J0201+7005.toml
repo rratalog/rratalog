@@ -1,0 +1,39 @@
+title = "J0201+7005"
+
+[Name]
+value = "J0201+7005" # string
+error = false # same units as above or put false
+ref = "https://doi.org/10.1088/0004-637X/809/1/67"
+
+[Period]
+value = 1.349184471847 # seconds
+error = false
+ref = "https://doi.org/10.1088/0004-637X/809/1/67"
+
+[Pdot]
+value = 21.029e-15 # seconds/seconds
+error = false # same units as above or put false
+ref = "https://doi.org/10.1088/0004-637X/809/1/67"
+
+[DM]
+value = 21.029 # pc/cc
+error = 0.002 # same units as above or put false
+ref = "https://doi.org/10.1088/0004-637X/809/1/67"
+
+[RA]
+value = "02:01:41.344" #hh:mm:ss.ss
+error = "00:00:00.007" # same units as above or put false
+ref = "https://doi.org/10.1088/0004-637X/809/1/67"
+
+[Dec]
+value = "+70:05:18.11" #(sign)dd:hh:mm.ss
+error = "00:00:00.02" # same units as above or put false
+ref = "https://doi.org/10.1088/0004-637X/809/1/67"
+
+[Flux]
+
+	[Flux.1400]
+    value = 120 # mJy
+    frequency = 1400 # MHz
+    error = false
+    ref = "https://doi.org/10.1088/0004-637X/809/1/67"
