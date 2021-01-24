@@ -1,0 +1,51 @@
+title = "J0054+66"
+
+[Name]
+value = "J0054+66"
+error = false
+ref = "https://doi.org/10.1063/1.2900310"
+
+[RA]
+value = "00:54" #hh:mm:ss.ss
+error = false
+ref = "https://doi.org/10.1063/1.2900310"
+
+[Dec]
+value = "+66:00" #(sign)dd:mm:ss.ss
+error = false
+ref = "https://doi.org/10.1063/1.2900310"
+
+[DM]
+value = 14.554 #pc/cc
+error = 0.007
+ref = "https://doi.org/10.3847/0004-637X/831/2/140"
+
+[Period]
+value = 1.3903 #seconds
+error = false
+ref = "https://doi.org/10.1063/1.2900310"
+
+[BurstRate]
+value = 0.7 #hour^-1
+error = false
+ref = "https://doi.org/10.3847/0004-637X/831/2/140"
+
+[Flux]
+
+    [Flux.57]
+  value = 70 #mJy 
+  frequency = 57 #MHz
+  error = 35
+  ref = "https://doi.org/10.3847/0004-637X/831/2/140"
+
+[Width]
+
+    [Width.57]
+  value = 11 #ms
+  frequency = 57 #MHz
+  error = 2
+  ref = "https://doi.org/10.3847/0004-637X/831/2/140"
+
+#Hessels et al 2008: https://doi.org/10.1063/1.2900310 
+#Taylor et al 2018: https://doi.org/10.3847/0004-637X/831/2/140
+
