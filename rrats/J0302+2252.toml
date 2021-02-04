@@ -1,0 +1,81 @@
+title = "J0302+2252"
+
+[Name]
+value = "J0302+2252"
+error = false
+ref = "https://doi.org/10.1093/mnras/stz2997"
+
+[RA]
+value = "03:02:31:990" #hh:mm:ss.ss
+error = "00:00:00:004"
+ref = "https://doi.org/10.1093/mnras/stz2997"
+
+[Dec]
+value = "+22:52:12.1" #(sign)dd:mm:ss.ss
+error = "00:00:00.2"
+ref = "https://doi.org/10.1093/mnras/stz2997"
+
+[DM]
+value =  18.9922 #pc/cc
+error = 0.0006
+ref = "https://doi.org/10.1093/mnras/stz2997"
+
+[Period]
+value = 1.207164839778 #seconds
+error = 0.000000000002
+ref = "https://doi.org/10.1093/mnras/stz2997"
+
+[Pdot]
+value = 0.0825e-15 #s/s
+error = 0.0001
+ref = "https://doi.org/10.1093/mnras/stz2997"
+
+[Flux]
+
+    [Flux.129]
+  value = 20 #mJy 
+  frequency = 129 #MHz
+  error = 10
+  ref = "https://doi.org/10.1093/mnras/stz2997"
+
+    [Flux.168]
+  value = 18 #mJy 
+  frequency = 168 #MHz
+  error = 9
+  ref = "https://doi.org/10.1093/mnras/stz2997"
+
+    [Flux.334]
+  value = 5 #mJy 
+  frequency = 334 #MHz
+  error = 1
+  ref = "https://doi.org/10.1093/mnras/stz2997"
+
+    [Flux.1532]
+  value = 0.7 #mJy 
+  frequency = 1532 #MHz
+  error = 0.2
+  ref = "https://doi.org/10.1093/mnras/stz2997"
+
+
+[Width]
+
+    [Width.149]
+  value = 70 #ms
+  frequency = 149 #MHz
+  error = 5.8
+  ref = "https://doi.org/10.1093/mnras/stz2997"
+
+    [Width.334]
+  value = 59 #ms
+  frequency = 334 #MHz
+  error = 4.9
+  ref = "https://doi.org/10.1093/mnras/stz2997"
+
+    [Width.1532]
+  value = 47 #ms
+  frequency = 1532 #MHz
+  error = 3.9
+  ref = "https://doi.org/10.1093/mnras/stz2997"
+
+
+#Michilli et al 2019: https://doi.org/10.1093/mnras/stz2997

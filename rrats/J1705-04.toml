@@ -1,68 +1,56 @@
-title = "J0201+7005"
+title = "J1705-04"
 
 [Name]
-value = "J0201+7005"
+value = "J1705-04"
 error = false
 ref = "https://doi.org/10.1088/0004-637X/809/1/67"
 
 [RA]
-value = "02:01:41.344" #hh:mm:ss.ss
-error = "00:00:00.007"
+value = "17:05" #hh:mm:ss.ss
+error = "00:02"
 ref = "https://doi.org/10.1088/0004-637X/809/1/67"
 
 [Dec]
-value = "+70:05:18.11" #(sign)dd:mm:ss.ss
-error = "00:00:00.06"
+value = "-04:41" #(sign)dd:mm:ss.ss
+error = "00:36"
 ref = "https://doi.org/10.1088/0004-637X/809/1/67"
 
 [DM]
-value =  21.029 #pc/cc
-error = 0.002
+value = 42.951 #pc/cc
+error =  0.009
 ref = "https://doi.org/10.1088/0004-637X/809/1/67"
 
 [Period]
-value = 1.349184471847 #seconds
-error = 0.000000000009
-ref = "https://doi.org/10.1088/0004-637X/809/1/67"
-
-[Pdot]
-value = 5.514e-15 #s/s
-error = 0.001e-15
+value = 0.23748 #seconds
+error = 0.00002
 ref = "https://doi.org/10.1088/0004-637X/809/1/67"
 
 [BurstRate]
 
     [BurstRate.Discovery]
-  value= 180
-  error= 73
+  value= 26
+  error= 26
   frequency= 350
   telescope= 'GBT'
   minflux= 160 #mJy
   ref = "https://doi.org/10.1088/0004-637X/809/1/67"
 
     [BurstRate.GBT350]
-  value= 24
-  error= 10
+  value= 32
+  error= 11
   frequency= 350
   telescope= 'GBT'
   minflux= 160 #mJy
   ref = "https://doi.org/10.1088/0004-637X/809/1/67"
 
-    [BurstRate.GBT820]
-  value= 256
-  error= 22
-  frequency= 820
-  telescope= 'GBT'
-  minflux= 45 #mJy
-  ref = "https://doi.org/10.1088/0004-637X/809/1/67"
-
     [BurstRate.LOFAR]
-  value= 63
-  error= 7
+  value= 0
+  error= False
   frequency= 150
   telescope= 'LOFAR'
   minflux= 80 #mJy
   ref = "https://doi.org/10.1088/0004-637X/809/1/67"
+
 
 
 #Karako-Argaman et al 2015: https://doi.org/10.1088/0004-637X/809/1/67
