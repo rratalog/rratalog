@@ -1,0 +1,54 @@
+title = "J1946+24"
+
+[Name]
+value = "J1946+24"
+error = false
+ref = "https://doi.org/10.1088/0004-637X/703/2/2259"
+
+[RA]
+value = "19:46:00" #hh:mm:ss.ss
+error = "00:00:07"
+ref = "https://doi.org/10.1088/0004-637X/703/2/2259"
+
+[Dec]
+value = "+23:58" #(sign)dd:mm:ss.ss
+error = "00:02"
+ref = "https://doi.org/10.1088/0004-637X/703/2/2259"
+
+[DM]
+value = 96 #pc/cc
+error = False
+ref = "https://doi.org/10.1088/0004-637X/703/2/2259"
+
+[Period]
+value = 4.729 #seconds
+error = False
+ref = "https://doi.org/10.1088/0004-637X/703/2/2259"
+
+[Flux]
+
+    [Flux.1400]
+  value = 101 #mJy
+  error = False
+  frequency = 1400 #MHz
+  ref = "https://doi.org/10.1088/0004-637X/703/2/2259"
+
+[Width]
+
+    [Width.1400]
+  value = 4 #ms
+  error = False
+  frequency = 1400 #MHz
+  ref = "https://doi.org/10.1088/0004-637X/703/2/2259"
+
+[BurstRate]
+
+    [BurstRate.Discovery]
+  value= 54 #hour^-1
+  error= False
+  frequency= 1400 #MHz
+  telescope= "Arecibo"
+  minflux= 16 #mJy
+  ref = "https://doi.org/10.1088/0004-637X/703/2/2259"
+
+#Deneva et al 2009: https://doi.org/10.1088/0004-637X/703/2/2259

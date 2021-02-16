@@ -1,0 +1,23 @@
+title = "J1010+15"
+
+[Name]
+value = "J1010+15"
+error = false
+ref = "https://doi.org/10.1088/0004-637X/775/1/51"
+
+[RA]
+value = "10:10:00" #hh:mm:ss.ss
+error = "00:00:31"
+ref = "https://doi.org/10.1088/0004-637X/775/1/51"
+
+[Dec]
+value = "+15:51" #(sign)dd:mm:ss.ss
+error = "00:08"
+ref = "https://doi.org/10.1088/0004-637X/775/1/51"
+
+[DM]
+value = 42 #pc/cc
+error = False
+ref = "https://doi.org/10.1088/0004-637X/775/1/51"
+
+#Deveva et al 2013: https://doi.org/10.1088/0004-637X/775/1/51

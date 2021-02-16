@@ -1,0 +1,91 @@
+title = "J1919+1745"
+
+[Name]
+value = "J1919+1745"
+error = false
+ref = "https://doi.org/10.1088/0004-637X/772/1/50"
+
+[RA]
+value = "19:19:43.342" #hh:mm:ss.ss
+error = "00:00:00.004"
+ref = "https://doi.org/10.1088/0004-637X/772/1/50"
+
+[Dec]
+value = "+17:45:03.79" #(sign)dd:mm:ss.ss
+error = "00:00:00.08"
+ref = "https://doi.org/10.1088/0004-637X/772/1/50"
+
+[DM]
+value = 142.3 #pc/cc
+error = 0.2
+ref = "https://doi.org/10.1088/0004-637X/772/1/50"
+
+[Period]
+value = 2.081343459724 #seconds
+error = 0.000000000009
+ref = "https://doi.org/10.1088/0004-637X/772/1/50"
+
+[Pdot]
+value = 1.7050e-15 #s/s
+error = 0.0004e-15
+ref = "https://doi.org/10.1088/0004-637X/772/1/50"
+
+[Flux]
+
+    [Flux.Original]
+  value = 12 #mJy
+  error = False
+  frequency = 1400 #MHz
+  ref = "https://doi.org/10.1088/0004-637X/703/2/2259"
+
+    [Flux.1400]
+  value = 0.190 #mJy
+  error = 0.008
+  frequency= 1400 #MHz
+  ref = "https://doi.org/10.1088/0004-637X/772/1/50"
+
+[Width]
+
+    [Width.Discovery]
+  value = 100 #ms
+  error = False
+  frequency = 1400 #MHz
+  ref = "https://doi.org/10.1088/0004-637X/703/2/2259"
+
+    [Width.1170]
+  value = 63.6 #ms
+  error = False
+  frequency = 1170 #MHz
+  ref = "https://doi.org/10.1088/0004-637X/772/1/50"
+
+    [Width.1370]
+  value = 62.4 #ms
+  error = False
+  frequency = 1370 #MHz
+  ref = "https://doi.org/10.1088/0004-637X/772/1/50"
+
+    [Width.1470]
+  value = 62.4 #ms
+  error = False
+  frequency = 1470 #MHz
+  ref = "https://doi.org/10.1088/0004-637X/772/1/50"
+
+    [Width.1570]
+  value = 62.5 #ms
+  error = False
+  frequency = 1570 #MHz
+  ref = "https://doi.org/10.1088/0004-637X/772/1/50"
+
+
+[BurstRate]
+
+    [BurstRate.Discovery]
+  value= 320 #hour^-1
+  error= False
+  frequency= 1400 #MHz
+  telescope= "Arecibo"
+  minflux= 3 #mJy
+  ref = "https://doi.org/10.1088/0004-637X/703/2/2259"
+
+#Deneva et al 2009: https://doi.org/10.1088/0004-637X/703/2/2259
+#Nice et al 2013:   https://doi.org/10.1088/0004-637X/772/1/50
