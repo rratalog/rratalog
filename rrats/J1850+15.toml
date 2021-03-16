@@ -1,0 +1,44 @@
+title = "J1850+15"
+
+[Name]
+value = "J1850+15"
+error = false
+ref = "https://doi.org/10.1111/j.1365-2966.2009.15965.x"
+
+[RA]
+value = "18:50:09" #hh:mm:ss.ss
+error = "00:00:58"
+ref = "https://doi.org/10.1111/j.1365-2966.2009.15965.x"
+
+[Dec]
+value = "+15:32" #(sign)dd:mm:ss.ss
+error = "00:15"
+ref = "https://doi.org/10.1111/j.1365-2966.2009.15965.x"
+
+[DM]
+value = 24.7 #pc/cc
+error = 8.7
+ref = "https://doi.org/10.1111/j.1365-2966.2009.15965.x"
+
+[Period]
+value = 1.383965 #seconds
+error = 0.000003
+ref = "https://doi.org/10.1111/j.1365-2966.2009.15965.x"
+
+[Flux]
+
+    [Flux.1400]
+  value = 200 #mJy
+  error = false
+  frequency = 1400 #MHz
+  ref = "https://doi.org/10.1111/j.1365-2966.2009.15965.x"
+
+[Width]
+
+    [Width.1400]
+  value = 31.8 #ms
+  error = false
+  frequency = 1400 #MHz
+  ref = "https://doi.org/10.1111/j.1365-2966.2009.15965.x"
+
+#Burke-Spolaor & Bailes 2010: https://doi.org/10.1111/j.1365-2966.2009.15965.x

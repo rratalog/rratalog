@@ -1,0 +1,61 @@
+title = "J1647-3607"
+
+[Name]
+value = "J1647-3607"
+error = false
+ref = "https://doi.org/10.1111/j.1365-2966.2009.15965.x"
+
+[RA]
+value = "16:47:46.51" #hh:mm:ss.ss
+error = "00:00:00.02"
+ref = "https://doi.org/10.1111/j.1365-2966.2012.22042.x"
+
+[Dec]
+value = "-36:07:04" #(sign)dd:mm:ss.ss
+error = "00:00:01"
+ref = "https://doi.org/10.1111/j.1365-2966.2012.22042.x"
+
+[DM]
+value = 224 #pc/cc
+error = 1
+ref = "https://doi.org/10.1111/j.1365-2966.2012.22042.x"
+
+[Period]
+value = 0.21231640921 #seconds
+error = 0.00000000005
+ref = "0.21231640921"
+
+[Pdot]
+value = 0.129e-15 #s/s
+error = 0.002e-15
+ref = "https://doi.org/10.1111/j.1365-2966.2012.22042.x"
+
+[Flux]
+
+    [Flux.1400]
+  value = 0.16 #mJy
+  error = false
+  frequency = 1400 #MHz
+  ref = "https://doi.org/10.1093/mnras/stx3095"
+
+[Width]
+
+    [Width.1400]
+  value = 9.9 #ms
+  error = false
+  frequency = 1400 #MHz
+  ref = "https://doi.org/10.1093/mnras/stx3095"
+
+[BurstRate]
+
+    [BurstRate.Discovery]
+  value= 436.4 #hour^-1
+  error= false
+  frequency= 1400 #MHz
+  telescope= "Parkes"
+  minflux= 40 #mJy
+  ref = "https://doi.org/10.1111/j.1365-2966.2009.15965.x"
+
+#Burke-Spolaor & Bailes 2010: https://doi.org/10.1111/j.1365-2966.2009.15965.x
+#Bates et al 2012 https://doi.org/10.1111/j.1365-2966.2012.22042.x
+#Johnston & Kerr 2018:  https://doi.org/10.1093/mnras/stx3095
