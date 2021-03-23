@@ -1,0 +1,49 @@
+title = "J1541-42"
+
+[Name]
+value = "J1541-42"
+error = false
+ref = "https://doi.org/10.1111/j.1365-2966.2011.18521.x"
+
+[RA]
+value = "15:41:44" #hh:mm:ss.ss
+error = "00:00:38"
+ref = "https://doi.org/10.1111/j.1365-2966.2011.18521.x"
+
+[Dec]
+value = "-42:18:50" #(sign)dd:mm:ss.ss
+error = "00:07"
+ref = "https://doi.org/10.1111/j.1365-2966.2011.18521.x"
+
+[DM]
+value = 60 #pc/cc
+error = 10
+ref = "https://doi.org/10.1111/j.1365-2966.2011.18521.x"
+
+[Flux]
+
+    [Flux.1400]
+  value = 150 #mJy
+  error = false
+  frequency = 1400 #MHz
+  ref = "https://doi.org/10.1111/j.1365-2966.2011.18521.x"
+
+[Width]
+
+    [Width.1400]
+  value = 4 #ms
+  error = false
+  frequency = 1400 #MHz
+  ref = "https://doi.org/10.1111/j.1365-2966.2011.18521.x"
+
+[BurstRate]
+
+    [BurstRate.Discovery]
+  value= 7 #hour^-1
+  error= false
+  frequency= 1400 #MHz
+  telescope= "Parkes"
+  minflux= 43 #mJy
+  ref = "https://doi.org/10.1111/j.1365-2966.2011.18521.x"
+
+#Burke-Spolaor et al 2011: https://doi.org/10.1111/j.1365-2966.2011.18521.x

@@ -1,0 +1,54 @@
+title = "J1216-50"
+
+[Name]
+value = "J1216-50"
+error = false
+ref = "https://doi.org/10.1111/j.1365-2966.2011.18521.x"
+
+[RA]
+value = "12:16:20" #hh:mm:ss.ss
+error = "00:00:44"
+ref = "https://doi.org/10.1111/j.1365-2966.2011.18521.x"
+
+[Dec]
+value = "-50:27:01" #(sign)dd:mm:ss.ss
+error = "00:07"
+ref = "https://doi.org/10.1111/j.1365-2966.2011.18521.x"
+
+[DM]
+value = 110 #pc/cc
+error = 20
+ref = "https://doi.org/10.1111/j.1365-2966.2011.18521.x"
+
+[Period]
+value = 6.355 #seconds
+error = 0.009
+ref = "https://doi.org/10.1111/j.1365-2966.2011.18521.x"
+
+[Flux]
+
+    [Flux.1400]
+  value = 130 #mJy
+  error = false
+  frequency = 1400 #MHz
+  ref = "https://doi.org/10.1111/j.1365-2966.2011.18521.x"
+
+[Width]
+
+    [Width.1400]
+  value = 9 #ms
+  error = false
+  frequency = 1400 #MHz
+  ref = "https://doi.org/10.1111/j.1365-2966.2011.18521.x"
+
+[BurstRate]
+
+    [BurstRate.Discovery]
+  value= 13 #hour^-1
+  error= false
+  frequency= 1400 #MHz
+  telescope= "Parkes"
+  minflux= 43 #mJy
+  ref = "https://doi.org/10.1111/j.1365-2966.2011.18521.x"
+
+#Burke-Spolaor et al 2011: https://doi.org/10.1111/j.1365-2966.2011.18521.x
