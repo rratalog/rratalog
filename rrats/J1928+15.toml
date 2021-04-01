@@ -17,19 +17,19 @@ ref = "https://doi.org/10.1088/0004-637X/703/2/2259"
 
 [DM]
 value = 242 #pc/cc
-error = False
+error = false
 ref = "https://doi.org/10.1088/0004-637X/703/2/2259"
 
 [Period]
 value = 0.403 #seconds
-error = False
+error = false
 ref = "https://doi.org/10.1088/0004-637X/703/2/2259"
 
 [Flux]
 
     [Flux.1400]
   value = 180  #mJy
-  error = False
+  error = false
   frequency = 1400 #MHz
   ref = "https://doi.org/10.1088/0004-637X/703/2/2259"
 
@@ -37,7 +37,7 @@ ref = "https://doi.org/10.1088/0004-637X/703/2/2259"
 
     [Width.1400]
   value = 5 #ms
-  error = False
+  error = false
   frequency = 1400 #MHz
   ref = "https://doi.org/10.1088/0004-637X/703/2/2259"
 
@@ -45,7 +45,7 @@ ref = "https://doi.org/10.1088/0004-637X/703/2/2259"
 
     [BurstRate.Discovery]
   value= 4 #hour^-1
-  error= False
+  error= false
   frequency= 1400 #MHz
   telescope= "Arecibo"
   minflux= 14 #mJy

@@ -24,7 +24,7 @@ ref = "https://doi.org/10.3847/0004-637X/821/1/10"
 
     [Flux.327]
   value = 200 #mJy
-  error =  False
+  error =  false
   frequency = 327 #MHz
   ref = "https://doi.org/10.3847/0004-637X/821/1/10"
 
@@ -32,7 +32,7 @@ ref = "https://doi.org/10.3847/0004-637X/821/1/10"
 
     [Width.327]
   value = 7.6 #ms
-  error = False
+  error = false
   frequency = 327 #MHz
   ref = "https://doi.org/10.3847/0004-637X/821/1/10"
 
@@ -40,7 +40,7 @@ ref = "https://doi.org/10.3847/0004-637X/821/1/10"
 
     [BurstRate.Discovery]
   value= 11
-  error= False
+  error= false
   frequency= 327 #MHz
   telescope= "Arecibo"
   minflux= 100 #mJy

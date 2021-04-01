@@ -34,13 +34,13 @@ ref = "https://doi.org/10.1111/j.1365-2966.2011.18917.x"
 
     [Flux.1400]
   value = 14 #mJy
-  error = False
+  error = false
   frequency = 1400 #MHz
   ref = "https://doi.org/10.1088/0004-637X/703/2/2259"
 
     [Flux.Parkes]
   value=540 #mJy
-  error=False
+  error= false
   frequency = 1400 #MHz
   ref = "https://doi.org/10.1111/j.1365-2966.2009.15693.x"
 
@@ -48,13 +48,13 @@ ref = "https://doi.org/10.1111/j.1365-2966.2011.18917.x"
 
     [Width.Discovery]
   value = 50 #ms
-  error = False
+  error = false
   frequency = 1400 #MHz
   ref = "https://doi.org/10.1088/0004-637X/703/2/2259"
 
     [Width.Parkes]
   value = 15.8
-  error = False
+  error = false
   frequency = 1400 #MHz
   ref = "https://doi.org/10.1111/j.1365-2966.2009.15693.x"
 
@@ -62,7 +62,7 @@ ref = "https://doi.org/10.1111/j.1365-2966.2011.18917.x"
 
     [BurstRate.Discovery]
   value= 84 #hour^-1
-  error= False
+  error= false
   frequency= 1400 #MHz
   telescope= "Arecibo"
   minflux= 5 #mJy
@@ -70,7 +70,7 @@ ref = "https://doi.org/10.1111/j.1365-2966.2011.18917.x"
 
     [BurstRate.Parkes]
   value=9.2
-  error=False
+  error=false
   frequency= 1400 #MHz
   telescope= "Parkes"
   minflux = False
@@ -78,14 +78,13 @@ ref = "https://doi.org/10.1111/j.1365-2966.2011.18917.x"
 
     [BurstRate.Parkes2]
   value=8.9
-  error=False
+  error=false
   frequency= 1400 #MHz
   telescope= "Parkes"
   minflux = False
   ref = "https://doi.org/10.1111/j.1365-2966.2011.18917.x"
 
   
- 
 
 #Deneva et al 2009: https://doi.org/10.1088/0004-637X/703/2/2259
 #Keane et al 2010: https://doi.org/10.1111/j.1365-2966.2009.15693.x

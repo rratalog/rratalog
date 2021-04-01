@@ -18,7 +18,7 @@ ref = "https://doi.org/10.1111/j.1365-2966.2012.22042.x"
 [DM]
 value = 71.50 #pc/cc
 error = 0.69
-ref = ""
+ref = "https://doi.org/10.1093/mnras/stu1930"
 
 [Period]
 value = 1.526085076 #seconds

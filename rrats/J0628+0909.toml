@@ -41,7 +41,7 @@ ref = "https://doi.org/10.1088/0004-637X/772/1/50"
 
     [Flux.Original]
   value = 85 #mJy
-  error =  False
+  error =  false
   frequency = 1400 #MHz
   ref = "https://doi.org/10.1088/0004-637X/703/2/2259"
   #Deneva et al 2009- from single pulses
@@ -50,31 +50,31 @@ ref = "https://doi.org/10.1088/0004-637X/772/1/50"
 
     [Width.1400]
   value = 10 #ms
-  error = False
+  error = false
   frequency = 1400 #MHz
   ref = "https://doi.org/10.1088/0004-637X/703/2/2259"
 
     [Width.1170]
   value = 7.6 #ms
-  error = False
+  error = false
   frequency = 1170 #MHz
   ref = "https://doi.org/10.1088/0004-637X/772/1/50"
 
     [Width.1370]
   value = 7.7 #ms
-  error = False
+  error = false
   frequency = 1370 #MHz
   ref = "https://doi.org/10.1088/0004-637X/772/1/50"
 
     [Width.1470]
   value = 8.0 #ms
-  error = False
+  error = false
   frequency = 1470 #MHz
   ref = "https://doi.org/10.1088/0004-637X/772/1/50"
 
     [Width.1570]
   value = 8.4 #ms
-  error = False
+  error = false
   frequency = 1570 #MHz
   ref = "https://doi.org/10.1088/0004-637X/772/1/50"
 
@@ -83,7 +83,7 @@ ref = "https://doi.org/10.1088/0004-637X/772/1/50"
 
     [BurstRate.Discovery]
   value= 141 #hour^-1
-  error= False
+  error= false
   frequency= 1400 #MHz
   telescope= "Arecibo"
   minflux= 10 #mJy

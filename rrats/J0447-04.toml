@@ -54,7 +54,7 @@ ref = "https://doi.org/10.1088/0004-637X/809/1/67"
 
     [BurstRate.LOFAR]
   value= 0
-  error= False
+  error= false
   frequency= 150
   telescope= 'LOFAR'
   minflux= 80 #mJy

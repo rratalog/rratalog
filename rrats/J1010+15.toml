@@ -17,7 +17,7 @@ ref = "https://doi.org/10.1088/0004-637X/775/1/51"
 
 [DM]
 value = 42 #pc/cc
-error = False
+error = false
 ref = "https://doi.org/10.1088/0004-637X/775/1/51"
 
 #Deveva et al 2013: https://doi.org/10.1088/0004-637X/775/1/51
