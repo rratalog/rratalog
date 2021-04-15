@@ -26,16 +26,21 @@ error = false
 ref = "https://doi.org/10.1063/1.2900310"
 
 [BurstRate]
-value = 0.7 #hour^-1
-error = false
-ref = "https://doi.org/10.3847/0004-637X/831/2/140"
+
+    [BurstRate.Discovery]
+  value = 0.7 #hour^-1
+  error = false
+  frequency = 57 #MHz
+  telescope = "LWA1"
+  minflux = 60 #mJy
+  ref = "https://doi.org/10.3847/0004-637X/831/2/140"
 
 [Flux]
 
     [Flux.57]
-  value = 70 #mJy 
+  value = 600 #mJy 
   frequency = 57 #MHz
-  error = 35
+  error = 300
   ref = "https://doi.org/10.3847/0004-637X/831/2/140"
 
 [Width]

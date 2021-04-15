@@ -26,9 +26,14 @@ error = 0.0002
 ref = "https://doi.org/10.1111/j.1365-2966.2011.18521.x"
 
 [BurstRate]
-value = 107 #hour^-1
-error = false
-ref = "https://doi.org/10.1111/j.1365-2966.2011.18521.x"
+
+    [BurstRate.Discovery]
+  value = 107 #hour^-1
+  error = false
+  frequency = 1352 #MHz
+  telescope = "Parkes"
+  minflux = 100 #mJy
+  ref = "https://doi.org/10.1111/j.1365-2966.2011.18521.x"
 
 [Flux]
 

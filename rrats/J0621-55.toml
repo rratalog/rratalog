@@ -1,0 +1,24 @@
+title = "J0621-55"
+
+[Name]
+value = "J0621-55"
+error = false
+ref = "https://doi.org/10.1093/mnras/stx2126"
+
+[RA]
+value = "06:20:42" #hh:mm:ss.ss
+error = "00:00:30"
+ref = "https://doi.org/10.1093/mnras/stx2126"
+
+[Dec]
+value = "-56:05" #(sign)dd:mm:ss.ss
+error = "00:07"
+ref = "https://doi.org/10.1093/mnras/stx2126"
+
+[DM]
+value = 22 #pc/cc
+error = false
+ref = "https://doi.org/10.1093/mnras/stx2126"
+
+
+#Keane et al 2018: https://doi.org/10.1093/mnras/stx2126
