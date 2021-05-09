@@ -62,13 +62,22 @@ ref = "https://doi.org/10.3847/1538-4357/aa88c3"
   minflux= 190 #mJy
   ref = "https://doi.org/10.1038/nature04440"
 
-    [BurstRate.GBT]
+    [BurstRate.Cui]
+  value = 30.35 #hour ^-1
+  error = false
+  frequency = 820 #MHz
+  telescope = "GBT"
+  minflux = 45 #mJy
+  ref = "https://doi.org/10.3847/1538-4357/aa6aa9"
+
+    [BurstRate.Jiang]
   value = 34.0 #hour^-1
   error = false
   frequency = 820 #MHz
   telescope = "GBT"
   minflux = 45 #mJy
-  ref = "https://doi.org/10.1038/nature04440"
+  ref = "https://doi.org/10.3847/1538-4357/aa88c3"
 
 #McLaughlin et al 2006: https://doi.org/10.1038/nature04440
 #Jiang et al 2017: https://doi.org/10.3847/1538-4357/aa88c3
+#Cui et al 2017 https://doi.org/10.3847/1538-4357/aa6aa9

@@ -21,13 +21,13 @@ error = 0.06
 ref = "https://doi.org/10.1111/j.1365-2966.2009.15584.x"
 
 [Period]
-value =  0.9233913866507 #seconds
-error =  0.0000000000003
+value =  0.923391386650 #seconds
+error =  0.000000000002
 ref = "https://doi.org/10.1093/mnras/sty923"
 
 [Pdot]
-value = 8.67761e-15 #s/s
-error = 0.00018e-15
+value = 8.6776e-15 #s/s
+error = 0.0002e-15
 ref = "https://doi.org/10.1093/mnras/sty923"
 
 [Flux]
