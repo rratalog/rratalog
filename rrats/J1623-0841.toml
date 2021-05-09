@@ -59,8 +59,15 @@ ref = "https://doi.org/10.3847/1538-4357/aa88c3"
   ref = "https://doi.org/10.1088/0004-637X/763/2/80"
 
 [BurstRate]
-
     [BurstRate.Discovery]
+  value= 35.77 #hour^-1
+  error= false
+  frequency= 350 #MHz
+  telescope= "GBT"
+  minflux= 80 #mJy
+  ref = "https://doi.org/10.3847/1538-4357/aa6aa9"
+
+    [BurstRate.Followup]
   value= 45.0 #hour^-1
   error= false
   frequency= 350 #MHz
@@ -70,3 +77,4 @@ ref = "https://doi.org/10.3847/1538-4357/aa88c3"
 
 #Boyles et al 2013: https://doi.org/10.1088/0004-637X/763/2/80
 #Jiang et al 2017: https://doi.org/10.3847/1538-4357/aa88c3
+#Cui et al 2017: https://doi.org/10.3847/1538-4357/aa6aa9

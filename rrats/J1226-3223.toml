@@ -7,7 +7,7 @@ ref = "https://doi.org/10.1111/j.1365-2966.2009.15965.x"
 
 [RA]
 value = "12:26:46.628" #hh:mm:ss.ss
-error = "00:00:00.40"
+error = "00:00:00.040"
 ref = "https://doi.org/10.3847/1538-4357/aa88c3"
 
 [Dec]
@@ -41,7 +41,7 @@ ref = "https://doi.org/10.3847/1538-4357/aa88c3"
 [Width]
 
     [Width.1400]
-  value = 7 #ms
+  value = 34 #ms
   error = false
   frequency = 1400 #MHz
   ref = "https://doi.org/10.3847/1538-4357/aa88c3"
@@ -56,8 +56,16 @@ ref = "https://doi.org/10.3847/1538-4357/aa88c3"
   minflux= 40 #mJy
   ref = "https://doi.org/10.1111/j.1365-2966.2009.15965.x"
 
+    [BurstRate.Cui]
+  value= 41.26 #hour^-1
+  error= false
+  frequency= 1400 #MHz
+  telescope= "Parkes"
+  minflux= 40 #mJy
+  ref = "https://doi.org/10.3847/1538-4357/aa6aa9"
+
     [BurstRate.Jiang]
-  value= 6.0 #hour^-1
+  value= 49.3 #hour^-1
   error= false
   frequency= 1400 #MHz
   telescope= "Parkes"

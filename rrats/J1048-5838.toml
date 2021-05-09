@@ -31,9 +31,29 @@ error = 0.00007e-15
 ref = "https://doi.org/10.3847/1538-4357/aa88c3"
 
 [BurstRate]
-value = 6.0 #hour^-1
-error = false
-ref = "https://doi.org/10.3847/1538-4357/aa88c3"
+    [BurstRate.Discovery]
+  value = 6.0 #hour^-1
+  error = false
+  frequency = 1400 #MHz
+  telescope = "Parkes"
+  minflux = 43 #mJy
+  ref = "https://doi.org/10.1111/j.1365-2966.2009.15693.x"
+
+    [BurstRate.Cui]
+  value= 3.98 #hour^-1
+  error= false
+  frequency= 1400 #MHz
+  telescope= "Parkes"
+  minflux= 43 #mJy
+  ref = "https://doi.org/10.3847/1538-4357/aa6aa9"
+
+    [BurstRate.Jiang]
+  value= 6.0 #hour^-1
+  error= false
+  frequency= 1400 #MHz
+  telescope= "Parkes"
+  minflux= 43 #mJy
+  ref = "https://doi.org/10.3847/1538-4357/aa88c3"
 
 [Flux]
 
