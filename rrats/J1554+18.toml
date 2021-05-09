@@ -17,7 +17,7 @@ ref = "https://doi.org/10.3847/0004-637X/821/1/10"
 
 [DM]
 value =  24.0 #pc/cc
-error = False
+error = false
 ref = "https://doi.org/10.3847/0004-637X/821/1/10"
 
 [Flux]

@@ -17,7 +17,7 @@ ref = "https://doi.org/10.3847/1538-4357/aa88c3"
 
 [DM]
 value = 59.79 #pc/cc
-error = 00.02
+error = 0.02
 ref = "https://doi.org/10.3847/1538-4357/aa88c3"
 
 [Period]

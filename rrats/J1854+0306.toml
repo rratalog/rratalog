@@ -73,7 +73,7 @@ ref = "https://doi.org/10.1111/j.1365-2966.2011.18917.x"
   error=false
   frequency= 1400 #MHz
   telescope= "Parkes"
-  minflux = False
+  minflux = false
   ref = "https://doi.org/10.1111/j.1365-2966.2009.15693.x"
 
     [BurstRate.Parkes2]
@@ -81,7 +81,7 @@ ref = "https://doi.org/10.1111/j.1365-2966.2011.18917.x"
   error=false
   frequency= 1400 #MHz
   telescope= "Parkes"
-  minflux = False
+  minflux = false
   ref = "https://doi.org/10.1111/j.1365-2966.2011.18917.x"
 
   
