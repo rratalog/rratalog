@@ -1,0 +1,49 @@
+title = "J0139+3336"
+
+[Name]
+value = "J0139+3336"
+error = false
+ref = "https://doi.org/10.1134/S1063772918010079"
+
+[RA]
+value = "01:39:57.23" #hh:mm:ss.ss
+error = "00:00:00.04"
+ref = "https://doi.org/10.1093/mnras/stz2997"
+
+[Dec]
+value = "+33:36:59.7" #(sign)dd:mm:ss.ss
+error = "00:00:00.9"
+ref = "https://doi.org/10.1093/mnras/stz2997"
+
+[DM]
+value = 21.23 #pc/cc
+error = 0.01
+ref = "https://doi.org/10.1093/mnras/stz2997"
+
+[Period]
+value = 1.2479609557 #seconds
+error = 0.0000000001
+ref = "https://doi.org/10.1093/mnras/stz2997"
+
+[Pdot]
+value = 2.064e-15 #s/s
+error = 0.008e-15
+ref = "https://doi.org/10.1093/mnras/stz2997"
+
+[Width]
+
+    [Width.149]
+  value = 15 #ms
+  error = 1
+  frequency = 149 #MHz
+  ref = "https://doi.org/10.1093/mnras/stz2997"
+
+    [Width.1532]
+  value = 14 #ms
+  error = 1
+  frequency = 1532 #MHz
+  ref = "https://doi.org/10.1093/mnras/stz2997"
+
+#Tyul'bashev et al 2018:  https://doi.org/10.1134/S1063772918010079
+#Michilli et al 2019: https://doi.org/10.1093/mnras/stz2997
+

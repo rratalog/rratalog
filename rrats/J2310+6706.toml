@@ -1,0 +1,62 @@
+title = "J2310+6706"
+
+[Name]
+value = "J2310+6706"
+error = false
+ref = "https://doi.org/10.1088/0004-637X/809/1/67"
+
+[RA]
+value = "23:10:42.0" #hh:mm:ss.ss
+error = "00:00:00.3"
+ref = "https://doi.org/10.3847/1538-4357/aabf8a"
+
+[Dec]
+value = "+67:06:52.1" #(sign)dd:mm:ss.ss
+error = "00:00:00.10"
+ref = "https://doi.org/10.3847/1538-4357/aabf8a"
+
+[DM]
+value = 97.7 #pc/cc
+error =  0.1
+ref = "https://doi.org/10.3847/1538-4357/aabf8a"
+
+[Period]
+value = 1.9447889728 #seconds
+error = 0.0000000012
+ref = "https://doi.org/10.3847/1538-4357/aabf8a"
+
+[Pdot]
+value = 0.076e-15 #seconds/seconds
+error = 0.004e-15 
+ref = "https://doi.org/10.3847/1538-4357/aabf8a"
+
+[BurstRate]
+
+    [BurstRate.Discovery]
+  value= 60
+  error= 42
+  frequency= 350
+  telescope= 'GBT'
+  minflux= 160 #mJy
+  ref = "https://doi.org/10.1088/0004-637X/809/1/67"
+
+    [BurstRate.GBT820]
+  value= 168
+  error= 32
+  frequency= 820
+  telescope= 'GBT'
+  minflux= 45 #mJy
+  ref = "https://doi.org/10.1088/0004-637X/809/1/67"
+
+    [BurstRate.LOFAR]
+  value= 0
+  error= false
+  frequency= 150
+  telescope= 'LOFAR'
+  minflux= 80 #mJy
+  ref = "https://doi.org/10.1088/0004-637X/809/1/67"
+
+
+
+#Karako-Argaman et al 2014: https://doi.org/10.1088/0004-637X/809/1/67
+#Lynch et al 2018: https://doi.org/10.3847/1538-4357/aabf8a

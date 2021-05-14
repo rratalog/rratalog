@@ -69,7 +69,7 @@ ref = "https://doi.org/10.1111/j.1365-2966.2011.18917.x"
   ref = "https://doi.org/10.1088/0004-637X/703/2/2259"
 
     [BurstRate.Parkes]
-  value=9.2
+  value=9.2 #hour^-1
   error=false
   frequency= 1400 #MHz
   telescope= "Parkes"
@@ -77,15 +77,25 @@ ref = "https://doi.org/10.1111/j.1365-2966.2011.18917.x"
   ref = "https://doi.org/10.1111/j.1365-2966.2009.15693.x"
 
     [BurstRate.Parkes2]
-  value=8.9
+  value=8.9 #hour^-1
   error=false
   frequency= 1400 #MHz
   telescope= "Parkes"
   minflux = false
   ref = "https://doi.org/10.1111/j.1365-2966.2011.18917.x"
 
+    [BurstRate.FAST]
+  value= 102 #hour^-1
+  error= 10
+  frequency=1250 #MHz
+  telescope='FAST'
+  minflux = 15 #mJy
+  ref = "https://doi.org/10.1007/s11433-018-9372-7"
+
+
   
 
 #Deneva et al 2009: https://doi.org/10.1088/0004-637X/703/2/2259
 #Keane et al 2010: https://doi.org/10.1111/j.1365-2966.2009.15693.x
 #Keane et al 2011: https://doi.org/10.1111/j.1365-2966.2011.18917.x
+#Lu et al 2019: https://doi.org/10.1007/s11433-018-9372-7

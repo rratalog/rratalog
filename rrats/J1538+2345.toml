@@ -41,21 +41,29 @@ ref = "https://doi.org/10.1088/0004-637X/809/1/67"
   ref = "https://doi.org/10.1088/0004-637X/809/1/67"
 
     [BurstRate.GBT350]
-  value= 77
+  value= 77 #hour^-1
   error= 14
-  frequency= 350
+  frequency= 350 #MHz
   telescope= 'GBT'
   minflux= 160 #mJy
   ref = "https://doi.org/10.1088/0004-637X/809/1/67"
 
     [BurstRate.LOFAR]
-  value= 66
+  value= 66 #hour^-1
   error= 7
-  frequency= 150
+  frequency= 150 #MHz
   telescope= 'LOFAR'
   minflux= 80 #mJy
   ref = "https://doi.org/10.1088/0004-637X/809/1/67"
 
+    [BurstRate.FAST]
+  value= 302 #hour^-1
+  error= 12
+  frequency=1250 #MHz
+  telescope='FAST'
+  minflux = 15 #mJy
+  ref = "https://doi.org/10.1007/s11433-018-9372-7"
 
 
 #Karako-Argaman et al 2015: https://doi.org/10.1088/0004-637X/809/1/67
+#Lu et al 2019: https://doi.org/10.1007/s11433-018-9372-7
