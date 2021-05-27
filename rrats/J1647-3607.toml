@@ -38,6 +38,13 @@ ref = "https://doi.org/10.1111/j.1365-2966.2012.22042.x"
   frequency = 1400 #MHz
   ref = "https://doi.org/10.1093/mnras/stx3095"
 
+    [Flux.350]
+  value= 1.6 #mJy
+  error = 0.13
+  frequency = 350 #MHz
+  ref = "https://doi.org/10.3847/1538-4357/ab75e2"
+
+
 [Width]
 
     [Width.1400]
@@ -45,6 +52,13 @@ ref = "https://doi.org/10.1111/j.1365-2966.2012.22042.x"
   error = false
   frequency = 1400 #MHz
   ref = "https://doi.org/10.1093/mnras/stx3095"
+
+    [Width.350]
+  value= 2 #ms
+  error = false
+  frequency = 350 #MHz
+  ref = "https://doi.org/10.3847/1538-4357/ab75e2"
+
 
 [BurstRate]
 
@@ -59,3 +73,4 @@ ref = "https://doi.org/10.1111/j.1365-2966.2012.22042.x"
 #Burke-Spolaor & Bailes 2010: https://doi.org/10.1111/j.1365-2966.2009.15965.x
 #Bates et al 2012 https://doi.org/10.1111/j.1365-2966.2012.22042.x
 #Johnston & Kerr 2018:  https://doi.org/10.1093/mnras/stx3095
+#McEwen et al 2020: https://doi.org/10.3847/1538-4357/ab75e2

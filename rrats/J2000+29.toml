@@ -16,9 +16,9 @@ error = false
 ref = "https://doi.org/10.3847/1538-4357/aaee65"
 
 [DM]
-value = 132.5 #pc/cc
-error = 1.4
-ref = "https://doi.org/10.3847/1538-4357/aaee65"
+value = 132.3 #pc/cc
+error = 0.7
+ref = "https://doi.org/10.3847/1538-4357/ab75e2"
 
 [Period]
 value = 3.07370 #seconds
@@ -33,6 +33,13 @@ ref = "https://doi.org/10.3847/1538-4357/aaee65"
   frequency = 1400 #MHz
   ref = "https://doi.org/10.3847/1538-4357/aaee65"
 
+    [Flux.350]
+  value= 1.4 #mJy
+  error = 0.3
+  frequency = 350 #MHz
+  ref = "https://doi.org/10.3847/1538-4357/ab75e2"
+
+
 [Width]
 
     [Width.1400]
@@ -41,5 +48,13 @@ ref = "https://doi.org/10.3847/1538-4357/aaee65"
   frequency = 1400 #MHz
   ref = "https://doi.org/10.3847/1538-4357/aaee65"
 
+    [Width.350]
+  value= 23 #ms
+  error = false
+  frequency = 350 #MHz
+  ref = "https://doi.org/10.3847/1538-4357/ab75e2"
+
+
 
 #Deneva et al 2018: https://doi.org/10.3847/1538-4357/aaee65
+#McEwen et al 2020: https://doi.org/10.3847/1538-4357/ab75e2

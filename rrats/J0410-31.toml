@@ -43,6 +43,14 @@ ref = "https://doi.org/10.1111/j.1365-2966.2011.18521.x"
   error = false
   ref = "https://doi.org/10.1111/j.1365-2966.2011.18521.x"
 
+    [Flux.350]
+  value= 7.8 #mJy
+  error = 1.9
+  frequency = 350 #MHz
+  ref = "https://doi.org/10.3847/1538-4357/ab75e2"
+
+  
+
 [Width]
 
     [Width.1352]
@@ -51,6 +59,14 @@ ref = "https://doi.org/10.1111/j.1365-2966.2011.18521.x"
   error = false
   ref = "https://doi.org/10.1111/j.1365-2966.2011.18521.x"
 
+    [Width.350]
+  value=25 #ms
+  error = false
+  frequency = 350 #MHz
+  ref = "https://doi.org/10.3847/1538-4357/ab75e2"
+
+
 
 
 #Burke-Spolaor et al 2011:  https://doi.org/10.1111/j.1365-2966.2011.18521.x
+#McEwen et al 2020: https://doi.org/10.3847/1538-4357/ab75e2
