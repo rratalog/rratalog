@@ -33,6 +33,12 @@ ref = "https://doi.org/10.1111/j.1365-2966.2010.17325.x"
   frequency = 1400 #MHz
   ref = "https://doi.org/10.1111/j.1365-2966.2009.15965.x"
 
+    [Flux.350]
+  value= 7.0 #mJy
+  error = 0.4
+  frequency = 350 #MHz
+  ref = "https://doi.org/10.3847/1538-4357/ab75e2"
+
 [Width]
 
     [Width.1400]
@@ -40,6 +46,12 @@ ref = "https://doi.org/10.1111/j.1365-2966.2010.17325.x"
   error = false
   frequency = 1400 #MHz
   ref = "https://doi.org/10.1111/j.1365-2966.2009.15965.x"
+
+    [Width.350]
+  value= 8 #ms
+  error = false
+  frequency = 350 #MHz
+  ref = "https://doi.org/10.3847/1538-4357/ab75e2"
 
 [BurstRate]
 
@@ -53,3 +65,4 @@ ref = "https://doi.org/10.1111/j.1365-2966.2010.17325.x"
 
 #Burke-Spolaor & Bailes 2010: https://doi.org/10.1111/j.1365-2966.2009.15965.x
 #Keith et al 2010: https://doi.org/10.1111/j.1365-2966.2010.17325.x
+#McEwen et al 2020: https://doi.org/10.3847/1538-4357/ab75e2

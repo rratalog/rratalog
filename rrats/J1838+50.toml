@@ -1,0 +1,54 @@
+title = "J1838+50"
+
+[Name]
+value = "J1838+50"
+error = false
+ref = "https://arxiv.org/abs/2012.02320"
+
+[RA]
+value = "18:38" #hh:mm:ss.ss
+error = "00:08"
+ref = "https://arxiv.org/abs/2012.02320"
+
+[Dec]
+value = "+50:51" #(sign)dd:mm:ss.ss
+error = "00:15"
+ref = "https://arxiv.org/abs/2012.02320"
+
+[DM]
+value = 21.81 #pc/cc
+error = 0.01
+ref = "https://arxiv.org/abs/2012.02320"
+
+[Period]
+value = 2.577223412 #seconds
+error = 0.000000005
+ref = "https://arxiv.org/abs/2012.02320"
+
+[Flux]
+
+    [Flux.600]
+  value = 200 #mJy
+  error = 130
+  frequency = 600 #MHz
+  ref = "https://arxiv.org/abs/2012.02320"
+
+[Width]
+
+    [Width.600]
+  value = 13 #ms
+  error = 2
+  frequency = 600 #MHz
+  ref = "https://arxiv.org/abs/2012.02320"
+
+[BurstRate]
+
+    [BurstRate.Discovery]
+  value= 3.9 #hour^-1
+  error= 0.2
+  frequency= 600 #MHz
+  telescope= "CHIME"
+  minflux= 53 #mJy
+  ref = "https://arxiv.org/abs/2012.02320"
+
+#Good et al 2020: https://arxiv.org/abs/2012.02320

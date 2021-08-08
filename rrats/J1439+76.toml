@@ -25,6 +25,23 @@ value = 0.947903 #seconds
 error = 0.000002
 ref = "https://doi.org/10.1088/0004-637X/809/1/67"
 
+[Width]
+
+    [Width.350]
+  value= 6 #ms
+  error = false
+  frequency = 350 #MHz
+  ref = "https://doi.org/10.3847/1538-4357/ab75e2"
+
+[Flux]
+
+    [Flux.350]
+  value= 0.41 #mJy
+  error = 0.09
+  frequency = 350 #MHz
+  ref = "https://doi.org/10.3847/1538-4357/ab75e2"
+
+
 [BurstRate]
 
     [BurstRate.Discovery]
@@ -62,3 +79,4 @@ ref = "https://doi.org/10.1088/0004-637X/809/1/67"
 
 
 #Karako-Argaman et al 2015: https://doi.org/10.1088/0004-637X/809/1/67
+#McEwen et al 2020: https://doi.org/10.3847/1538-4357/ab75e2

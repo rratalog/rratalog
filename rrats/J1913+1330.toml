@@ -72,6 +72,16 @@ ref = "https://doi.org/10.1093/mnras/sty923"
   minflux = 300 #mJy
   ref = "https://doi.org/10.1111/j.1365-2966.2009.15584.x"
 
+    [BurstRate.FAST]
+  value= 155 #hour^-1
+  error= 8
+  frequency=1250 #MHz
+  telescope='FAST'
+  minflux = 15 #mJy
+  ref = "https://doi.org/10.1007/s11433-018-9372-7"
+
+
 #McLaughlin et al 2006: https://doi.org/10.1038/nature04440
 #McLaughlin et al 2009: https://doi.org/10.1111/j.1365-2966.2009.15584.x
 #Bhattacharyya et al 2018: https://doi.org/10.1093/mnras/sty923
+#Lu et al 2019: https://doi.org/10.1007/s11433-018-9372-7
