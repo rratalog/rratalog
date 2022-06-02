@@ -6,8 +6,8 @@ error = false
 ref = "https://doi.org/10.1093/mnras/stz2997"
 
 [RA]
-value = "03:02:31:990" #hh:mm:ss.ss
-error = "00:00:00:004"
+value = "03:02:31.990" #hh:mm:ss.ss
+error = "00:00:00.004"
 ref = "https://doi.org/10.1093/mnras/stz2997"
 
 [Dec]
@@ -27,7 +27,7 @@ ref = "https://doi.org/10.1093/mnras/stz2997"
 
 [Pdot]
 value = 0.0825e-15 #s/s
-error = 0.0001
+error = 0.0001e-15
 ref = "https://doi.org/10.1093/mnras/stz2997"
 
 [Flux]
