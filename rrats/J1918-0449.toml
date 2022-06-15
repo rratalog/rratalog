@@ -1,0 +1,59 @@
+title = "J1918-0449"
+
+[Name]
+value = "J1918-0449"
+error = false
+ref = "https://doi.org/10.48550/arXiv.2206.03091"
+
+[RA]
+value = "19:18:36.07" #hh:mm:ss.ss
+error = false
+ref = "https://doi.org/10.48550/arXiv.2206.03091"
+
+[Dec]
+value = "-04:49:49.8" #(sign)dd:mm:ss.ss
+error = false
+ref = "https://doi.org/10.48550/arXiv.2206.03091"
+
+[DM]
+value =  116.1 #pc/cc
+error = 0.4
+ref = "https://doi.org/10.48550/arXiv.2206.03091"
+
+[Period]
+value = 2.47921 #seconds
+error = 0.00003
+ref = "https://doi.org/10.48550/arXiv.2206.03091"
+
+[Flux]
+
+    [Flux.1250]
+  value = 453.55 #mJy
+  error = false
+  frequency = 1250 #MHz
+  ref = "https://doi.org/10.48550/arXiv.2206.03091"
+  #Peak flux reported
+
+[Width]
+
+    [Width.1250]
+  value = 5.1 #ms
+  error = false
+  frequency = 1250 #MHz
+  ref = "https://doi.org/10.48550/arXiv.2206.03091"
+  #Peak of pulse width distribution reported
+  
+[BurstRate]
+
+    [BurstRate.Discovery]
+  value= 54.5 #hour^-1
+  error= false
+  frequency= 1250 #MHz
+  telescope= FAST
+  minflux= 54.13 #mJy
+  ref = "https://doi.org/10.48550/arXiv.2206.03091"
+  #Average burst rate-- 1 burst every 66 seconds
+  #Min flux referenced to 6-sigma detection
+
+#References go here
+#Chen et al. 2022-- https://doi.org/10.48550/arXiv.2206.03091
