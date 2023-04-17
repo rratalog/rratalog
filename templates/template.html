@@ -10,7 +10,6 @@
                 $(document).ready(function() {
     $('#example').DataTable( {
       "scrollX": true
-
     } );
 } );
             </script>
@@ -22,16 +21,11 @@
                  <th colspan="1">{{ item }}</th>
             {% endfor %}
             </tr>
-            <tr>
-            {% for item in units %}
-                <th>{{item}}</th>
-            {% endfor %}
-            </tr>
         </thead>
         {% for index, row in df.iterrows() %}
             <tbody>
             <tr>
-                {% for item in header %}
+                {% for item in tableinfo %}
                     {% if row[item + "_ref"] != "--" %}
                     {% set weblink = row[item + "_ref"] %}
                     <td> <a href="{{ weblink }}">{{ row[item] }}</a></td>
