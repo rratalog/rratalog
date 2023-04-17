@@ -1,0 +1,54 @@
+title = "J1603+18"
+
+[Name]
+value = "J1603+18"
+error = false
+ref = "https://doi.org/10.3847/0004-637X/821/1/10"
+
+[RA]
+value = "16:03:34" #hh:mm:ss.ss
+error = "00:01:58"
+ref = "https://doi.org/10.3847/0004-637X/821/1/10"
+
+[Dec]
+value = "+18:51" #(sign)dd:mm:ss.ss
+error = "00:08"
+ref = "https://doi.org/10.3847/0004-637X/821/1/10"
+
+[DM]
+value = 29.7 #pc/cc
+error = false
+ref = "https://doi.org/10.3847/0004-637X/821/1/10"
+
+[Period]
+value = 0.503 #seconds
+error = false
+ref = "https://doi.org/10.3847/0004-637X/821/1/10"
+
+[Flux]
+
+    [Flux.327]
+  value = 200 #mJy
+  error = false
+  frequency = 327 #MHz
+  ref = "https://doi.org/10.3847/0004-637X/821/1/10"
+
+[Width]
+
+    [Width.327]
+  value = 8.8 #ms
+  error = false
+  frequency = 327 #MHz
+  ref = "https://doi.org/10.3847/0004-637X/821/1/10"
+
+[BurstRate]
+
+    [BurstRate.Discovery]
+  value= 4
+  error= false
+  frequency= 327 #MHz
+  telescope= "Arecibo"
+  minflux= 95 #mJy
+  ref = "https://doi.org/10.3847/0004-637X/821/1/10"
+
+#Deneva et al 2016: https://doi.org/10.3847/0004-637X/821/1/10

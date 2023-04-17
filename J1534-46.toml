@@ -1,0 +1,44 @@
+title = "J1534-46"
+
+[Name]
+value = "J1534-46"
+error = false
+ref = "https://doi.org/10.1111/j.1365-2966.2009.15965.x"
+
+[RA]
+value = "15:34:08" #hh:mm:ss.ss
+error = "00:00:42"
+ref = "https://doi.org/10.1111/j.1365-2966.2009.15965.x"
+
+[Dec]
+value = "-46:14" #(sign)dd:mm:ss.ss
+error = "00:15"
+ref = "https://doi.org/10.1111/j.1365-2966.2009.15965.x"
+
+[DM]
+value = 64.4 #pc/cc
+error = 7.8
+ref = "https://doi.org/10.1111/j.1365-2966.2009.15965.x"
+
+[Period]
+value = 0.364835 #seconds
+error = 0.000009
+ref = "https://doi.org/10.1111/j.1365-2966.2009.15965.x"
+
+[Flux]
+
+    [Flux.1400]
+  value = 140 #mJy
+  error = false
+  frequency = 1400 #MHz
+  ref = "https://doi.org/10.1111/j.1365-2966.2009.15965.x"
+
+[Width]
+
+    [Width.1400]
+  value = 25.5 #ms
+  error = false
+  frequency = 1400 #MHz
+  ref = "https://doi.org/10.1111/j.1365-2966.2009.15965.x"
+
+#Burke-Spolaor & Bailes 2010: https://doi.org/10.1111/j.1365-2966.2009.15965.x

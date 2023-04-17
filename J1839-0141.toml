@@ -1,0 +1,88 @@
+title = "J1839-0141"
+
+[Name]
+value = "J1839-0141"
+error = false
+ref = "https://doi.org/10.1038/nature04440"
+
+[RA]
+value = "18:39:06.9848" #hh:mm:ss.ss
+error = "00:00:00.0085"
+ref = "https://doi.org/10.3847/1538-4357/aa88c3"
+
+[Dec]
+value = "-01:41:56.0" #(sign)dd:mm:ss.ss
+error = "00:00:00.2"
+ref = "https://doi.org/10.3847/1538-4357/aa88c3"
+
+[DM]
+value = 293.2 #pc/cc
+error = 0.6
+ref = "https://doi.org/10.3847/1538-4357/aa6aa9"
+
+[Period]
+value = 0.93326558076 #seconds
+error = 0.00000000002
+ref = "https://doi.org/10.3847/1538-4357/aa88c3"
+
+[Pdot]
+value = 5.944e-15 #s/s
+error = 0.001e-15
+ref = "https://doi.org/10.3847/1538-4357/aa88c3"
+
+[Pepoch]
+value = 55467
+error = false
+ref = "https://doi.org/10.3847/1538-4357/aa88c3"
+
+[Flux]
+
+    [Flux.1400]
+  value = 100 #mJy
+  error = false
+  frequency = 1400 #MHz
+  ref = "https://doi.org/10.1038/nature04440"
+
+[Width]
+
+    [Width.820]
+  value = 13 #ms
+  error = false
+  frequency = 820 #MHz
+  ref = "https://doi.org/10.3847/1538-4357/aa88c3"
+
+    [Width.1400]
+  value = 15 #ms
+  error = false
+  frequency = 1400 #MHz
+  ref = "https://doi.org/10.1038/nature04440"
+
+[BurstRate]
+
+    [BurstRate.Discovery]
+  value= 0.61 #hour^-1
+  error= false
+  frequency= 1400 #MHz
+  telescope= "Parkes"
+  minflux= 70 #mJy
+  ref = "https://doi.org/10.1038/nature04440"
+
+    [BurstRate.Cui]
+  value = 15.61 #hour^-1
+  error = false
+  frequency = 820 #MHz
+  telescope = "GBT"
+  minflux = 45 #mJy
+  ref = "https://doi.org/10.3847/1538-4357/aa6aa9"
+
+    [BurstRate.Jiang]
+  value = 19.5 #hour^-1
+  error = false
+  frequency = 820 #MHz
+  telescope = "GBT"
+  minflux = 45 #mJy
+  ref = "https://doi.org/10.3847/1538-4357/aa88c3"
+
+#McLaughlin et al 2006: https://doi.org/10.1038/nature04440
+#Jiang et al 2017: https://doi.org/10.3847/1538-4357/aa88c3
+#Cui et al 2017: https://doi.org/10.3847/1538-4357/aa6aa9

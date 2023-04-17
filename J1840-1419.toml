@@ -1,0 +1,75 @@
+title = "J1840-1419"
+
+[Name]
+value = "J1840-1419"
+error = false
+ref = "https://doi.org/10.1111/j.1365-2966.2009.15693.x"
+
+[RA]
+value = "18:40:33.04" #hh:mm:ss.ss
+error = "00:00:00.01"
+ref = "https://doi.org/10.1093/mnras/sty923"
+
+[Dec]
+value = "-14:19:06.5" #(sign)dd:mm:ss.ss
+error = "00:00:00.9"
+ref = "https://doi.org/10.1093/mnras/sty923"
+
+[DM]
+value = 19.4 #pc/cc
+error = 1.4
+ref = "https://doi.org/10.1111/j.1365-2966.2011.18917.x"
+
+[Period]
+value = 6.5975625223 #seconds
+error = 0.0000000001
+ref = "https://doi.org/10.1093/mnras/sty923"
+
+[Pdot]
+value = 6.353e-15 #s/s
+error = 0.001e-15
+ref = "https://doi.org/10.1093/mnras/sty923"
+
+[Pepoch]
+value = 55074.9
+error = false
+ref = "https://doi.org/10.1093/mnras/sty923"
+
+[Flux]
+
+    [Flux.1400]
+  value = 1700 #mJy
+  error = false
+  frequency = 1400 #MHz
+  ref = "https://doi.org/10.1111/j.1365-2966.2009.15693.x"
+
+[Width]
+
+    [Width.1400]
+  value = 2.6 #ms
+  error = false
+  frequency = 1400 #MHz
+  ref = "https://doi.org/10.1111/j.1365-2966.2009.15693.x"
+
+[BurstRate]
+
+    [BurstRate.Discovery]
+  value= 46.0 #hour^-1
+  error= false
+  frequency= 1400 #MHz
+  telescope= "Parkes"
+  minflux= 160 #mJy
+  ref = "https://doi.org/10.1111/j.1365-2966.2009.15693.x"
+
+    [BurstRate.Reobs]
+  value= 63.4 #hour^-1
+  error= false
+  frequency= 1400 #MHz
+  telescope= "Parkes"
+  minflux= 160 #mJy
+  ref = "https://doi.org/10.1111/j.1365-2966.2011.18917.x"
+
+
+#Keane et al 2010: https://doi.org/10.1111/j.1365-2966.2009.15693.x
+#Keane et al 2011: https://doi.org/10.1111/j.1365-2966.2011.18917.x
+#Bhattacharyya et al 2018: https://doi.org/10.1093/mnras/sty923

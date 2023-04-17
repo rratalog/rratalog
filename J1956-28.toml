@@ -1,0 +1,48 @@
+title = "J1956-28"
+
+[Name]
+value = "J1956-28"
+error = false
+ref = "https://doi.org/10.1088/0004-637X/809/1/67"
+
+[RA]
+value = "19:56" #hh:mm:ss.ss
+error = "00:02"
+ref = "https://doi.org/10.1088/0004-637X/809/1/67"
+
+[Dec]
+value = "-27:53" #(sign)dd:mm:ss.ss
+error = "00:36"
+ref = "https://doi.org/10.1088/0004-637X/809/1/67"
+
+[DM]
+value = 45.69 #pc/cc
+error =  0.01
+ref = "https://doi.org/10.1088/0004-637X/809/1/67"
+
+[Period]
+value = 0.2600144 #seconds
+error = 0.0000006
+ref = "https://doi.org/10.1088/0004-637X/809/1/67"
+
+[BurstRate]
+
+    [BurstRate.Discovery]
+  value= 120
+  error= 60
+  frequency= 350
+  telescope= 'GBT'
+  minflux= 160 #mJy
+  ref = "https://doi.org/10.1088/0004-637X/809/1/67"
+
+    [BurstRate.GBT350]
+  value= 66
+  error= 20
+  frequency= 350
+  telescope= 'GBT'
+  minflux= 160 #mJy
+  ref = "https://doi.org/10.1088/0004-637X/809/1/67"
+
+
+
+#Karako-Argaman et al 2015: https://doi.org/10.1088/0004-637X/809/1/67

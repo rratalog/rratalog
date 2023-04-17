@@ -1,0 +1,54 @@
+title = "J1838+50"
+
+[Name]
+value = "J1838+50"
+error = false
+ref = "https://doi.org/10.3847/1538-4357/ac1da6"
+
+[RA]
+value = "18:38" #hh:mm:ss.ss
+error = "00:08"
+ref = "https://doi.org/10.3847/1538-4357/ac1da6"
+
+[Dec]
+value = "+50:51" #(sign)dd:mm:ss.ss
+error = "00:15"
+ref = "https://doi.org/10.3847/1538-4357/ac1da6"
+
+[DM]
+value = 21.81 #pc/cc
+error = 0.01
+ref = "https://doi.org/10.3847/1538-4357/ac1da6"
+
+[Period]
+value = 2.577223412 #seconds
+error = 0.000000005
+ref = "https://doi.org/10.3847/1538-4357/ac1da6"
+
+[Flux]
+
+    [Flux.600]
+  value = 200 #mJy
+  error = 130
+  frequency = 600 #MHz
+  ref = "https://doi.org/10.3847/1538-4357/ac1da6"
+
+[Width]
+
+    [Width.600]
+  value = 13 #ms
+  error = 2
+  frequency = 600 #MHz
+  ref = "https://doi.org/10.3847/1538-4357/ac1da6"
+
+[BurstRate]
+
+    [BurstRate.Discovery]
+  value= 3.9 #hour^-1
+  error= 0.2
+  frequency= 600 #MHz
+  telescope= "CHIME"
+  minflux= 53 #mJy
+  ref = "https://doi.org/10.3847/1538-4357/ac1da6"
+
+#Good et al 2021: https://doi.org/10.3847/1538-4357/ac1da6

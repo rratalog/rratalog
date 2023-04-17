@@ -1,0 +1,76 @@
+title = "J1739-2521"
+
+[Name]
+value = "J1739-2521"
+error = false
+ref = "https://doi.org/10.3847/1538-4357/aa6aa9"
+
+[RA]
+value = "17:39:32.629" #hh:mm:ss.ss
+error = "00:00:00.054"
+ref = "https://doi.org/10.3847/1538-4357/aa88c3"
+
+[Dec]
+value = "-25:21:56" #(sign)dd:mm:ss.ss
+error = "00:00:15"
+ref = "https://doi.org/10.3847/1538-4357/aa88c3"
+
+[DM]
+value = 186.4 #pc/cc
+error = false
+ref = "https://doi.org/10.3847/1538-4357/aa6aa9"
+
+[Period]
+value = 1.81846119286 #seconds
+error = 0.00000000024
+ref = "https://doi.org/10.3847/1538-4357/aa88c3"
+
+[Pdot]
+value = 0.24e-15 #s/s
+error = 0.02e-15
+ref = "https://doi.org/10.3847/1538-4357/aa88c3"
+
+[Pepoch]
+value = 55631
+error = false
+ref = "https://doi.org/10.3847/1538-4357/aa88c3"
+
+[Flux]
+
+    [Flux.820]
+  value = 49 #mJy
+  error = false
+  frequency = 820 #MHz
+  ref = "https://doi.org/10.3847/1538-4357/aa6aa9"
+
+[Width]
+
+    [Width.820]
+  value = 43 #ms
+  error = false
+  frequency = 820 #MHz
+  ref = "https://doi.org/10.3847/1538-4357/aa88c3"
+
+[BurstRate]
+
+    [BurstRate.Discovery]
+  value= 22.64 #hour^-1
+  error= false
+  frequency= 820 #MHz
+  telescope= "GBT"
+  minflux= 45 #mJy
+  ref = "https://doi.org/10.3847/1538-4357/aa6aa9"
+
+    [BurstRate.Reobs]
+  value= 38.3 #hour^-1
+  error= false
+  frequency= 820 #MHz
+  telescope= "GBT"
+  minflux= 45 #mJy
+  ref = "https://doi.org/10.3847/1538-4357/aa88c3"
+
+
+
+
+#Cui et al 2017: https://doi.org/10.3847/1538-4357/aa6aa9
+#Jiang et al 2017: https://doi.org/10.3847/1538-4357/aa88c3

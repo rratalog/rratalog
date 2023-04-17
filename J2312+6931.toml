@@ -1,0 +1,79 @@
+title = "J2312+6931"
+
+[Name]
+value = "J2312+6931"
+error = false
+ref = "https://doi.org/10.3847/1538-4357/aabf8a"
+
+[RA]
+value = "23:12:38.93" #hh:mm:ss.ss
+error = "00:00:00.05"
+ref = "https://doi.org/10.3847/1538-4357/aabf8a"
+
+[Dec]
+value = "+69:31:04.0" #(sign)dd:mm:ss.ss
+error = "00:00:00.3"
+ref = "https://doi.org/10.3847/1538-4357/aabf8a"
+
+[DM]
+value = 71.6 #pc/cc
+error =  0.1
+ref = "https://doi.org/10.3847/1538-4357/aabf8a"
+
+[Period]
+value = 0.81337477832 #seconds
+error = 0.00000000002
+ref = "https://doi.org/10.3847/1538-4357/aabf8a"
+
+[Pdot]
+value = 0.63e-15 #seconds/seconds
+error = 0.01e-15 
+ref = "https://doi.org/10.3847/1538-4357/aabf8a"
+
+[Flux]
+
+    [Flux.350]
+  value = 0.8 #mJy
+  frequency = 350 #MHz
+  error = 0.4
+  ref = "https://doi.org/10.3847/1538-4357/ab75e2"
+
+[Width]
+
+    [Width.350]
+  value = 17 #ms
+  frequency = 350 #MHz
+  error = false
+  ref = "https://doi.org/10.3847/1538-4357/ab75e2"
+
+[BurstRate]
+
+    [BurstRate.Discovery]
+  value= 60
+  error= 42
+  frequency= 350
+  telescope= 'GBT'
+  minflux= 160 #mJy
+  ref = "https://doi.org/10.1088/0004-637X/809/1/67"
+
+    [BurstRate.GBT820]
+  value= 168
+  error= 32
+  frequency= 820
+  telescope= 'GBT'
+  minflux= 45 #mJy
+  ref = "https://doi.org/10.1088/0004-637X/809/1/67"
+
+    [BurstRate.LOFAR]
+  value= 0
+  error= false
+  frequency= 150
+  telescope= 'LOFAR'
+  minflux= 80 #mJy
+  ref = "https://doi.org/10.1088/0004-637X/809/1/67"
+
+
+
+
+#Lynch et al 2018: https://doi.org/10.3847/1538-4357/aabf8a
+#McEwen et al 2020: https://doi.org/10.3847/1538-4357/ab75e2

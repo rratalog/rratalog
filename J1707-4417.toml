@@ -1,0 +1,74 @@
+title = "J1707-4417"
+
+[Name]
+value = "J1707-4417"
+error = false
+ref = "https://doi.org/10.1111/j.1365-2966.2009.15693.x"
+
+[RA]
+value = "17:07:41.41" #hh:mm:ss.ss
+error = "00:00:00.03"
+ref = "https://doi.org/10.1111/j.1365-2966.2011.18917.x"
+
+[Dec]
+value = "-44:17:19" #(sign)dd:mm:ss.ss
+error = "00:00:01"
+ref = "https://doi.org/10.1111/j.1365-2966.2011.18917.x"
+
+[DM]
+value = 380 #pc/cc
+error = 10
+ref = "https://doi.org/10.1111/j.1365-2966.2011.18917.x"
+
+[Period]
+value = 5.7637770030 #seconds
+error = 0.0000000004
+ref = "https://doi.org/10.1111/j.1365-2966.2011.18917.x"
+
+[Pdot]
+value = 11.65e-15 #s/s
+error =  0.02e-15
+ref = "https://doi.org/10.1111/j.1365-2966.2011.18917.x"
+
+[Pepoch]
+value = 54999
+error = false
+ref = "https://doi.org/10.1111/j.1365-2966.2011.18917.x"
+
+[Flux]
+
+    [Flux.1400]
+  value = 575 #mJy
+  error = false
+  frequency = 1400 #MHz
+  ref = "https://doi.org/10.1111/j.1365-2966.2009.15693.x"
+
+[Width]
+
+    [Width.1400]
+  value = 12.1 #ms
+  error = false
+  frequency = 1400 #MHz
+  ref = "https://doi.org/10.1111/j.1365-2966.2009.15693.x"
+
+[BurstRate]
+
+    [BurstRate.Discovery]
+  value= 8.5 #hour^-1
+  error= false
+  frequency= 1400 #MHz
+  telescope= "Parkes"
+  minflux= 75 #mJy
+  ref = "https://doi.org/10.1111/j.1365-2966.2009.15693.x"
+
+    [BurstRate.Reobs]
+  value= 8.9 #hour^-1
+  error= false
+  frequency= 1400 #MHz
+  telescope= "Parkes"
+  minflux= 75 #mJy
+  ref = "https://doi.org/10.1111/j.1365-2966.2011.18917.x"
+
+
+#Keane et al 2010: https://doi.org/10.1111/j.1365-2966.2009.15693.x
+#Keane et al 2011: https://doi.org/10.1111/j.1365-2966.2011.18917.x

@@ -1,0 +1,49 @@
+title = "J1311-59"
+
+[Name]
+value = "J1311-59"
+error = false
+ref = "https://doi.org/10.1111/j.1365-2966.2011.18917.x"
+
+[RA]
+value = "13:11" #hh:mm:ss.ss
+error = "00:07"
+ref = "https://doi.org/10.1111/j.1365-2966.2011.18917.x"
+
+[Dec]
+value = "-59" #(sign)dd:mm:ss.ss
+error = "00:07"
+ref = "https://doi.org/10.1111/j.1365-2966.2011.18917.x"
+
+[DM]
+value = 152 #pc/cc
+error = 5
+ref = "https://doi.org/10.1111/j.1365-2966.2011.18917.x"
+
+[Flux]
+
+    [Flux.1400]
+  value = 130 #mJy
+  error = false
+  frequency = 1400 #MHz
+  ref = "https://doi.org/10.1111/j.1365-2966.2011.18917.x"
+
+[Width]
+
+    [Width.1400]
+  value = 16 #ms
+  error = false
+  frequency = 1400 #MHz
+  ref = "https://doi.org/10.1111/j.1365-2966.2011.18917.x"
+
+[BurstRate]
+
+    [BurstRate.Discovery]
+  value= 0.3 #hour^-1
+  error= false
+  frequency= 1400 #MHz
+  telescope= "Parkes"
+  minflux= 64 #mJy
+  ref = "https://doi.org/10.1111/j.1365-2966.2011.18917.x"
+
+#Keane et al 2011: https://doi.org/10.1111/j.1365-2966.2011.18917.x
