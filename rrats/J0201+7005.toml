@@ -30,6 +30,11 @@ value = 5.514e-15 #s/s
 error = 0.001e-15
 ref = "https://doi.org/10.1088/0004-637X/809/1/67"
 
+[Pepoch]
+value = 56777
+error = false
+ref = "https://doi.org/10.1088/0004-637X/809/1/67"
+
 [Width]
 
     [Width.350]
