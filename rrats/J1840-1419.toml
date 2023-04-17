@@ -30,6 +30,11 @@ value = 6.353e-15 #s/s
 error = 0.001e-15
 ref = "https://doi.org/10.1093/mnras/sty923"
 
+[Pepoch]
+value = 55074.9
+error = false
+ref = "https://doi.org/10.1093/mnras/sty923"
+
 [Flux]
 
     [Flux.1400]

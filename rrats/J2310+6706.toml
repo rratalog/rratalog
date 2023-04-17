@@ -30,6 +30,11 @@ value = 0.076e-15 #seconds/seconds
 error = 0.004e-15 
 ref = "https://doi.org/10.3847/1538-4357/aabf8a"
 
+[Pepoch]
+value = 57225
+error = false
+ref = "https://doi.org/10.3847/1538-4357/aabf8a"
+
 [BurstRate]
 
     [BurstRate.Discovery]

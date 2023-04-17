@@ -11,7 +11,7 @@ error = "00:00:39"
 ref = "https://doi.org/10.1111/j.1365-2966.2011.18521.x"
 
 [Dec]
-value = "43:54:43" #(sign)dd:mm:ss.ss
+value = "-43:54:43" #(sign)dd:mm:ss.ss
 error = "00:07"
 ref = "https://doi.org/10.1111/j.1365-2966.2011.18521.x"
 
