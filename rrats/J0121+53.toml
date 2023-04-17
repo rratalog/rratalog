@@ -3,27 +3,27 @@ title = "J0121+53"
 [Name]
 value = "J0121+53"
 error = false
-ref = "https://arxiv.org/abs/2012.02320"
+ref = "https://doi.org/10.3847/1538-4357/ac1da6"
 
 [RA]
 value = "01:21" #hh:mm:ss.ss
 error = "00:11"
-ref = "https://arxiv.org/abs/2012.02320"
+ref = "https://doi.org/10.3847/1538-4357/ac1da6"
 
 [Dec]
 value = "+53:29" #(sign)dd:mm:ss.ss
 error = "00:16"
-ref = "https://arxiv.org/abs/2012.02320"
+ref = "https://doi.org/10.3847/1538-4357/ac1da6"
 
 [DM]
 value = 91.38 #pc/cc
 error = 0.03
-ref = "https://arxiv.org/abs/2012.02320"
+ref = "https://doi.org/10.3847/1538-4357/ac1da6"
 
 [Period]
 value = 2.7247846 #seconds
 error = 0.0000004
-ref = "https://arxiv.org/abs/2012.02320"
+ref = "https://doi.org/10.3847/1538-4357/ac1da6"
 
 [Flux]
 
@@ -31,7 +31,7 @@ ref = "https://arxiv.org/abs/2012.02320"
   value = 200 #mJy
   error = 150
   frequency = 600 #MHz
-  ref = "https://arxiv.org/abs/2012.02320"
+  ref = "https://doi.org/10.3847/1538-4357/ac1da6"
 
 [Width]
 
@@ -39,7 +39,7 @@ ref = "https://arxiv.org/abs/2012.02320"
   value = 20 #ms
   error = 5
   frequency = 600 #MHz
-  ref = "https://arxiv.org/abs/2012.02320"
+  ref = "https://doi.org/10.3847/1538-4357/ac1da6"
 
 [BurstRate]
 
@@ -49,6 +49,6 @@ ref = "https://arxiv.org/abs/2012.02320"
   frequency= 600 #MHz
   telescope= "CHIME"
   minflux= 42 #mJy
-  ref = "https://arxiv.org/abs/2012.02320"
+  ref = "https://doi.org/10.3847/1538-4357/ac1da6"
 
-#Good et al 2020: https://arxiv.org/abs/2012.02320
+#Good et al 2021: https://doi.org/10.3847/1538-4357/ac1da6
