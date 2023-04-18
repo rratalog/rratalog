@@ -377,15 +377,11 @@ if __name__ == "__main__":
         full_display_df.to_csv('rratalog.csv',columns=df_keys)
 
     if make_html==True:
-        #drop ref columns here
-        full_display_df = full_display_df.drop(full_display_df.iloc[:,17:],axis=1)
-        #print(full_display_df)
         templateLoader = jinja2.FileSystemLoader(searchpath='./')
         env = jinja2.Environment(loader=templateLoader)
         template = env.get_template('template.html')
-
         with open("rratalog.html", "w") as fh:
-            out = template.render(header=unit_keys, tableinfo=df_keys, df=full_display_df)
+            out = template.render(header=unit_keys, tableinfo=table_keys, df=full_display_df)
             fh.write(out)
 
     if make_tex==True:
