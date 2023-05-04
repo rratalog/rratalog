@@ -377,8 +377,9 @@ if __name__ == "__main__":
         full_display_df.to_csv('rratalog.csv',columns=df_keys)
 
     if make_html==True:
+        display_df = full_display_df.drop(full_display_df.iloc[:,17:],axis=1)
         templateLoader = jinja2.FileSystemLoader(searchpath='./')
-        env = jinja2.Environment(loader=templateLoader)
+        env = jinja2.Environment(loader=templateLoader,trim_blocks=True,lstrip_blocks=True)
         template = env.get_template('template.html')
         with open("rratalog.html", "w") as fh:
             out = template.render(header=unit_keys, tableinfo=table_keys, df=full_display_df)
