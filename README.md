@@ -1,6 +1,6 @@
 # RRATalog
 
-The web version of the RRATalog is located at https://astro.phys.wvu.edu/rratalog/
+The web version of the RRATalog is located at https://rratalog.github.io/rratalog/
 
 The RRATalog is a comprehensive catalog of radio pulsars categorized as Rotating Radio Transients (RRATs). 
 For clarity, we only include published pulsars which were discovered through their single pulses rather than a periodicity search.
