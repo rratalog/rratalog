@@ -103,6 +103,8 @@ table_keys = ["Name","RA", "Dec", "DM", "Period", "Pdot", "Pepoch", "Frequency",
 units = ["","hh:mm:ss.ss","dd:mm:ss.ss","pc cm^-3", "s", "10^-15 s/s", "", "Hz", "10^-15 Hz/s", "10^12 G", "10^31 erg/s", "Myr", "deg", "deg","hr^-1","Jy","ms"]
 df_keys = table_keys + [x+"_ref" for x in table_keys]
 
+null_value = "*"
+
 unit_keys=[]
 for i in range(len(table_keys)):
     if len(units[i]) > 0:
@@ -161,7 +163,7 @@ if __name__ == "__main__":
                         if "ref" in rrat_toml[key]:
                             display_dict[key+"_ref"].append(rrat_toml[key]["ref"])
                         else:
-                            display_dict[key + "_ref"].append('--')
+                            display_dict[key + "_ref"].append(null_value)
                     else:
                         pass
 
@@ -176,9 +178,8 @@ if __name__ == "__main__":
                             display_dict[key].append(err_string)
                             display_dict[key+"_ref"].append(rrat_toml[key]["ref"])
                     except KeyError:
-                        display_dict[key].append('--')
-                        display_dict[key+"_ref"].append('--')
-
+                        display_dict[key].append(null_value)
+                        display_dict[key+"_ref"].append(null_value)
 
                 elif key=="DM":
                     try:
@@ -191,8 +192,8 @@ if __name__ == "__main__":
                             display_dict[key].append(err_string)
                             display_dict[key+"_ref"].append(rrat_toml[key]["ref"])
                     except KeyError:
-                        display_dict[key].append('--')
-                        display_dict[key+"_ref"].append('--')
+                        display_dict[key].append(null_value)
+                        display_dict[key+"_ref"].append(null_value)
 
                 elif key=="Period":
                     try:
@@ -205,8 +206,8 @@ if __name__ == "__main__":
                             display_dict[key].append(err_string)
                             display_dict[key+"_ref"].append(rrat_toml[key]["ref"])
                     except KeyError:
-                        display_dict[key].append('--')
-                        display_dict[key+"_ref"].append('--')
+                        display_dict[key].append(null_value)
+                        display_dict[key+"_ref"].append(null_value)
 
                 elif key=="Pdot":
                     try:
@@ -225,8 +226,8 @@ if __name__ == "__main__":
                             display_dict[key].append(err_string)
                             display_dict[key+"_ref"].append(rrat_toml[key]["ref"])
                     except KeyError:
-                        display_dict[key].append('--')
-                        display_dict[key+"_ref"].append('--')
+                        display_dict[key].append(null_value)
+                        display_dict[key+"_ref"].append(null_value)
 
                 elif key=="Pepoch":
                     try:
@@ -234,8 +235,8 @@ if __name__ == "__main__":
                         display_dict[key].append(z["value"])
                         display_dict[key+"_ref"].append(rrat_toml[key]["ref"])
                     except KeyError:
-                        display_dict[key].append('--')
-                        display_dict[key+"_ref"].append('--')
+                        display_dict[key].append(null_value)
+                        display_dict[key+"_ref"].append(null_value)
 
                 elif key=="Frequency":
                     try:
@@ -252,8 +253,8 @@ if __name__ == "__main__":
                             display_dict[key].append(err_string)
                             display_dict[key+"_ref"].append(rrat_toml["Period"]["ref"])
                     except KeyError:
-                        display_dict[key].append('--')
-                        display_dict[key+"_ref"].append('--')
+                        display_dict[key].append(null_value)
+                        display_dict[key+"_ref"].append(null_value)
 
                 elif key=="Fdot":
                     try:
@@ -270,8 +271,8 @@ if __name__ == "__main__":
                             display_dict[key].append(err_string)
                             display_dict[key+"_ref"].append(rrat_toml["Pdot"]["ref"])
                     except KeyError:
-                        display_dict[key].append('--')
-                        display_dict[key+"_ref"].append('--')
+                        display_dict[key].append(null_value)
+                        display_dict[key+"_ref"].append(null_value)
 
                 #Timing derived parameters from P/Pdot
 
@@ -283,9 +284,8 @@ if __name__ == "__main__":
                         display_dict[key+"_ref"].append(rrat_toml["Pdot"]["ref"])
                         #error probably not relevant- much larger than calculated
                     except KeyError:
-                        display_dict[key].append('--')
-                        display_dict[key+"_ref"].append('--')
-
+                        display_dict[key].append(null_value)
+                        display_dict[key+"_ref"].append(null_value)
 
                 elif key=="Bsurf":
                     try:
@@ -294,9 +294,8 @@ if __name__ == "__main__":
                         display_dict[key].append(np.round(bsurf,1))
                         display_dict[key+"_ref"].append(rrat_toml["Pdot"]["ref"])
                     except KeyError:
-                        display_dict[key].append('--')
-                        display_dict[key+"_ref"].append('--')
-
+                        display_dict[key].append(null_value)
+                        display_dict[key+"_ref"].append(null_value)
 
                 elif key=="Edot":
                     try:
@@ -305,8 +304,8 @@ if __name__ == "__main__":
                         display_dict[key].append(np.round(edot,1))
                         display_dict[key+"_ref"].append(rrat_toml["Pdot"]["ref"])
                     except KeyError:
-                        display_dict[key].append('--')
-                        display_dict[key+"_ref"].append('--')
+                        display_dict[key].append(null_value)
+                        display_dict[key+"_ref"].append(null_value)
 
 
                 #Derived parameters from position (and DM)
@@ -341,9 +340,8 @@ if __name__ == "__main__":
                         except:
                             print('One entry in BurstRate needs to be Discovery!')
                     except KeyError:
-                        display_dict[key].append('--')
-                        display_dict[key+"_ref"].append('--')
-
+                        display_dict[key].append(null_value)
+                        display_dict[key+"_ref"].append(null_value)
 
                 elif key=="Width" or key=="Flux":
                     try:
@@ -351,13 +349,12 @@ if __name__ == "__main__":
                         display_dict[key].append(z)
                         display_dict[key+"_ref"].append(rrat_toml[key]["1400"]["ref"])
                     except KeyError:
-                        display_dict[key].append('--')
-                        display_dict[key+"_ref"].append('--')
+                        display_dict[key].append(null_value)
+                        display_dict[key+"_ref"].append(null_value)
 
                 else:
-                    display_dict[key].append('--')
-                    display_dict[key + "_ref"].append('--')
-
+                    display_dict[key].append(null_value)
+                    display_dict[key + "_ref"].append(null_value)
 
             display_df = pd.DataFrame(display_dict)
             full_display_df = pd.concat([full_display_df,display_df],ignore_index=True)
