@@ -111,7 +111,7 @@ for i in range(len(table_keys)):
         unit_keys.append(table_keys[i])
 
 if __name__ == "__main__":
-    list_of_rrats = glob.glob("J*.toml")
+    list_of_rrats = glob.glob("rrats/J*.toml")
     list_of_rrats.sort()
     display_dict = {}
     rrat_dict = {}
@@ -380,7 +380,7 @@ if __name__ == "__main__":
         display_df = full_display_df.drop(full_display_df.iloc[:,17:],axis=1)
         templateLoader = jinja2.FileSystemLoader(searchpath='./')
         env = jinja2.Environment(loader=templateLoader,trim_blocks=True,lstrip_blocks=True)
-        template = env.get_template('template.html')
+        template = env.get_template('templates/template.html')
         with open("rratalog.html", "w") as fh:
             out = template.render(header=unit_keys, tableinfo=table_keys, df=full_display_df)
             fh.write(out)
