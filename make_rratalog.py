@@ -311,22 +311,22 @@ if __name__ == "__main__":
                 #Derived parameters from position (and DM)
 
                 elif key=="l":
-                     l_val = np.round(c_gal.l.deg,2)
-                     if len(str(l_val).split('.')[-1]) < 2:
-                         l_str = str(l_val) + '0'
-                     else:
-                         l_str = str(l_val)
-                     display_dict[key].append(l_str)
-                     display_dict[key+"_ref"].append(rrat_toml["RA"]["ref"])
+                    l_val = np.round(c_gal.l.deg,2)
+                    if len(str(l_val).split('.')[-1]) < 2:
+                        l_str = str(l_val) + '0'
+                    else:
+                        l_str = str(l_val)
+                    display_dict[key].append(l_str)
+                    display_dict[key+"_ref"].append(rrat_toml["RA"]["ref"])
 
                 elif key=="b":
-                     b_val = np.round(c_gal.b.deg,2)
-                     if len(str(b_val).split('.')[-1]) < 2:
-                         b_str = str(b_val) + '0'
-                     else:
-                         b_str = str(b_val)
-                     display_dict[key].append(b_str)
-                     display_dict[key+"_ref"].append(rrat_toml["Dec"]["ref"])
+                    b_val = np.round(c_gal.b.deg,2)
+                    if len(str(b_val).split('.')[-1]) < 2:
+                        b_str = str(b_val) + '0'
+                    else:
+                        b_str = str(b_val)
+                    display_dict[key].append(b_str)
+                    display_dict[key+"_ref"].append(rrat_toml["Dec"]["ref"])
 
                 #Nested dictionaries
 
