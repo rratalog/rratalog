@@ -26,7 +26,7 @@ ref = "https://doi.org/10.1093/mnras/stad2012"
   value = 0.4 #hour^-1
   error = false
   frequency = 600 #MHz
-  telescope = CHIME
+  telescope = 'CHIME'
   minflux = false#mJy
   ref = "https://doi.org/10.1093/mnras/stad2012"
 
