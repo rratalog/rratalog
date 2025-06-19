@@ -1,0 +1,40 @@
+title = "J0741+17"
+
+[Name]
+value = "J0741+17"
+error = false
+ref = "https://doi.org/10.1093/mnras/stad2012"
+
+[RA]
+value = "07:41" #hh:mm:ss.ss
+error = "00:01"
+ref = "https://doi.org/10.1093/mnras/stad2012"
+
+[Dec]
+value = "17:03" #(sign)dd:mm:ss.ss
+error = "00:23"
+ref = "https://doi.org/10.1093/mnras/stad2012"
+
+[DM]
+value = 44.3 #pc/cc
+error = false
+ref = "https://doi.org/10.1093/mnras/stad2012"
+
+[Period]
+value = 1.73 #seconds
+error = false
+ref = "https://doi.org/10.1093/mnras/stad2012"
+
+[BurstRate]
+
+    [BurstRate.Discovery]
+  value = 3.7 #hour^-1
+  error = false
+  frequency = 600 #MHz
+  telescope = CHIME
+  minflux = false#mJy
+  ref = "https://doi.org/10.1093/mnras/stad2012"
+
+#References go here
+# Dong et al 2023 https://doi.org/10.1093/mnras/stad2012
+

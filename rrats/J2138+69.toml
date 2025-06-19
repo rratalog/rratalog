@@ -1,0 +1,40 @@
+title = "J2138+69"
+
+[Name]
+value = "J2138+69"
+error = false
+ref = "https://doi.org/10.1093/mnras/stad2012"
+
+[RA]
+value = "21:38" #hh:mm:ss.ss
+error = "00:01"
+ref = "https://doi.org/10.1093/mnras/stad2012"
+
+[Dec]
+value = "69:50" #(sign)dd:mm:ss.ss
+error = "00:16"
+ref = "https://doi.org/10.1093/mnras/stad2012"
+
+[DM]
+value = 46.6 #pc/cc
+error = false
+ref = "https://doi.org/10.1093/mnras/stad2012"
+
+[Period]
+value = 0.22 #seconds
+error = false
+ref = "https://doi.org/10.1093/mnras/stad2012"
+
+[BurstRate]
+
+    [BurstRate.Discovery]
+  value = 0.3 #hour^-1
+  error = false
+  frequency = 600 #MHz
+  telescope = CHIME
+  minflux = false#mJy
+  ref = "https://doi.org/10.1093/mnras/stad2012"
+
+#References go here
+# Dong et al 2023 https://doi.org/10.1093/mnras/stad2012
+
