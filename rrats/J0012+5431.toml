@@ -21,7 +21,7 @@ error = 0.7
 ref = "https://doi.org/10.1093/mnras/stad2012"
 
 [Period]
-value = 3.0253007099(2) #seconds
+value = 3.0253007099 #seconds
 error = 0.0000000002
 ref = "https://doi.org/10.1093/mnras/stad2012"
 
