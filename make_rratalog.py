@@ -4,6 +4,8 @@ from pprint import pprint as print
 from astropy import units as u
 from astropy.coordinates import SkyCoord
 import numpy as np
+import argparse
+import os
 
 make_html = True #if True, will save rratalog.html
 make_csv = True #if True, will save rratalog.csv
@@ -111,7 +113,16 @@ for i in range(len(table_keys)):
         unit_keys.append(table_keys[i])
 
 if __name__ == "__main__":
-    list_of_rrats = glob.glob("J*.toml")
+    parser = argparse.ArgumentParser(description="Generate RRATalog outputs")
+    parser.add_argument(
+        "--data-dir",
+        default="./rrats",
+        help="Directory containing .toml files",
+    )
+    args = parser.parse_args()
+
+    data_dir = args.data_dir
+    list_of_rrats = glob.glob(os.path.join(data_dir, "J*.toml"))
     list_of_rrats.sort()
     display_dict = {}
     rrat_dict = {}
