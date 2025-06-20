@@ -49,7 +49,7 @@ ref = "https://doi.org/10.48550/arXiv.2206.03091"
   value= 54.5 #hour^-1
   error= false
   frequency= 1250 #MHz
-  telescope= FAST
+  telescope = "FAST"
   minflux= 54.13 #mJy
   ref = "https://doi.org/10.48550/arXiv.2206.03091"
   #Average burst rate-- 1 burst every 66 seconds

@@ -389,7 +389,7 @@ if __name__ == "__main__":
 
     if make_html==True:
         display_df = full_display_df.drop(full_display_df.iloc[:,17:],axis=1)
-        templateLoader = jinja2.FileSystemLoader(searchpath='./')
+        templateLoader = jinja2.FileSystemLoader(searchpath=os.path.join(os.path.dirname(__file__), 'templates'))
         env = jinja2.Environment(loader=templateLoader,trim_blocks=True,lstrip_blocks=True)
         template = env.get_template('template.html')
         with open("rratalog.html", "w") as fh:
