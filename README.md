@@ -12,5 +12,4 @@ We welcome additions, updates, and corrections to the RRATalog-- either in the f
 If you use the RRATalog, please acknowledge the URL above, and cite Agarwal et al. (in prep).  
 
 ## Development preview
-
-Changes pushed to the `dev` branch are automatically deployed to a temporary GitHub Pages preview using the workflow in `.github/workflows/dev-pages.yml`. Each preview build runs `make_rratalog.py` and publishes the generated site using the `actions/deploy-pages` action. The preview URL is provided in the workflow run summary and expires automatically after a few days.
+Changes pushed to the `dev` branch are automatically deployed to a temporary GitHub Pages preview using the workflow in `.github/workflows/dev-pages.yml`. The job checks out the branch with `actions/checkout@v4`, installs Python with `actions/setup-python@v5`, runs `make_rratalog.py`, and publishes the site with `actions/deploy-pages@v4`. The preview URL is shown in the workflow summary and expires automatically after a few days.
