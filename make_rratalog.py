@@ -100,7 +100,7 @@ def error_string_coords(coord,err):
 ##########
 
 table_keys = ["Name","RA", "Dec", "DM", "Period", "Pdot", "Pepoch", "Frequency", "Fdot", "Bsurf", "Edot", "Tau", "l", "b", "BurstRate", "Flux", "Width"]
-units = ["","hh:mm:ss.ss","dd:mm:ss.ss","pc cm^-3", "s", "10^-15 s/s", "", "Hz", "10^-15 Hz/s", "10^12 G", "10^31 erg/s", "Myr", "deg", "deg","hr^-1","Jy","ms"]
+units = ["","hh:mm:ss.ss","dd:mm:ss.ss","pc cm^-3", "s", "10^-15 s/s", "", "Hz", "10^-15 Hz/s", "10^12 G", "10^31 erg/s", "Myr", "deg", "deg","hr^-1","mJy","ms"]
 df_keys = table_keys + [x+"_ref" for x in table_keys]
 
 unit_keys=[]
