@@ -23,5 +23,16 @@ The RRATalog is maintained by Evan Lewis (efl0003 (at) mix.wvu.edu) and Maura Mc
 We welcome additions, updates, and corrections to the RRATalog-- either in the form of GitHub pull requests (edit/add the TOML files and we'll take care of the rest), or you can email the maintainers.
 If you use the RRATalog, please acknowledge the URL above, and cite Agarwal et al. (in prep).  
 
+## Installation
+
+To install the dependencies required to build and work with the RRATalog, run:
+
+```
+pip install -r requirements.txt
+```
+
+This installs packages such as `toml`, `pandas`, `jinja2`, `numpy`, and `astropy`.
+
 ## Development preview
 Changes pushed to the `dev` branch are automatically deployed to a temporary GitHub Pages preview using the workflow in `.github/workflows/dev-pages.yml`. The job checks out the branch with `actions/checkout@v4`, installs Python with `actions/setup-python@v5`, runs `make_rratalog.py`, and publishes the site with `actions/deploy-pages@v4`. The preview URL is shown in the workflow summary and expires automatically after a few days.
+
