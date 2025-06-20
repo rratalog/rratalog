@@ -20,3 +20,7 @@ pip install -r requirements.txt
 ```
 
 This installs packages such as `toml`, `pandas`, `jinja2`, `numpy`, and `astropy`.
+
+## Development preview
+Changes pushed to the `dev` branch are automatically deployed to a temporary GitHub Pages preview using the workflow in `.github/workflows/dev-pages.yml`. The job checks out the branch with `actions/checkout@v4`, installs Python with `actions/setup-python@v5`, runs `make_rratalog.py`, and publishes the site with `actions/deploy-pages@v4`. The preview URL is shown in the workflow summary and expires automatically after a few days.
+
