@@ -4,6 +4,7 @@ from pprint import pprint as print
 from astropy import units as u
 from astropy.coordinates import SkyCoord
 import numpy as np
+import argparse
 
 make_html = True #if True, will save rratalog.html
 make_csv = True #if True, will save rratalog.csv
@@ -111,6 +112,15 @@ for i in range(len(table_keys)):
         unit_keys.append(table_keys[i])
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Generate RRATalog outputs")
+    parser.add_argument('-v', '--verbose', action='store_true', help='Enable verbose output')
+    args = parser.parse_args()
+    verbose = args.verbose
+
+    def vprint(*args, **kwargs):
+        if verbose:
+            print(*args, **kwargs)
+
     list_of_rrats = glob.glob("J*.toml")
     list_of_rrats.sort()
     display_dict = {}
@@ -214,7 +224,7 @@ if __name__ == "__main__":
                        if rrat_toml[key]["error"] == False:
                            display_dict[key].append(p1*1e15)
                            display_dict[key+"_ref"].append(rrat_toml["Pdot"]["ref"])
-                           print(rrat_toml["Name"]["value"])
+                           vprint(rrat_toml["Name"]["value"])
                        else:
                             if len(str(p1).partition('.')[2]) > 10:
                                 p1round = np.round(p1,10)
@@ -339,7 +349,7 @@ if __name__ == "__main__":
                             display_dict[key].append(z)
                             display_dict[key+"_ref"].append(rrat_toml[key]["Discovery"]["ref"])
                         except:
-                            print('One entry in BurstRate needs to be Discovery!')
+                            vprint('One entry in BurstRate needs to be Discovery!')
                     except KeyError:
                         display_dict[key].append('--')
                         display_dict[key+"_ref"].append('--')
@@ -363,8 +373,8 @@ if __name__ == "__main__":
             full_display_df = pd.concat([full_display_df,display_df],ignore_index=True)
 
         except toml.decoder.TomlDecodeError as exc:
-            print(rrat)
-            print(exc)
+            vprint(rrat)
+            vprint(exc)
             pass
 
     #print(full_display_df)
