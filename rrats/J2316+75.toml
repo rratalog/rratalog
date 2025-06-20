@@ -1,0 +1,35 @@
+title = "J2316+75"
+
+[Name]
+value = "J2316+75"
+error = false
+ref = "https://doi.org/10.1093/mnras/stad2012"
+
+[RA]
+value = "23:15" #hh:mm:ss.ss
+error = "00:01"
+ref = "https://doi.org/10.1093/mnras/stad2012"
+
+[Dec]
+value = "75:44" #(sign)dd:mm:ss.ss
+error = "00:21"
+ref = "https://doi.org/10.1093/mnras/stad2012"
+
+[DM]
+value = 53.4 #pc/cc
+error = false
+ref = "https://doi.org/10.1093/mnras/stad2012"
+
+[BurstRate]
+
+    [BurstRate.Discovery]
+  value = 0.5 #hour^-1
+  error = false
+  frequency = 600 #MHz
+  telescope = 'CHIME'
+  minflux = false#mJy
+  ref = "https://doi.org/10.1093/mnras/stad2012"
+
+#References go here
+# Dong et al 2023 https://doi.org/10.1093/mnras/stad2012
+

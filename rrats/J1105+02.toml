@@ -1,0 +1,46 @@
+title = "J1105+02"
+
+[Name]
+value = "J1105+02"
+error = false
+ref = "https://doi.org/10.1093/mnras/stad2012"
+
+[RA]
+value = "11:05:32" #hh:mm:ss.ss
+error = "00:00:00.2"
+ref = "https://doi.org/10.1093/mnras/stad2012"
+
+[Dec]
+value = "02:28:50" #(sign)dd:mm:ss.ss
+error = "00:00:30"
+ref = "https://doi.org/10.1093/mnras/stad2012"
+
+[DM]
+value = 16.5 #pc/cc
+error = 0.4
+ref = "https://doi.org/10.1093/mnras/stad2012"
+
+[Period]
+value = 6.403055372 #seconds
+error = 0.0000000004
+ref = "https://doi.org/10.1093/mnras/stad2012"
+
+[Pepoch]
+value = 59216
+error = false
+ref = "https://doi.org/10.1093/mnras/stad2012"
+
+
+[BurstRate]
+
+    [BurstRate.Discovery]
+  value = 2.5 #hour^-1
+  error = false
+  frequency = 600 #MHz
+  telescope = 'CHIME'
+  minflux = false #mJy
+  ref = "https://doi.org/10.1093/mnras/stad2012"
+
+#References go here
+# Dong et al 2023 https://doi.org/10.1093/mnras/stad2012
+
