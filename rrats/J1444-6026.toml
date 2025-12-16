@@ -16,7 +16,7 @@ error = "00:00:00.4"
 ref = "https://doi.org/10.1111/j.1365-2966.2009.15584.x"
 
 [DM]
-value = 145.3 #pc/cc
+value = 367.7 #pc/cc
 error = 1.4
 ref = "https://doi.org/10.1111/j.1365-2966.2009.15584.x"
 
