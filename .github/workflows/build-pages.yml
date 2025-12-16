@@ -2,7 +2,7 @@ name: Build RRATalog (dev)
 
 on:
   push:
-    branches: [ dev-pages ]
+    branches: [ main ]
     paths:
       - 'make_rratalog.py'
       - 'rrats/**'
