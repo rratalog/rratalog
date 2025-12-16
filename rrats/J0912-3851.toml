@@ -37,7 +37,7 @@ ref = "https://doi.org/10.1111/j.1365-2966.2012.22042.x"
 
 [Flux]
 
-    [Flux.1400]
+    [Flux.1400mean]
   value = 0.14 #mJy
   error = false
   frequency = 1400 #MHz
