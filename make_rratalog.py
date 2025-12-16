@@ -103,6 +103,8 @@ table_keys = ["Name","RA", "Dec", "DM", "Period", "Pdot", "Pepoch", "Frequency",
 units = ["","hh:mm:ss.ss","dd:mm:ss.ss","pc cm^-3", "s", "10^-15 s/s", "", "Hz", "10^-15 Hz/s", "10^12 G", "10^31 erg/s", "Myr", "deg", "deg","hr^-1","mJy","ms"]
 df_keys = table_keys + [x+"_ref" for x in table_keys]
 
+null_value = "*"
+
 unit_keys=[]
 for i in range(len(table_keys)):
     if len(units[i]) > 0:
@@ -111,7 +113,7 @@ for i in range(len(table_keys)):
         unit_keys.append(table_keys[i])
 
 if __name__ == "__main__":
-    list_of_rrats = glob.glob("J*.toml")
+    list_of_rrats = glob.glob("rrats/J*.toml")
     list_of_rrats.sort()
     display_dict = {}
     rrat_dict = {}
@@ -129,6 +131,8 @@ if __name__ == "__main__":
         for key in table_keys:
             display_dict[key] = []
             display_dict[key+"_ref"] = []
+            display_dict[key+"_val"] = []
+            display_dict[key+"_err"] = []
         try:
             rrat_toml = toml.load(rrat)
 
@@ -155,13 +159,33 @@ if __name__ == "__main__":
 
             for key in table_keys:
 
+                # Omit computed keys...
+                if key not in ["Frequency", "Fdot", "Tau", "Bsurf", "Edot", "l", "b",
+                               "BurstRate", "Width", "Flux"]:
+                    # Grab the value of the parameter (or null if missing)
+                    try:
+                        display_dict[key + "_val"].append(rrat_toml[key]["value"])
+                    except KeyError:
+                        print('%s: No value for %s' % (rrat_toml["Name"]["value"], key))
+                        display_dict[key + "_val"].append(null_value)
+
+                    # Grab the uncertainty on the parameter (or null if "False" or missing)
+                    try:
+                        err = rrat_toml[key]["error"]
+                        if err is False:
+                            display_dict[key + "_err"].append(null_value)
+                        else:
+                            display_dict[key+"_err"].append(err)
+                    except KeyError:
+                        display_dict[key + "_err"].append(null_value)
+
                 if key =="Name":
                     if "value" in rrat_toml[key]:
                         display_dict[key].append(rrat_toml[key]["value"])
                         if "ref" in rrat_toml[key]:
                             display_dict[key+"_ref"].append(rrat_toml[key]["ref"])
                         else:
-                            display_dict[key + "_ref"].append('--')
+                            display_dict[key + "_ref"].append(null_value)
                     else:
                         pass
 
@@ -176,9 +200,8 @@ if __name__ == "__main__":
                             display_dict[key].append(err_string)
                             display_dict[key+"_ref"].append(rrat_toml[key]["ref"])
                     except KeyError:
-                        display_dict[key].append('--')
-                        display_dict[key+"_ref"].append('--')
-
+                        display_dict[key].append(null_value)
+                        display_dict[key+"_ref"].append(null_value)
 
                 elif key=="DM":
                     try:
@@ -191,8 +214,8 @@ if __name__ == "__main__":
                             display_dict[key].append(err_string)
                             display_dict[key+"_ref"].append(rrat_toml[key]["ref"])
                     except KeyError:
-                        display_dict[key].append('--')
-                        display_dict[key+"_ref"].append('--')
+                        display_dict[key].append(null_value)
+                        display_dict[key+"_ref"].append(null_value)
 
                 elif key=="Period":
                     try:
@@ -205,8 +228,8 @@ if __name__ == "__main__":
                             display_dict[key].append(err_string)
                             display_dict[key+"_ref"].append(rrat_toml[key]["ref"])
                     except KeyError:
-                        display_dict[key].append('--')
-                        display_dict[key+"_ref"].append('--')
+                        display_dict[key].append(null_value)
+                        display_dict[key+"_ref"].append(null_value)
 
                 elif key=="Pdot":
                     try:
@@ -225,8 +248,8 @@ if __name__ == "__main__":
                             display_dict[key].append(err_string)
                             display_dict[key+"_ref"].append(rrat_toml[key]["ref"])
                     except KeyError:
-                        display_dict[key].append('--')
-                        display_dict[key+"_ref"].append('--')
+                        display_dict[key].append(null_value)
+                        display_dict[key+"_ref"].append(null_value)
 
                 elif key=="Pepoch":
                     try:
@@ -234,10 +257,12 @@ if __name__ == "__main__":
                         display_dict[key].append(z["value"])
                         display_dict[key+"_ref"].append(rrat_toml[key]["ref"])
                     except KeyError:
-                        display_dict[key].append('--')
-                        display_dict[key+"_ref"].append('--')
+                        display_dict[key].append(null_value)
+                        display_dict[key+"_ref"].append(null_value)
 
                 elif key=="Frequency":
+                    display_dict[key + "_val"].append(f0)
+                    display_dict[key + "_err"].append(f0_error)
                     try:
                         z = rrat_toml["Period"]
                         if rrat_toml["Period"]["error"] == False:
@@ -252,8 +277,8 @@ if __name__ == "__main__":
                             display_dict[key].append(err_string)
                             display_dict[key+"_ref"].append(rrat_toml["Period"]["ref"])
                     except KeyError:
-                        display_dict[key].append('--')
-                        display_dict[key+"_ref"].append('--')
+                        display_dict[key].append(null_value)
+                        display_dict[key+"_ref"].append(null_value)
 
                 elif key=="Fdot":
                     try:
@@ -269,9 +294,13 @@ if __name__ == "__main__":
                                 err_string = error_string_dec(f1*1e15,f1_error*1e15)
                             display_dict[key].append(err_string)
                             display_dict[key+"_ref"].append(rrat_toml["Pdot"]["ref"])
+                        display_dict[key+"_val"].append(f1)
+                        display_dict[key+"_err"].append(f1_error)
                     except KeyError:
-                        display_dict[key].append('--')
-                        display_dict[key+"_ref"].append('--')
+                        display_dict[key].append(null_value)
+                        display_dict[key+"_ref"].append(null_value)
+                        display_dict[key+"_val"].append(null_value)
+                        display_dict[key+"_err"].append(null_value)
 
                 #Timing derived parameters from P/Pdot
 
@@ -282,10 +311,13 @@ if __name__ == "__main__":
                         display_dict[key].append(np.round(tau,1))
                         display_dict[key+"_ref"].append(rrat_toml["Pdot"]["ref"])
                         #error probably not relevant- much larger than calculated
+                        display_dict[key+"_val"].append(tau)
+                        display_dict[key+"_err"].append(null_value)
                     except KeyError:
-                        display_dict[key].append('--')
-                        display_dict[key+"_ref"].append('--')
-
+                        display_dict[key].append(null_value)
+                        display_dict[key+"_ref"].append(null_value)
+                        display_dict[key+"_val"].append(null_value)
+                        display_dict[key+"_err"].append(null_value)
 
                 elif key=="Bsurf":
                     try:
@@ -293,10 +325,13 @@ if __name__ == "__main__":
                         bsurf = (3.2e19)*( (p0*p1)**0.5 )*(1e-12)
                         display_dict[key].append(np.round(bsurf,1))
                         display_dict[key+"_ref"].append(rrat_toml["Pdot"]["ref"])
+                        display_dict[key+"_val"].append(bsurf)
+                        display_dict[key+"_err"].append(null_value)
                     except KeyError:
-                        display_dict[key].append('--')
-                        display_dict[key+"_ref"].append('--')
-
+                        display_dict[key].append(null_value)
+                        display_dict[key+"_ref"].append(null_value)
+                        display_dict[key+"_val"].append(null_value)
+                        display_dict[key+"_err"].append(null_value)
 
                 elif key=="Edot":
                     try:
@@ -304,30 +339,38 @@ if __name__ == "__main__":
                         edot = (3.95)*(p1/1e-15)*( (1/p0)**3 )
                         display_dict[key].append(np.round(edot,1))
                         display_dict[key+"_ref"].append(rrat_toml["Pdot"]["ref"])
+                        display_dict[key+"_val"].append(edot)
+                        display_dict[key+"_err"].append(null_value)
                     except KeyError:
-                        display_dict[key].append('--')
-                        display_dict[key+"_ref"].append('--')
+                        display_dict[key].append(null_value)
+                        display_dict[key+"_ref"].append(null_value)
+                        display_dict[key+"_val"].append(null_value)
+                        display_dict[key+"_err"].append(null_value)
 
 
                 #Derived parameters from position (and DM)
 
                 elif key=="l":
-                     l_val = np.round(c_gal.l.deg,2)
-                     if len(str(l_val).split('.')[-1]) < 2:
-                         l_str = str(l_val) + '0'
-                     else:
-                         l_str = str(l_val)
-                     display_dict[key].append(l_str)
-                     display_dict[key+"_ref"].append(rrat_toml["RA"]["ref"])
+                    display_dict[key+"_val"].append(c_gal.l.deg)
+                    display_dict[key+"_err"].append(null_value)
+                    l_val = np.round(c_gal.l.deg,2)
+                    if len(str(l_val).split('.')[-1]) < 2:
+                        l_str = str(l_val) + '0'
+                    else:
+                        l_str = str(l_val)
+                    display_dict[key].append(l_str)
+                    display_dict[key+"_ref"].append(rrat_toml["RA"]["ref"])
 
                 elif key=="b":
-                     b_val = np.round(c_gal.b.deg,2)
-                     if len(str(b_val).split('.')[-1]) < 2:
-                         b_str = str(b_val) + '0'
-                     else:
-                         b_str = str(b_val)
-                     display_dict[key].append(b_str)
-                     display_dict[key+"_ref"].append(rrat_toml["Dec"]["ref"])
+                    display_dict[key+"_val"].append(c_gal.b.deg)
+                    display_dict[key+"_err"].append(null_value)
+                    b_val = np.round(c_gal.b.deg,2)
+                    if len(str(b_val).split('.')[-1]) < 2:
+                        b_str = str(b_val) + '0'
+                    else:
+                        b_str = str(b_val)
+                    display_dict[key].append(b_str)
+                    display_dict[key+"_ref"].append(rrat_toml["Dec"]["ref"])
 
                 #Nested dictionaries
 
@@ -338,26 +381,33 @@ if __name__ == "__main__":
                             z=rrat_toml[key]["Discovery"]["value"]
                             display_dict[key].append(z)
                             display_dict[key+"_ref"].append(rrat_toml[key]["Discovery"]["ref"])
+                            display_dict[key+"_val"].append(z)
+                            display_dict[key+"_err"].append(null_value)
                         except:
                             print('One entry in BurstRate needs to be Discovery!')
                     except KeyError:
-                        display_dict[key].append('--')
-                        display_dict[key+"_ref"].append('--')
-
+                        display_dict[key].append(null_value)
+                        display_dict[key+"_ref"].append(null_value)
+                        display_dict[key+"_val"].append(null_value)
+                        display_dict[key+"_err"].append(null_value)
 
                 elif key=="Width" or key=="Flux":
                     try:
                         z = rrat_toml[key]["1400"]["value"]
                         display_dict[key].append(z)
                         display_dict[key+"_ref"].append(rrat_toml[key]["1400"]["ref"])
+                        display_dict[key+"_val"].append(z)
+                        display_dict[key+"_err"].append(null_value)
+
                     except KeyError:
-                        display_dict[key].append('--')
-                        display_dict[key+"_ref"].append('--')
+                        display_dict[key].append(null_value)
+                        display_dict[key+"_ref"].append(null_value)
+                        display_dict[key+"_val"].append(null_value)
+                        display_dict[key+"_err"].append(null_value)
 
                 else:
-                    display_dict[key].append('--')
-                    display_dict[key + "_ref"].append('--')
-
+                    display_dict[key].append(null_value)
+                    display_dict[key + "_ref"].append(null_value)
 
             display_df = pd.DataFrame(display_dict)
             full_display_df = pd.concat([full_display_df,display_df],ignore_index=True)
@@ -376,11 +426,34 @@ if __name__ == "__main__":
     if make_csv==True:
         full_display_df.to_csv('rratalog.csv',columns=df_keys)
 
+    # Create the rratalog2.csv file, with separate columns for the errors
+    val_err_keys = ["RA", "Dec", "DM", "Period", "Pdot", "Frequency", "Fdot"]
+    table_keys_2 = []
+    units_2 = []
+    # we don't modify the values for some calumns...
+    unit_map = { "Pdot": "s/s", "Fdot": "Hz/s" }
+    for i,k in enumerate(table_keys):
+        # grab the units to use
+        u = units[i]
+        if k in unit_map:
+            u = unit_map[k]
+
+        if k in val_err_keys:
+            table_keys_2.append(k + "_val")
+            table_keys_2.append(k + "_err")
+            units_2.append(u)
+            units_2.append(u)
+        else:
+            table_keys_2.append(k)
+            units_2.append(u)
+    df_keys_2 = table_keys_2 + [x+"_ref" for x in table_keys]
+    full_display_df.to_csv('rratalog2.csv', columns=df_keys_2)
+
     if make_html==True:
         display_df = full_display_df.drop(full_display_df.iloc[:,17:],axis=1)
         templateLoader = jinja2.FileSystemLoader(searchpath='./')
         env = jinja2.Environment(loader=templateLoader,trim_blocks=True,lstrip_blocks=True)
-        template = env.get_template('template.html')
+        template = env.get_template('templates/template.html')
         with open("rratalog.html", "w") as fh:
             out = template.render(header=unit_keys, tableinfo=table_keys, df=full_display_df)
             fh.write(out)
