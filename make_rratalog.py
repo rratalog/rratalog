@@ -103,7 +103,7 @@ table_keys = ["Name","RA", "Dec", "DM", "Period", "Pdot", "Pepoch", "Frequency",
 units = ["","hh:mm:ss.ss","dd:mm:ss.ss","pc cm^-3", "s", "10^-15 s/s", "", "Hz", "10^-15 Hz/s", "10^12 G", "10^31 erg/s", "Myr", "deg", "deg","hr^-1","mJy","ms"]
 df_keys = table_keys + [x+"_ref" for x in table_keys]
 
-null_value = "*"
+null_value = "--"
 
 unit_keys=[]
 for i in range(len(table_keys)):
