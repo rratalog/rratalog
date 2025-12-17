@@ -22,14 +22,14 @@ ref = "https://doi.org/10.1051/0004-6361/201935609"
 
 [Period]
 value = 1.9743 #seconds
-error = False
+error = false
 ref = "https://doi.org/10.1051/0004-6361/201935609"
 
 [Flux]
 
     [Flux.111]
   value = 7600 #mJy
-  error = False
+  error = false
   frequency = 111 #MHz
   ref = "https://doi.org/10.1051/0004-6361/201833102"
 
@@ -37,7 +37,7 @@ ref = "https://doi.org/10.1051/0004-6361/201935609"
 
     [Width.135]
   value = 20 #ms
-  error = False
+  error = false
   frequency = 135 #MHz
   ref = "https://doi.org/10.1051/0004-6361/201935609"
 

@@ -24,7 +24,7 @@ ref = "https://doi.org/10.1051/0004-6361/201833102"
 
     [Flux.111]
   value = 8700 #mJy
-  error = False
+  error = false
   frequency = 111 #MHz
   ref = "https://doi.org/10.1051/0004-6361/201833102"
 
@@ -32,7 +32,7 @@ ref = "https://doi.org/10.1051/0004-6361/201833102"
 
     [Width.111]
   value = 35 #ms
-  error = False
+  error = false
   frequency = 111 #MHz
   ref = "https://doi.org/10.1051/0004-6361/201833102"
 
