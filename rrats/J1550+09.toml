@@ -1,0 +1,32 @@
+title = "J1550+09"
+
+[Name]
+value = "J1550+09"
+error = false
+ref = "https://doi.org/10.3103/S1068335620120179"
+
+[RA]
+value = "15:50:47" #hh:mm:ss.ss
+error = "00:00:90"
+ref = "https://doi.org/10.3103/S1068335620120179"
+
+[Dec]
+value = "+09:43" #(sign)dd:mm:ss.ss
+error = "00:15"
+ref = "https://doi.org/10.3103/S1068335620120179"
+
+[DM]
+value = 21 #pc/cc
+error = 1.5
+ref = "https://doi.org/10.3103/S1068335620120179"
+
+[Width]
+
+    [Width.111]
+  value = 18 #ms
+  error = false
+  frequency = 111 #MHz
+  ref = "https://doi.org/10.3103/S1068335620120179"
+
+#References go here
+#Logvinenko+20: https://doi.org/10.3103/S1068335620120179
