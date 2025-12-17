@@ -1,0 +1,47 @@
+title = "J0317+13"
+
+[Name]
+value = "J0317+13"
+error = false
+ref = "https://doi.org/10.1134/S1063772918010079"
+
+[RA]
+value = "03:17:54" #hh:mm:ss.ss
+error = "00:00:12"
+ref = "https://doi.org/10.1051/0004-6361/201935609"
+
+[Dec]
+value = "+13:29" #(sign)dd:mm:ss.ss
+error = "00:03"
+ref = "https://doi.org/10.1051/0004-6361/201935609"
+
+[DM]
+value = 12.90 #pc/cc
+error = 0.04
+ref = "https://doi.org/10.1051/0004-6361/201935609"
+
+[Period]
+value = 1.9743 #seconds
+error = False
+ref = "https://doi.org/10.1051/0004-6361/201935609"
+
+[Flux]
+
+    [Flux.111]
+  value = 7600 #mJy
+  error = False
+  frequency = 111 #MHz
+  ref = "https://doi.org/10.1051/0004-6361/201833102"
+
+[Width]
+
+    [Width.135]
+  value = 20 #ms
+  error = False
+  frequency = 135 #MHz
+  ref = "https://doi.org/10.1051/0004-6361/201935609"
+
+#References go here
+#Tyul'bashev+18a: https://doi.org/10.1134/S1063772918010079
+#Tyul'bashev+18b: https://doi.org/10.1051/0004-6361/201833102
+#Sanidas+19: https://doi.org/10.1051/0004-6361/201935609

@@ -1,0 +1,41 @@
+title = "J0640+07"
+
+[Name]
+value = "J0640+07"
+error = false
+ref = "https://doi.org/10.1134/S1063772918010079"
+
+[RA]
+value = "06:40:40" #hh:mm:ss.ss
+error = "00:00:35"
+ref = "https://doi.org/10.1051/0004-6361/201833102"
+
+[Dec]
+value = "+07:44" #(sign)dd:mm:ss.ss
+error = "00:25"
+ref = "https://doi.org/10.1051/0004-6361/201833102"
+
+[DM]
+value = 52 #pc/cc
+error = 3
+ref = "https://doi.org/10.1051/0004-6361/201833102"
+
+[Flux]
+
+    [Flux.111]
+  value = 8700 #mJy
+  error = False
+  frequency = 111 #MHz
+  ref = "https://doi.org/10.1051/0004-6361/201833102"
+
+[Width]
+
+    [Width.111]
+  value = 35 #ms
+  error = False
+  frequency = 111 #MHz
+  ref = "https://doi.org/10.1051/0004-6361/201833102"
+
+#References go here
+#Tyul'bashev+18a: https://doi.org/10.1134/S1063772918010079
+#Tyul'bashev+18b: https://doi.org/10.1051/0004-6361/201833102

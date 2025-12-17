@@ -1,0 +1,47 @@
+title = "J1555+01"
+
+[Name]
+value = "J1555+01"
+error = false
+ref = "https://doi.org/10.1134/S1063772918010079"
+
+[RA]
+value = "15:55:58" #hh:mm:ss.ss
+error = "00:00:17"
+ref = "https://doi.org/10.1051/0004-6361/201833102"
+
+[Dec]
+value = "+01:08" #(sign)dd:mm:ss.ss
+error = "00:25"
+ref = "https://doi.org/10.1051/0004-6361/201833102"
+
+[DM]
+value = 18.5 #pc/cc
+error = 1.5
+ref = "https://doi.org/10.1051/0004-6361/201833102"
+
+[Period]
+value = 0.577 #seconds
+error = False
+ref = "https://doi.org/10.1051/0004-6361/202449762"
+
+[Flux]
+
+    [Flux.111]
+  value = 22600 #mJy
+  error = False
+  frequency = 111 #MHz
+  ref = "https://doi.org/10.1051/0004-6361/201833102"
+
+[Width]
+
+    [Width.111]
+  value = 20 #ms
+  error = False
+  frequency = 111 #MHz
+  ref = "https://doi.org/10.1051/0004-6361/201833102"
+
+#References go here
+#Tyul'bashev+18a: https://doi.org/10.1134/S1063772918010079
+#Tyul'bashev+18b: https://doi.org/10.1051/0004-6361/201833102
+#Tyul'bashev+24: https://doi.org/10.1051/0004-6361/202449762
