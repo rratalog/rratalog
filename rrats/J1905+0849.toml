@@ -1,0 +1,29 @@
+title = "J1905+0849"
+
+[Name]
+value = "J1905+0849"
+error = false
+ref = "http://doi.org/10.1088/1674-4527/21/5/107"
+
+[RA]
+value = "19:05:02.6" #hh:mm:ss.ss
+error = false
+ref = "http://doi.org/10.1088/1674-4527/ada3b7"
+
+[Dec]
+value = "+08:49" #(sign)dd:mm:ss.ss
+error = false
+ref = "http://doi.org/10.1088/1674-4527/ada3b7"
+
+[DM]
+value = 257.8 #pc/cc
+error = 2.3
+ref = "http://doi.org/10.1088/1674-4527/ada3b7"
+
+[Period]
+value = 1.03433 #seconds
+error = 0.0052
+ref = "http://doi.org/10.1088/1674-4527/ada3b7"
+
+#Han+21: http://doi.org/10.1088/1674-4527/21/5/107
+#Han+25: http://doi.org/10.1088/1674-4527/ada3b7
