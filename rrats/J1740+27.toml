@@ -1,0 +1,51 @@
+title = "J1740+27"
+
+[Name]
+value = "J1740+27"
+error = false
+ref = "https://doi.org/10.1051/0004-6361/201833102"
+
+[RA]
+value = "17:40:30" #hh:mm:ss.ss
+error = "00:00:12"
+ref = "https://doi.org/10.1051/0004-6361/201935609"
+
+[Dec]
+value = "+27:13" #(sign)dd:mm:ss.ss
+error = "00:03"
+ref = "https://doi.org/10.1051/0004-6361/201935609"
+
+[DM]
+value = 35.46 #pc/cc
+error = 0.05
+ref = "https://doi.org/10.1051/0004-6361/201935609"
+
+[Period]
+value = 1.0582
+error = false
+ref = "https://doi.org/10.1051/0004-6361/201935609"
+
+[Flux]
+
+    [Flux.111]
+  value = 5900 #mJy
+  error = false
+  frequency = 111 #MHz
+  ref = "https://doi.org/10.1051/0004-6361/201833102"
+
+[Width]
+
+    [Width.111]
+  value = 25 #ms
+  error = false
+  frequency = 111 #MHz
+  ref = "https://doi.org/10.1051/0004-6361/201833102"
+
+    [Width.135]
+  value = 21 #ms
+  error = false
+  frequency = 135 #MHz
+  ref = "https://doi.org/10.1051/0004-6361/201935609"
+
+#Tyul'bashev+18b: https://doi.org/10.1051/0004-6361/201833102
+#Sanidas+19: https://doi.org/10.1051/0004-6361/201935609

@@ -1,0 +1,46 @@
+title = "J2105+19"
+
+[Name]
+value = "J2105+19"
+error = false
+ref = "https://doi.org/10.1051/0004-6361/201833102"
+
+[RA]
+value = "21:05:20" #hh:mm:ss.ss
+error = "00:00:20"
+ref = "https://doi.org/10.1051/0004-6361/201833102"
+
+[Dec]
+value = "+19:21" #(sign)dd:mm:ss.ss
+error = "00:20"
+ref = "https://doi.org/10.1051/0004-6361/201833102"
+
+[DM]
+value = 34.5 #pc/cc
+error = 1.5
+ref = "http://doi.org/10.1093/mnras/stae070"
+
+[Period]
+value = 3.5297
+error = false
+ref = "http://doi.org/10.1093/mnras/stac2404"
+
+[Flux]
+
+    [Flux.111]
+  value = 2700 #mJy
+  error = false
+  frequency = 111 #MHz
+  ref = "https://doi.org/10.1051/0004-6361/201833102"
+
+[Width]
+
+    [Width.111]
+  value = 35 #ms
+  error = false
+  frequency = 111 #MHz
+  ref = " http://doi.org/10.1093/mnras/stac2404"
+
+#Tyul'bashev+18b: https://doi.org/10.1051/0004-6361/201833102
+#Tyul'bashev+22: http://doi.org/10.1093/mnras/stac2404
+#Tyul'bashev+24: http://doi.org/10.1093/mnras/stae070

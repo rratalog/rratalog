@@ -1,29 +1,29 @@
-title = "J1005+30"
+title = "J2202+21"
 
 [Name]
-value = "J1005+30"
+value = "J2202+21"
 error = false
 ref = "https://doi.org/10.1051/0004-6361/201833102"
 
 [RA]
-value = "10:05:30" #hh:mm:ss.ss
-error = "00:00:40"
+value = "22:02:21" #hh:mm:ss.ss
+error = "00:00:21"
 ref = "https://doi.org/10.1051/0004-6361/201833102"
 
 [Dec]
-value = "+30:15" #(sign)dd:mm:ss.ss
-error = "00:15"
+value = "+21:47" #(sign)dd:mm:ss.ss
+error = "00:20"
 ref = "https://doi.org/10.1051/0004-6361/201833102"
 
 [DM]
-value = 17.5 #pc/cc
-error = 1.5
-ref = "https://doi.org/10.1051/0004-6361/201833102"
+value = 17.7 #pc/cc
+error = 0.4
+ref = "http://doi.org/10.3847/1538-4357/ab75e2"
 
 [Flux]
 
     [Flux.111]
-  value = 28300 #mJy
+  value = 4800 #mJy
   error = false
   frequency = 111 #MHz
   ref = "https://doi.org/10.1051/0004-6361/201833102"
@@ -31,9 +31,10 @@ ref = "https://doi.org/10.1051/0004-6361/201833102"
 [Width]
 
     [Width.111]
-  value = 30 #ms
+  value = 12.5 #ms
   error = false
   frequency = 111 #MHz
   ref = "https://doi.org/10.1051/0004-6361/201833102"
 
 #Tyul'bashev+18b: https://doi.org/10.1051/0004-6361/201833102
+#McEwen+20: http://doi.org/10.3847/1538-4357/ab75e2

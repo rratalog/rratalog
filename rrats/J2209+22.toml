@@ -1,0 +1,51 @@
+title = "J2209+22"
+
+[Name]
+value = "J2209+22"
+error = false
+ref = "https://doi.org/10.1051/0004-6361/201833102"
+
+[RA]
+value = "22:09:54" #hh:mm:ss.ss
+error = "00:00:12"
+ref = "https://doi.org/10.1051/0004-6361/201935609"
+
+[Dec]
+value = "+21:17" #(sign)dd:mm:ss.ss
+error = "00:03"
+ref = "https://doi.org/10.1051/0004-6361/201935609"
+
+[DM]
+value = 46.30 #pc/cc
+error = 0.08
+ref = "https://doi.org/10.1051/0004-6361/201935609"
+
+[Period]
+value = 1.7769
+error = false
+ref = "https://doi.org/10.1051/0004-6361/201935609"
+
+[Flux]
+
+    [Flux.111]
+  value = 2600 #mJy
+  error = false
+  frequency = 111 #MHz
+  ref = "https://doi.org/10.1051/0004-6361/201833102"
+
+[Width]
+
+    [Width.111]
+  value = 12.5 #ms
+  error = false
+  frequency = 111 #MHz
+  ref = "https://doi.org/10.1051/0004-6361/201833102"
+
+    [Width.135]
+  value = 36 #ms
+  error = false
+  frequency = 135 #MHz
+  ref = "https://doi.org/10.1051/0004-6361/201935609"
+
+#Tyul'bashev+18b: https://doi.org/10.1051/0004-6361/201833102
+#Sanidas+19: https://doi.org/10.1051/0004-6361/201935609

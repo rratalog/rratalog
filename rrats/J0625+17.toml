@@ -1,29 +1,34 @@
-title = "J1005+30"
+title = "J0625+17"
 
 [Name]
-value = "J1005+30"
+value = "J0625+17"
 error = false
 ref = "https://doi.org/10.1051/0004-6361/201833102"
 
 [RA]
-value = "10:05:30" #hh:mm:ss.ss
-error = "00:00:40"
+value = "06:25:19" #hh:mm:ss.ss
+error = "00:00:90"
 ref = "https://doi.org/10.1051/0004-6361/201833102"
 
 [Dec]
-value = "+30:15" #(sign)dd:mm:ss.ss
-error = "00:15"
+value = "+17:30" #(sign)dd:mm:ss.ss
+error = "00:25"
 ref = "https://doi.org/10.1051/0004-6361/201833102"
 
 [DM]
-value = 17.5 #pc/cc
-error = 1.5
+value = 58 #pc/cc
+error = 4
 ref = "https://doi.org/10.1051/0004-6361/201833102"
+
+[Period]
+value = 2.51841 #seconds
+error = 0.00002
+ref = "https://astro.phys.wvu.edu/GBNCC/J0625+17_fft.png"
 
 [Flux]
 
     [Flux.111]
-  value = 28300 #mJy
+  value = 4300 #mJy
   error = false
   frequency = 111 #MHz
   ref = "https://doi.org/10.1051/0004-6361/201833102"
@@ -31,7 +36,7 @@ ref = "https://doi.org/10.1051/0004-6361/201833102"
 [Width]
 
     [Width.111]
-  value = 30 #ms
+  value = 25 #ms
   error = false
   frequency = 111 #MHz
   ref = "https://doi.org/10.1051/0004-6361/201833102"

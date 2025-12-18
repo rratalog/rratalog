@@ -1,29 +1,29 @@
-title = "J1005+30"
+title = "J0534+34"
 
 [Name]
-value = "J1005+30"
+value = "J0534+34"
 error = false
 ref = "https://doi.org/10.1051/0004-6361/201833102"
 
 [RA]
-value = "10:05:30" #hh:mm:ss.ss
-error = "00:00:40"
+value = "05:34:30" #hh:mm:ss.ss
+error = "00:00:20"
 ref = "https://doi.org/10.1051/0004-6361/201833102"
 
 [Dec]
-value = "+30:15" #(sign)dd:mm:ss.ss
+value = "+34:07" #(sign)dd:mm:ss.ss
 error = "00:15"
 ref = "https://doi.org/10.1051/0004-6361/201833102"
 
 [DM]
-value = 17.5 #pc/cc
+value = 24.5 #pc/cc
 error = 1.5
 ref = "https://doi.org/10.1051/0004-6361/201833102"
 
 [Flux]
 
     [Flux.111]
-  value = 28300 #mJy
+  value = 2600 #mJy
   error = false
   frequency = 111 #MHz
   ref = "https://doi.org/10.1051/0004-6361/201833102"
@@ -31,7 +31,7 @@ ref = "https://doi.org/10.1051/0004-6361/201833102"
 [Width]
 
     [Width.111]
-  value = 30 #ms
+  value = 15 #ms
   error = false
   frequency = 111 #MHz
   ref = "https://doi.org/10.1051/0004-6361/201833102"
