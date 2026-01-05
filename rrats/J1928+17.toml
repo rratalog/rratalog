@@ -1,0 +1,55 @@
+title = "J1928+17"
+
+[Name]
+value = "J1928+17"
+error = false
+ref = "http://doi.org/10.3847/1538-4357/ac375d"
+
+[RA]
+value = "19:28:52" #hh:mm:ss.ss
+error = false
+ref = "http://doi.org/10.3847/1538-4357/ac375d"
+
+[Dec]
+value = "+17:25:29" #(sign)dd:mm:ss.ss
+error = false
+ref = "http://doi.org/10.3847/1538-4357/ac375d"
+
+[DM]
+value = 135.96 #pc/cc
+error = 0.12
+ref = "http://doi.org/10.3847/1538-4357/ac375d"
+
+[Period]
+value = 0.28983833 #seconds
+error = 0.00000008
+ref = "http://doi.org/10.3847/1538-4357/ac375d"
+
+[Flux]
+
+    [Flux.1400mean]
+  value = 1.4 #mJy
+  error = 0.4
+  frequency = 1400 #MHz
+  ref = "http://doi.org/10.3847/1538-4357/ac375d"
+
+[Width]
+
+    [Width.1400]
+  value = 1.1 #ms
+  error = 0.6
+  frequency = 1400 #MHz
+  ref = "http://doi.org/10.3847/1538-4357/ac375d"
+
+[BurstRate]
+
+    [BurstRate.Discovery]
+  value= 78 #hour^-1
+  error= false
+  frequency= 1400 #MHz
+  telescope= "Arecibo"
+  minflux= 50 #mJy
+  ref = "http://doi.org/10.3847/1538-4357/ac375d"
+
+#References go here
+#Parent et al 2022: http://doi.org/10.3847/1538-4357/ac375d
