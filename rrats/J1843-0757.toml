@@ -1,0 +1,56 @@
+title = "J1843-0757"
+
+[Name]
+value = "J1843-0757"
+error = false
+ref = "http://doi.org/10.1093/mnras/stac579"
+
+[RA]
+value = "18:43:33.06" #hh:mm:ss.ss
+error = "00:00:00.02"
+ref = "http://doi.org/10.1093/mnras/stac579"
+
+[Dec]
+value = "-07:57:33" #(sign)dd:mm:ss.ss
+error = "00:00:02"
+ref = "http://doi.org/10.1093/mnras/stac579"
+
+[DM]
+value = 255 #pc/cc
+error = 1
+ref = "http://doi.org/10.1093/mnras/stad508"
+
+[Period]
+value = 2.03194008516 #seconds
+error = 0.00000000009
+ref = "http://doi.org/10.1093/mnras/stac579"
+
+[Pdot]
+value = 4.13e-15 #s/s
+error = 0.03e-15
+ref = "http://doi.org/10.1093/mnras/stac579"
+
+[Pepoch]
+value = 58743.79446
+error = false
+ref = "http://doi.org/10.1093/mnras/stac579"
+
+[Flux]
+
+    [Flux.1400mean]
+  value = 0.09 #mJy
+  error = false
+  frequency = 1400 #MHz
+  ref = "http://doi.org/10.1093/mnras/stad508"
+
+[Width]
+
+    [Width.1400]
+  value = 31.8 #ms
+  error = false
+  frequency = 1400 #MHz
+  ref = "http://doi.org/10.1093/mnras/stad508"
+
+#References go here
+#Bezuidenhout+22: http://doi.org/10.1093/mnras/stac579
+#Sengar+23: http://doi.org/10.1093/mnras/stad508

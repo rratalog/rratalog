@@ -1,0 +1,34 @@
+title = "J1152-6056"
+
+[Name]
+value = "J1152-6056"
+error = false
+ref = "http://doi.org/10.1093/mnras/stac579"
+
+[RA]
+value = "11:52:37.44" #hh:mm:ss.ss
+error = "00:00:00.13"
+ref = "http://doi.org/10.1093/mnras/stac579"
+
+[Dec]
+value = "-60:56:22" #(sign)dd:mm:ss.ss
+error = "00:00:01"
+ref = "http://doi.org/10.1093/mnras/stac579"
+
+[DM]
+value = 381 #pc/cc
+error = false
+ref = "http://doi.org/10.1093/mnras/stac579"
+
+[Period]
+value = 2.449000 #seconds
+error = 0.000006
+ref = "http://doi.org/10.1093/mnras/stac579"
+
+[Pepoch]
+value = 58925.72910
+error = false
+ref = "http://doi.org/10.1093/mnras/stac579"
+
+#References go here
+#Bezuidenhout+22: http://doi.org/10.1093/mnras/stac579

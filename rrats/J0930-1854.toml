@@ -1,0 +1,24 @@
+title = "J0930-1854"
+
+[Name]
+value = "J0930-1854"
+error = false
+ref = "http://doi.org/10.1093/mnras/stac579"
+
+[RA]
+value = "09:30:35.27" #hh:mm:ss.ss
+error = "00:00:00.02"
+ref = "http://doi.org/10.1093/mnras/stac579"
+
+[Dec]
+value = "-18:54:31.1" #(sign)dd:mm:ss.ss
+error = "00:00:00.8"
+ref = "http://doi.org/10.1093/mnras/stac579"
+
+[DM]
+value = 33 #pc/cc
+error = false
+ref = "http://doi.org/10.1093/mnras/stac579"
+
+#References go here
+#Bezuidenhout+22: http://doi.org/10.1093/mnras/stac579

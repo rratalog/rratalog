@@ -1,0 +1,34 @@
+title = "J0723-2050"
+
+[Name]
+value = "J0723-2050"
+error = false
+ref = "http://doi.org/10.1093/mnras/stac579"
+
+[RA]
+value = "07:23:04.8" #hh:mm:ss.ss
+error = "00:00:00.18"
+ref = "http://doi.org/10.1093/mnras/stac579"
+
+[Dec]
+value = "-20:49:52" #(sign)dd:mm:ss.ss
+error = "00:00:07"
+ref = "http://doi.org/10.1093/mnras/stac579"
+
+[DM]
+value = 130 #pc/cc
+error = false
+ref = "http://doi.org/10.1093/mnras/stac579"
+
+[Period]
+value = 0.71154 #seconds
+error = false
+ref = "http://doi.org/10.1093/mnras/stac579"
+
+[Pepoch]
+value = 59165.22799
+error = false
+ref = "http://doi.org/10.1093/mnras/stac579"
+
+#References go here
+#Bezuidenhout+22: http://doi.org/10.1093/mnras/stac579
