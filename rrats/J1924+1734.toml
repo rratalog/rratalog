@@ -1,0 +1,21 @@
+title = "J1924+1734"
+
+[Name]
+value = "J1924+1734"
+error = false
+ref = "https://doi.org/10.1088/1674-4527/accc76"
+
+[RA]
+value = "19:24:57" #hh:mm:ss.ss
+error = false
+ref = "https://doi.org/10.1088/1674-4527/accc76"
+
+[Dec]
+value = "+17:34" #(sign)dd:mm:ss.ss
+error = false
+ref = "https://doi.org/10.1088/1674-4527/accc76"
+
+[DM]
+value = 49 #pc/cc
+error = 3
+ref = "https://doi.org/10.1088/1674-4527/accc76"

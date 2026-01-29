@@ -1,0 +1,26 @@
+title = "J1859+0251"
+
+[Name]
+value = "J1859+0251"
+error = false
+ref = "https://doi.org/10.1088/1674-4527/accc76"
+
+[RA]
+value = "18:59:35" #hh:mm:ss.ss
+error = false
+ref = "https://doi.org/10.1088/1674-4527/accc76"
+
+[Dec]
+value = "+02:51" #(sign)dd:mm:ss.ss
+error = false
+ref = "https://doi.org/10.1088/1674-4527/accc76"
+
+[DM]
+value = 286 #pc/cc
+error = 3
+ref = "https://doi.org/10.1088/1674-4527/accc76"
+
+[Period]
+value = 3.58 #seconds
+error = 0.003
+ref = "https://doi.org/10.1088/1674-4527/accc76"

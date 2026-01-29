@@ -1,0 +1,26 @@
+title = "J1857+0229"
+
+[Name]
+value = "J1857+0229"
+error = false
+ref = "https://doi.org/10.1088/1674-4527/accc76"
+
+[RA]
+value = "18:57:19" #hh:mm:ss.ss
+error = false
+ref = "https://doi.org/10.1088/1674-4527/accc76"
+
+[Dec]
+value = "+02:29" #(sign)dd:mm:ss.ss
+error = false
+ref = "https://doi.org/10.1088/1674-4527/accc76"
+
+[DM]
+value = 574 #pc/cc
+error = 1
+ref = "https://doi.org/10.1088/1674-4527/accc76"
+
+[Period]
+value = 0.584 #seconds
+error = 0.003
+ref = "https://doi.org/10.1088/1674-4527/accc76"

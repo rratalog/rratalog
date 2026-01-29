@@ -1,0 +1,26 @@
+title = "J1938+1748"
+
+[Name]
+value = "J1938+1748"
+error = false
+ref = "https://doi.org/10.1088/1674-4527/accc76"
+
+[RA]
+value = "19:38:30" #hh:mm:ss.ss
+error = false
+ref = "https://doi.org/10.1088/1674-4527/accc76"
+
+[Dec]
+value = "+17:48" #(sign)dd:mm:ss.ss
+error = false
+ref = "https://doi.org/10.1088/1674-4527/accc76"
+
+[DM]
+value = 56 #pc/cc
+error = 1
+ref = "https://doi.org/10.1088/1674-4527/accc76"
+
+[Period]
+value = 7.106 #seconds
+error = 0.0002
+ref = "https://doi.org/10.1088/1674-4527/accc76"

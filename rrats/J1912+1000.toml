@@ -1,0 +1,26 @@
+title = "J1912+1000"
+
+[Name]
+value = "J1912+1000"
+error = false
+ref = "https://doi.org/10.1088/1674-4527/accc76"
+
+[RA]
+value = "19:12:46" #hh:mm:ss.ss
+error = false
+ref = "https://doi.org/10.1088/1674-4527/accc76"
+
+[Dec]
+value = "+10:00" #(sign)dd:mm:ss.ss
+error = false
+ref = "https://doi.org/10.1088/1674-4527/accc76"
+
+[DM]
+value = 147 #pc/cc
+error = 4
+ref = "https://doi.org/10.1088/1674-4527/accc76"
+
+[Period]
+value = 3.053 #seconds
+error = 0.004
+ref = "https://doi.org/10.1088/1674-4527/accc76"

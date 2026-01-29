@@ -1,0 +1,21 @@
+title = "J1855-0054"
+
+[Name]
+value = "J1855-0054"
+error = false
+ref = "https://doi.org/10.1088/1674-4527/accc76"
+
+[RA]
+value = "18:55:21" #hh:mm:ss.ss
+error = false
+ref = "https://doi.org/10.1088/1674-4527/accc76"
+
+[Dec]
+value = "-00:54" #(sign)dd:mm:ss.ss
+error = false
+ref = "https://doi.org/10.1088/1674-4527/accc76"
+
+[DM]
+value = 577 #pc/cc
+error = 4
+ref = "https://doi.org/10.1088/1674-4527/accc76"
