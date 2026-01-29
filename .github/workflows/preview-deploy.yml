@@ -1,5 +1,4 @@
-# Builds the site from the branch and publishes it into main:/previews/<branch>/
-# This does not change the root index.html on main, so your normal Pages deployment remains unchanged.
+# Build preview from the source branch/PR head and publish to main:/previews/<branch>
 on:
   push:
     branches:
@@ -13,22 +12,36 @@ permissions:
 jobs:
   build-and-publish-preview:
     runs-on: ubuntu-latest
-    # avoid trying to publish previews when running on main itself
+    # Do not run when the workflow is executing on main itself
     if: github.ref != 'refs/heads/main'
     steps:
-      - name: Checkout (source branch)
+      - name: Checkout source (explicitly use PR head SHA or the push ref)
         uses: actions/checkout@v4
         with:
+          # For PR events use the head SHA; for push events use the push ref
+          ref: ${{ github.event.pull_request.head.sha || github.ref }}
           fetch-depth: 0
           persist-credentials: true
 
-      - name: Resolve BRANCH_NAME (works for pushes and PRs)
+      - name: Debug: show checked-out commit and branch
         run: |
-          if [ -n "${GITHUB_HEAD_REF}" ]; then
-            echo "BRANCH_NAME=${GITHUB_HEAD_REF}" >> $GITHUB_ENV
-          else
-            echo "BRANCH_NAME=${GITHUB_REF##*/}" >> $GITHUB_ENV
-          fi
+          echo "GITHUB_REF: $GITHUB_REF"
+          echo "GITHUB_SHA: $GITHUB_SHA"
+          echo "GITHUB_HEAD_REF: $GITHUB_HEAD_REF"
+          echo "Resolved ref/branch:"
+          git rev-parse --abbrev-ref HEAD || true
+          git rev-parse HEAD || true
+          git log -1 --oneline || true
+
+      - name: Debug: list rrats files in working tree
+        run: |
+          echo "Listing rrats/ files used for this build:"
+          ls -la rrats || true
+          # show the names of the files and first few lines of any recently added files (adjust pattern if needed)
+          git ls-files rrats/** || true
+          # show a diffstat vs main to confirm new/changed files (optional)
+          git fetch origin main:main-temp || true
+          git --no-pager diff --name-status main-temp...HEAD -- rrats || true
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -46,13 +59,12 @@ jobs:
 
       - name: Save build outputs to temp
         run: |
-          # copy generated files to an external temporary folder so they survive a checkout of main
           TMPDIR=$(mktemp -d)
           echo "TMPDIR=$TMPDIR" >> $GITHUB_ENV
-          # copy typical outputs that make_rratalog.py produces
+          # copy generated output files into the temp dir
           cp -a rratalog.html index.html "${TMPDIR}/" 2>/dev/null || true
           cp -a rratalog.csv rratalog2.csv "${TMPDIR}/" 2>/dev/null || true
-          # if your generator emits additional assets/directories, copy them here:
+          # if your generator emits other asset dirs, copy them too:
           # cp -a output_dir "${TMPDIR}/output_dir" || true
           ls -la "${TMPDIR}" || true
 
@@ -64,15 +76,26 @@ jobs:
           persist-credentials: true
 
       - name: Copy preview into main:/previews/<branch>
+        env:
+          BRANCH_NAME: ${{ github.event.pull_request.head.ref || github.ref_name }}
         run: |
+          # Normalize BRANCH_NAME for both push and PR events
+          if [ -z "${BRANCH_NAME}" ]; then
+            # fallback to GITHUB_HEAD_REF or parsed GITHUB_REF
+            if [ -n "$GITHUB_HEAD_REF" ]; then
+              BRANCH_NAME="$GITHUB_HEAD_REF"
+            else
+              BRANCH_NAME="${GITHUB_REF##*/}"
+            fi
+          fi
+          echo "Using BRANCH_NAME=${BRANCH_NAME}"
           TARGET_DIR="previews/${BRANCH_NAME}"
           mkdir -p "${TARGET_DIR}"
           # clean target dir so updates replace previous preview files
           rm -rf "${TARGET_DIR:?}/"*
           # copy saved files from the temp folder into the target dir
           cp -a "${TMPDIR}/." "${TARGET_DIR}/" || true
-          # If you had directories (assets, css, etc.) ensure they are copied too:
-          # cp -a "${TMPDIR}/output_dir" "${TARGET_DIR}/" || true
+          # if you copied extra directories (assets), ensure they are under TARGET_DIR
           ls -la "previews" || true
           ls -la "${TARGET_DIR}" || true
 
