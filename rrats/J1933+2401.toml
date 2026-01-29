@@ -1,0 +1,21 @@
+title = "J1933+2401"
+
+[Name]
+value = "J1933+2401"
+error = false
+ref = "https://doi.org/10.1088/1674-4527/accc76"
+
+[RA]
+value = "19:33:36" #hh:mm:ss.ss
+error = false
+ref = "https://doi.org/10.1088/1674-4527/accc76"
+
+[Dec]
+value = "+24:01" #(sign)dd:mm:ss.ss
+error = false
+ref = "https://doi.org/10.1088/1674-4527/accc76"
+
+[DM]
+value = 185 #pc/cc
+error = 3
+ref = "https://doi.org/10.1088/1674-4527/accc76"

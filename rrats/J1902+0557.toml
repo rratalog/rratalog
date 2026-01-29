@@ -1,0 +1,21 @@
+title = "J1902+0557"
+
+[Name]
+value = "J1902+0557"
+error = false
+ref = "https://doi.org/10.1088/1674-4527/accc76"
+
+[RA]
+value = "19:02:56" #hh:mm:ss.ss
+error = false
+ref = "https://doi.org/10.1088/1674-4527/accc76"
+
+[Dec]
+value = "+05:57" #(sign)dd:mm:ss.ss
+error = false
+ref = "https://doi.org/10.1088/1674-4527/accc76"
+
+[DM]
+value = 414 #pc/cc
+error = 2
+ref = "https://doi.org/10.1088/1674-4527/accc76"

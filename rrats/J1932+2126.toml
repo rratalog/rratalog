@@ -1,0 +1,21 @@
+title = "J1932+2126"
+
+[Name]
+value = "J1932+2126"
+error = false
+ref = "https://doi.org/10.1088/1674-4527/accc76"
+
+[RA]
+value = "19:32:51" #hh:mm:ss.ss
+error = false
+ref = "https://doi.org/10.1088/1674-4527/accc76"
+
+[Dec]
+value = "+21:26" #(sign)dd:mm:ss.ss
+error = false
+ref = "https://doi.org/10.1088/1674-4527/accc76"
+
+[DM]
+value = 126 #pc/cc
+error = 3
+ref = "https://doi.org/10.1088/1674-4527/accc76"

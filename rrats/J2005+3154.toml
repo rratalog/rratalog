@@ -1,0 +1,21 @@
+title = "J2005+3154"
+
+[Name]
+value = "J2005+3154"
+error = false
+ref = "https://doi.org/10.1088/1674-4527/accc76"
+
+[RA]
+value = "20:05:19" #hh:mm:ss.ss
+error = false
+ref = "https://doi.org/10.1088/1674-4527/accc76"
+
+[Dec]
+value = "+31:54" #(sign)dd:mm:ss.ss
+error = false
+ref = "https://doi.org/10.1088/1674-4527/accc76"
+
+[DM]
+value = 225 #pc/cc
+error = 1
+ref = "https://doi.org/10.1088/1674-4527/accc76"

@@ -1,0 +1,26 @@
+title = "J1858-0113"
+
+[Name]
+value = "J1858-0113"
+error = false
+ref = "https://doi.org/10.1088/1674-4527/accc76"
+
+[RA]
+value = "18:58:52" #hh:mm:ss.ss
+error = false
+ref = "https://doi.org/10.1088/1674-4527/accc76"
+
+[Dec]
+value = "-01:13" #(sign)dd:mm:ss.ss
+error = false
+ref = "https://doi.org/10.1088/1674-4527/accc76"
+
+[DM]
+value = 280 #pc/cc
+error = 4
+ref = "https://doi.org/10.1088/1674-4527/accc76"
+
+[Period]
+value = 1.532 #seconds
+error = 0.001
+ref = "https://doi.org/10.1088/1674-4527/accc76"

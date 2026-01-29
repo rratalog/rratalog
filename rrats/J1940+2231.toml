@@ -1,0 +1,26 @@
+title = "J1940+2231"
+
+[Name]
+value = "J1940+2231"
+error = false
+ref = "https://doi.org/10.1088/1674-4527/accc76"
+
+[RA]
+value = "19:40:55" #hh:mm:ss.ss
+error = false
+ref = "https://doi.org/10.1088/1674-4527/accc76"
+
+[Dec]
+value = "+22:31" #(sign)dd:mm:ss.ss
+error = false
+ref = "https://doi.org/10.1088/1674-4527/accc76"
+
+[DM]
+value = 198 #pc/cc
+error = 7
+ref = "https://doi.org/10.1088/1674-4527/accc76"
+
+[Period]
+value = 5.682 #seconds
+error = 0.002
+ref = "https://doi.org/10.1088/1674-4527/accc76"

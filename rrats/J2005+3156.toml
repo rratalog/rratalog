@@ -1,0 +1,26 @@
+title = "J2005+3156"
+
+[Name]
+value = "J2005+3156"
+error = false
+ref = "https://doi.org/10.1088/1674-4527/accc76"
+
+[RA]
+value = "20:05:30" #hh:mm:ss.ss
+error = false
+ref = "https://doi.org/10.1088/1674-4527/accc76"
+
+[Dec]
+value = "+31:56" #(sign)dd:mm:ss.ss
+error = false
+ref = "https://doi.org/10.1088/1674-4527/accc76"
+
+[DM]
+value = 337 #pc/cc
+error = 2
+ref = "https://doi.org/10.1088/1674-4527/accc76"
+
+[Period]
+value = 2.146 #seconds
+error = 0.001
+ref = "https://doi.org/10.1088/1674-4527/accc76"
