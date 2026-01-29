@@ -21,27 +21,33 @@ jobs:
           fetch-depth: 0
           persist-credentials: true
 
-      - name: Determine SOURCE_REF and BRANCH_NAME
+      - name: Determine SOURCE_REF and BRANCH_NAME (no in-run expressions)
+        # pass GitHub context into step env (safe, no ${ { } } inside script body)
+        env:
+          PR_HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          PR_HEAD_REF: ${{ github.event.pull_request.head.ref }}
+          HEAD_REF: ${{ github.head_ref }}
+          TRIGGER_REF: ${{ github.ref }}
         run: |
-          # Determine a SOURCE_REF and a human-readable BRANCH_NAME for pushes and PRs.
-          # For PRs: use head SHA and head ref name. For pushes: use branch name.
-          if [ -n "${{ github.event.pull_request.head.sha }}" ]; then
-            echo "SOURCE_REF=${{ github.event.pull_request.head.sha }}" >> $GITHUB_ENV
-            echo "BRANCH_NAME=${{ github.event.pull_request.head.ref }}" >> $GITHUB_ENV
-          elif [ -n "${{ github.head_ref }}" ]; then
-            echo "SOURCE_REF=${{ github.head_ref }}" >> $GITHUB_ENV
-            echo "BRANCH_NAME=${{ github.head_ref }}" >> $GITHUB_ENV
+          # For PR events, PR_HEAD_SHA and PR_HEAD_REF are set; for push events use TRIGGER_REF.
+          if [ -n "$PR_HEAD_SHA" ]; then
+            echo "SOURCE_REF=$PR_HEAD_SHA" >> $GITHUB_ENV
+            echo "BRANCH_NAME=$PR_HEAD_REF" >> $GITHUB_ENV
+          elif [ -n "$HEAD_REF" ]; then
+            echo "SOURCE_REF=$HEAD_REF" >> $GITHUB_ENV
+            echo "BRANCH_NAME=$HEAD_REF" >> $GITHUB_ENV
           else
-            # For push events, use short branch name
-            BR="${GITHUB_REF##*/}"
-            echo "SOURCE_REF=${BR}" >> $GITHUB_ENV
-            echo "BRANCH_NAME=${BR}" >> $GITHUB_ENV
+            # For push events the trigger ref looks like refs/heads/<branch>
+            BR="${TRIGGER_REF##*/}"
+            echo "SOURCE_REF=$BR" >> $GITHUB_ENV
+            echo "BRANCH_NAME=$BR" >> $GITHUB_ENV
           fi
           echo "Determined SOURCE_REF=${SOURCE_REF} BRANCH_NAME=${BRANCH_NAME}"
 
       - name: Checkout source commit/branch
         run: |
-          # Ensure all refs are available and check out the intended source ref.
+          # Ensure refs are available and check out the intended source ref.
+          # This step uses SOURCE_REF written to GITHUB_ENV above.
           git fetch --prune --unshallow origin || true
           git fetch origin '+refs/heads/*:refs/remotes/origin/*' || true
           echo "Checking out SOURCE_REF=${SOURCE_REF}"
