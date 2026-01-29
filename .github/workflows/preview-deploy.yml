@@ -13,32 +13,39 @@ permissions:
 jobs:
   build-and-publish-preview:
     runs-on: ubuntu-latest
-    # avoid running on main itself
     if: github.ref != 'refs/heads/main'
     steps:
-      - name: Determine source ref (works for push and PR)
-        run: |
-          # If this is a pull_request event, github.event.pull_request.head.sha is defined
-          if [ -n "${{ github.event.pull_request.head.sha }}" ]; then
-            echo "SOURCE_REF=${{ github.event.pull_request.head.sha }}" >> $GITHUB_ENV
-            echo "SOURCE_REF_TYPE=sha" >> $GITHUB_ENV
-          elif [ -n "${{ github.head_ref }}" ]; then
-            # github.head_ref contains branch name for PRs
-            echo "SOURCE_REF=${{ github.head_ref }}" >> $GITHUB_ENV
-            echo "SOURCE_REF_TYPE=branch" >> $GITHUB_ENV
-          else
-            # fallback to the ref that triggered the workflow (push)
-            echo "SOURCE_REF=${{ github.ref }}" >> $GITHUB_ENV
-            echo "SOURCE_REF_TYPE=ref" >> $GITHUB_ENV
-          fi
-          echo "Determined SOURCE_REF=${SOURCE_REF} (type=${SOURCE_REF_TYPE})"
-
-      - name: Checkout source using resolved ref
+      - name: Initial checkout (fetch all)
         uses: actions/checkout@v4
         with:
-          ref: ${{ env.SOURCE_REF }}
           fetch-depth: 0
           persist-credentials: true
+
+      - name: Determine SOURCE_REF and BRANCH_NAME
+        run: |
+          # Determine a SOURCE_REF and a human-readable BRANCH_NAME for pushes and PRs.
+          # For PRs: use head SHA and head ref name. For pushes: use branch name.
+          if [ -n "${{ github.event.pull_request.head.sha }}" ]; then
+            echo "SOURCE_REF=${{ github.event.pull_request.head.sha }}" >> $GITHUB_ENV
+            echo "BRANCH_NAME=${{ github.event.pull_request.head.ref }}" >> $GITHUB_ENV
+          elif [ -n "${{ github.head_ref }}" ]; then
+            echo "SOURCE_REF=${{ github.head_ref }}" >> $GITHUB_ENV
+            echo "BRANCH_NAME=${{ github.head_ref }}" >> $GITHUB_ENV
+          else
+            # For push events, use short branch name
+            BR="${GITHUB_REF##*/}"
+            echo "SOURCE_REF=${BR}" >> $GITHUB_ENV
+            echo "BRANCH_NAME=${BR}" >> $GITHUB_ENV
+          fi
+          echo "Determined SOURCE_REF=${SOURCE_REF} BRANCH_NAME=${BRANCH_NAME}"
+
+      - name: Checkout source commit/branch
+        run: |
+          # Ensure all refs are available and check out the intended source ref.
+          git fetch --prune --unshallow origin || true
+          git fetch origin '+refs/heads/*:refs/remotes/origin/*' || true
+          echo "Checking out SOURCE_REF=${SOURCE_REF}"
+          git checkout "${SOURCE_REF}"
 
       - name: Debug: show checked-out commit and branch
         run: |
@@ -51,9 +58,8 @@ jobs:
           echo "Listing rrats/ files used for this build:"
           ls -la rrats || true
           git ls-files rrats/** || true
-          # Save rrats file list for inclusion in BUILD_INFO
           git ls-files rrats/** > rrats_list.txt || true
-          wc -l rrats_list.txt || true
+          echo "First 20 rrats entries (if any):"
           head -n 20 rrats_list.txt || true
 
       - name: Set up Python
@@ -74,18 +80,16 @@ jobs:
         run: |
           TMPDIR=$(mktemp -d)
           echo "TMPDIR=$TMPDIR" >> $GITHUB_ENV
-          # copy generated files
           cp -a rratalog.html index.html "${TMPDIR}/" 2>/dev/null || true
           cp -a rratalog.csv rratalog2.csv "${TMPDIR}/" 2>/dev/null || true
-          # include rrats file list and source commit for traceability
           echo "SOURCE_COMMIT=$(git rev-parse HEAD)" > "${TMPDIR}/BUILD_INFO.txt"
-          echo "BRANCH_OR_REF=${{ env.SOURCE_REF }}" >> "${TMPDIR}/BUILD_INFO.txt"
+          echo "BRANCH_OR_REF=${BRANCH_NAME}" >> "${TMPDIR}/BUILD_INFO.txt"
           if [ -f rrats_list.txt ]; then
             echo "--- RRATS FILES ---" >> "${TMPDIR}/BUILD_INFO.txt"
             cat rrats_list.txt >> "${TMPDIR}/BUILD_INFO.txt"
           fi
           ls -la "${TMPDIR}" || true
-          echo "Preview BUILD_INFO:"
+          echo "BUILD_INFO contents:"
           cat "${TMPDIR}/BUILD_INFO.txt" || true
 
       - name: Checkout main branch (target for preview files)
@@ -96,10 +100,7 @@ jobs:
           persist-credentials: true
 
       - name: Copy preview into main:/previews/<branch>
-        env:
-          BRANCH_NAME: ${{ github.event.pull_request.head.ref || github.ref_name }}
         run: |
-          # Normalize BRANCH_NAME for push/PR events
           if [ -z "${BRANCH_NAME}" ]; then
             if [ -n "$GITHUB_HEAD_REF" ]; then
               BRANCH_NAME="$GITHUB_HEAD_REF"
@@ -111,11 +112,10 @@ jobs:
           TARGET_DIR="previews/${BRANCH_NAME}"
           mkdir -p "${TARGET_DIR}"
           rm -rf "${TARGET_DIR:?}/"*
-          # copy saved files from TMP into the preview folder
           cp -a "${TMPDIR}/." "${TARGET_DIR}/" || true
           ls -la "previews" || true
           ls -la "${TARGET_DIR}" || true
-          echo "Contents of BUILD_INFO:"
+          echo "BUILD_INFO at preview:"
           cat "${TARGET_DIR}/BUILD_INFO.txt" || true
 
       - name: Commit and push preview to main
