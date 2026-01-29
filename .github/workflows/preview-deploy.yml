@@ -1,0 +1,85 @@
+# Builds the site from the branch and publishes it into main:/previews/<branch>/
+# This does not change the root index.html on main, so your normal Pages deployment remains unchanged.
+on:
+  push:
+    branches:
+      - '**'
+  pull_request:
+    types: [opened, reopened, synchronize]
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-publish-preview:
+    runs-on: ubuntu-latest
+    # avoid trying to publish previews when running on main itself
+    if: github.ref != 'refs/heads/main'
+    steps:
+      - name: Checkout (source branch)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Resolve BRANCH_NAME (works for pushes and PRs)
+        run: |
+          if [ -n "${GITHUB_HEAD_REF}" ]; then
+            echo "BRANCH_NAME=${GITHUB_HEAD_REF}" >> $GITHUB_ENV
+          else
+            echo "BRANCH_NAME=${GITHUB_REF##*/}" >> $GITHUB_ENV
+          fi
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies (same as main workflow)
+        run: |
+          python -m pip install --upgrade pip
+          pip install toml pandas jinja2 astropy numpy
+
+      - name: Run rratalog generator (same as main workflow)
+        run: |
+          python make_rratalog.py
+
+      - name: Save build outputs to temp
+        run: |
+          # copy generated files to an external temporary folder so they survive a checkout of main
+          TMPDIR=$(mktemp -d)
+          echo "TMPDIR=$TMPDIR" >> $GITHUB_ENV
+          # copy typical outputs that make_rratalog.py produces
+          cp -a rratalog.html index.html "${TMPDIR}/" 2>/dev/null || true
+          cp -a rratalog.csv rratalog2.csv "${TMPDIR}/" 2>/dev/null || true
+          # if your generator emits additional assets/directories, copy them here:
+          # cp -a output_dir "${TMPDIR}/output_dir" || true
+          ls -la "${TMPDIR}" || true
+
+      - name: Checkout main branch (target for preview files)
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Copy preview into main:/previews/<branch>
+        run: |
+          TARGET_DIR="previews/${BRANCH_NAME}"
+          mkdir -p "${TARGET_DIR}"
+          # clean target dir so updates replace previous preview files
+          rm -rf "${TARGET_DIR:?}/"*
+          # copy saved files from the temp folder into the target dir
+          cp -a "${TMPDIR}/." "${TARGET_DIR}/" || true
+          # If you had directories (assets, css, etc.) ensure they are copied too:
+          # cp -a "${TMPDIR}/output_dir" "${TARGET_DIR}/" || true
+          ls -la "previews" || true
+          ls -la "${TARGET_DIR}" || true
+
+      - name: Commit and push preview to main
+        uses: EndBug/add-and-commit@v9
+        with:
+          add: "previews/${{ env.BRANCH_NAME }}"
+          message: "chore(preview): publish preview for ${{ env.BRANCH_NAME }} to /previews/${{ env.BRANCH_NAME }}"
+          author_name: "github-actions[bot]"
+          author_email: "41898282+github-actions[bot]@users.noreply.github.com"
