@@ -3,7 +3,7 @@ title = "J1848+1516"
 [Name]
 value = "J1848+1516"
 error = false
-ref = "https://doi.org/10.1093/mnras/sty2072"
+ref = "https://doi.org/10.1051/0004-6361/201833102"
 
 [RA]
 value = "18:48:56.13" #hh:mm:ss.ss
