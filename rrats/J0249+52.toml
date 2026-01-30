@@ -1,0 +1,49 @@
+title = "J0249+52"
+
+[Name]
+value = "J0249+52"
+error = false
+ref = "https://doi.org/10.1134/S1063772923070077"
+
+[RA]
+value = "02:49:00" #hh:mm:ss.ss
+error = "00:00:90"
+ref = "https://doi.org/10.1134/S1063772923070077"
+
+[Dec]
+value = "+52:46" #(sign)dd:mm:ss.ss
+error = "00:15"
+ref = "https://doi.org/10.1134/S1063772923070077"
+
+[DM]
+value =  27.5 #pc/cc
+error = 1.5
+ref = "https://doi.org/10.1134/S1063772923070077"
+
+[BurstRate]
+
+    [BurstRate.Discovery]
+  value = 0.44 #hour^-1
+  error = false
+  telescope = "LPA"
+  minflux = 2000 #mJy; given S/N 10 = S~3.5 to 4 Jy
+  ref = "https://doi.org/10.1134/S1063772923070077"
+
+[Flux]
+
+    [Flux.110]
+  value = 29 #mJy 
+  frequency = 110.25 #MHz
+  error = false
+  ref = "https://doi.org/10.1134/S1063772923070077"
+
+[Width]
+
+    [Width.110]
+  value = 37 #ms
+  frequency = 110.25 #MHz
+  error = false
+  ref = "https://doi.org/10.1134/S1063772923070077"
+
+
+#Samodurov et al. 2023: https://doi.org/10.1134/S1063772923070077
