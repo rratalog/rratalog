@@ -6,14 +6,14 @@ error = false
 ref = "https://doi.org/10.3847/1538-4357/aaee65"
 
 [RA]
-value = "18:53" #hh:mm:ss.ss
+value = "18:53:46" #hh:mm:ss.ss
 error = false
-ref = "https://doi.org/10.3847/1538-4357/aaee65"
+ref = "https://doi.org/10.1088/1674-4527/21/5/107"
 
 [Dec]
-value = "+04" #(sign)dd:mm:ss.ss
+value = "+04:27" #(sign)dd:mm:ss.ss
 error = false
-ref = "https://doi.org/10.3847/1538-4357/aaee65"
+ref = "https://doi.org/10.1088/1674-4527/21/5/107"
 
 [DM]
 value = 549.3 #pc/cc
@@ -42,4 +42,5 @@ ref = "https://doi.org/10.3847/1538-4357/aaee65"
   ref = "https://doi.org/10.3847/1538-4357/aaee65"
 
 
-#Deneva et al 2018: https://doi.org/10.3847/1538-4357/aaee65
+#Patel et al 2018: https://doi.org/10.3847/1538-4357/aaee65
+#Han et al 2021: https://doi.org/10.1088/1674-4527/21/5/107
