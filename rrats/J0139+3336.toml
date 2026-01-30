@@ -43,6 +43,12 @@ ref = "https://doi.org/10.1093/mnras/stz2997"
   frequency = 149 #MHz
   ref = "https://doi.org/10.1093/mnras/stz2997"
 
+    [Width.1250]
+  value = 5.3 #ms
+  error = 0.7
+  frequency = 1250 #MHz
+  ref = "https://doi.org/10.1088/1674-4527/acea1f"
+
     [Width.1532]
   value = 14 #ms
   error = 1
