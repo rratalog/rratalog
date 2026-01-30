@@ -1,0 +1,46 @@
+title = "J1656+00"
+
+[Name]
+value = "J1656+00"
+error = false
+ref = "https://doi.org/10.3847/0004-637X/821/1/10"
+
+[RA]
+value = "16:56:41" #hh:mm:ss.ss
+error = "00:00:30"
+ref = "https://doi.org/10.3847/0004-637X/821/1/10"
+
+[Dec]
+value = "+00:26" #(sign)dd:mm:ss.ss
+error = "00:08"
+ref = "https://doi.org/10.3847/0004-637X/821/1/10"
+
+[Period]
+value = 1.49785
+error = false
+ref = "https://doi.org/10.3847/0004-637X/821/1/10"
+
+[DM]
+value = 46.9 #pc/cc
+error = false
+ref = "https://doi.org/10.3847/0004-637X/821/1/10"
+
+[Flux]
+
+    [Flux.327]
+  value = 11.4 #mJy 
+  frequency = 327 #MHz
+  error = false
+  ref = "https://doi.org/10.3847/0004-637X/821/1/10"
+
+[Width]
+
+    [Width.1400]
+  value = 7.4 #ms
+  frequency = 1400 #MHz
+  error = 0.7
+  ref = "https://doi.org/10.1088/1674-4527/acea1f"
+
+
+#Deneva et al. 2016: https://doi.org/10.3847/0004-637X/821/1/10
+#Wang et al. 2023: https://doi.org/10.1088/1674-4527/acea1f

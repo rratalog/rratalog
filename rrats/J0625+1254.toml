@@ -1,0 +1,41 @@
+title = "J0625+1254"
+
+[Name]
+value = "J0625+1254"
+error = false
+ref = "https://doi.org/10.3847/1538-4357/aaee65"
+
+[RA]
+value = "06:25:26" #hh:mm:ss.ss
+error = false
+ref = "https://doi.org/10.1088/1674-4527/accc76"
+
+[Dec]
+value = "+12:54" #(sign)dd:mm:ss.ss
+error = false
+ref = "https://doi.org/10.1088/1674-4527/accc76"
+
+[DM]
+value = 101.9 #pc/cc
+error = 6.1
+ref = "https://doi.org/10.3847/1538-4357/aaee65"
+
+[Flux]
+
+    [Flux.1400]
+  value = 36 #mJy 
+  frequency = 1400 #MHz
+  error = false
+  ref = "https://doi.org/10.3847/1538-4357/aaee65"
+
+[Width]
+
+    [Width.1400]
+  value = 7.1 #ms
+  frequency = 1400 #MHz
+  error = false
+  ref = "https://doi.org/10.3847/1538-4357/aaee65"
+
+
+#Patel et al. 2018: https://doi.org/10.3847/1538-4357/aaee65
+#Zhou et al. 2023: https://doi.org/10.1088/1674-4527/accc76

@@ -1,0 +1,46 @@
+title = "J0630+1933"
+
+[Name]
+value = "J0630+1933"
+error = false
+ref = "https://doi.org/10.3847/0004-637X/821/1/10"
+
+[RA]
+value = "06:30:04" #hh:mm:ss.ss
+error = false
+ref = "https://doi.org/10.1088/1674-4527/accc76"
+
+[Dec]
+value = "+19:33" #(sign)dd:mm:ss.ss
+error = false
+ref = "https://doi.org/10.1088/1674-4527/accc76"
+
+[Period]
+value = 1.248661
+error = false
+ref = "https://doi.org/10.1088/1674-4527/accc76"
+
+[DM]
+value = 47.2 #pc/cc
+error = false
+ref = "https://doi.org/10.1088/1674-4527/accc76"
+
+[Flux]
+
+    [Flux.327]
+  value = 3.6 #mJy 
+  frequency = 327 #MHz
+  error = false
+  ref = "https://doi.org/10.3847/0004-637X/821/1/10"
+
+[Width]
+
+    [Width.1400]
+  value = 8.5 #ms
+  frequency = 1400 #MHz
+  error = false
+  ref = "https://doi.org/10.1088/1674-4527/accc76"
+
+
+#Deneva et al. 2016: https://doi.org/10.3847/0004-637X/821/1/10
+#Zhou et al. 2023: https://doi.org/10.1088/1674-4527/accc76
