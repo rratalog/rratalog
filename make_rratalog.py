@@ -235,7 +235,7 @@ if __name__ == "__main__":
                     try:
                        z = rrat_toml[key]
                        if rrat_toml[key]["error"] == False:
-                           display_dict[key].append(np.round(p1,10)*1e15)
+                           display_dict[key].append(np.round(p1*1e15,3))
                            display_dict[key+"_ref"].append(rrat_toml["Pdot"]["ref"])
                            print(rrat_toml["Name"]["value"])
                        else:
