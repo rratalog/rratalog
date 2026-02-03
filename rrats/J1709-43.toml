@@ -20,6 +20,21 @@ value = 228 #pc/cc
 error = 20
 ref = "https://doi.org/10.1111/j.1365-2966.2011.18521.x"
 
+[Period]
+value = 0.8968609868 #s
+error = false
+ref = "https://doi.org/10.1088/1674-4527/ad2dbe"
+
+[Pdot]
+value = 2.4162e-14
+error = false
+ref = "https://doi.org/10.1088/1674-4527/ad2dbe"
+
+[Pepoch]
+value = 56800
+error = false
+ref = "https://doi.org/10.1088/1674-4527/ad2dbe"
+
 [Flux]
 
     [Flux.1400]
@@ -47,3 +62,4 @@ ref = "https://doi.org/10.1111/j.1365-2966.2011.18521.x"
   ref = "https://doi.org/10.1111/j.1365-2966.2011.18521.x"
 
 #Burke-Spolaor et al 2011: https://doi.org/10.1111/j.1365-2966.2011.18521.x
+#Ren et al 2024: https://doi.org/10.1088/1674-4527/ad2dbe
