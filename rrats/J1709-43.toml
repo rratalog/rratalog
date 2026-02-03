@@ -26,7 +26,7 @@ error = false
 ref = "https://doi.org/10.1088/1674-4527/ad2dbe"
 
 [Pdot]
-value = 2.4162e-14
+value = 24.162e-15
 error = false
 ref = "https://doi.org/10.1088/1674-4527/ad2dbe"
 
