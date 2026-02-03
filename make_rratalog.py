@@ -284,7 +284,7 @@ if __name__ == "__main__":
                     try:
                         z = rrat_toml["Pdot"]
                         if rrat_toml["Pdot"]["error"] == False:
-                            display_dict[key].append(f1*1e15)
+                            display_dict[key].append(np.round(f1*1e15,3))
                             display_dict[key+"_ref"].append(rrat_toml["Pdot"]["ref"])
                         else:
                             if len(str(f1).partition('.')[2]) > 10:
