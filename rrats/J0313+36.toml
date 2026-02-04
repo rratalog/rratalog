@@ -1,0 +1,39 @@
+title = "J0313+36"
+
+[Name]
+value = "J0313+36"
+error = false
+ref = "https://doi.org/10.1051/0004-6361/202449762"
+
+[RA]
+value = "03:13:13" #hh:mm:ss.ss
+error = "00:00:90"
+ref = "https://doi.org/10.1051/0004-6361/202449762"
+
+[Dec]
+value = "+36:15" #(sign)dd:mm:ss.ss
+error = "00:15"
+ref = "https://doi.org/10.1051/0004-6361/202449762"
+
+[DM]
+value =  20.8 #pc/cc
+error = 1.5
+ref = "https://doi.org/10.1051/0004-6361/202449762"
+
+[Flux]
+
+    [Flux.110]
+  value = 4100 #mJy 
+  frequency = 110.25 #MHz
+  error = false
+  ref = "https://doi.org/10.1051/0004-6361/202449762"
+
+[Width]
+
+    [Width.110]
+  value = 53 #ms
+  frequency = 110.25 #MHz
+  error = false
+  ref = "https://doi.org/10.1051/0004-6361/202449762"
+
+Tyul'bashev et al. 2024: https://doi.org/10.1051/0004-6361/202449762

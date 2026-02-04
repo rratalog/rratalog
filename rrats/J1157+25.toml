@@ -1,0 +1,39 @@
+title = "J1157+25"
+
+[Name]
+value = "J1157+25"
+error = false
+ref = "https://doi.org/10.1051/0004-6361/202449762"
+
+[RA]
+value = "11:57:44" #hh:mm:ss.ss
+error = "00:00:90"
+ref = "https://doi.org/10.1051/0004-6361/202449762"
+
+[Dec]
+value = "+25:40" #(sign)dd:mm:ss.ss
+error = "00:15"
+ref = "https://doi.org/10.1051/0004-6361/202449762"
+
+[DM]
+value = 8.85 #pc/cc
+error = 1.0
+ref = "https://doi.org/10.1051/0004-6361/202449762"
+
+[Flux]
+
+    [Flux.110]
+  value = 8100 #mJy 
+  frequency = 110.25 #MHz
+  error = false
+  ref = "https://doi.org/10.1051/0004-6361/202449762"
+
+[Width]
+
+    [Width.110]
+  value = 15 #ms
+  frequency = 110.25 #MHz
+  error = false
+  ref = "https://doi.org/10.1051/0004-6361/202449762"
+
+Tyul'bashev et al. 2024: https://doi.org/10.1051/0004-6361/202449762

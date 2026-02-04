@@ -1,0 +1,39 @@
+title = "J2119+40"
+
+[Name]
+value = "J2119+40"
+error = false
+ref = "https://doi.org/10.1051/0004-6361/202449762"
+
+[RA]
+value = "21:19:19" #hh:mm:ss.ss
+error = "00:00:90"
+ref = "https://doi.org/10.1051/0004-6361/202449762"
+
+[Dec]
+value = "+40:51" #(sign)dd:mm:ss.ss
+error = "00:15"
+ref = "https://doi.org/10.1051/0004-6361/202449762"
+
+[DM]
+value = 72.6 #pc/cc
+error = 3.0
+ref = "https://doi.org/10.1051/0004-6361/202449762"
+
+[Flux]
+
+    [Flux.110]
+  value = 3300 #mJy 
+  frequency = 110.25 #MHz
+  error = false
+  ref = "https://doi.org/10.1051/0004-6361/202449762"
+
+[Width]
+
+    [Width.110]
+  value = 42 #ms
+  frequency = 110.25 #MHz
+  error = false
+  ref = "https://doi.org/10.1051/0004-6361/202449762"
+
+Tyul'bashev et al. 2024: https://doi.org/10.1051/0004-6361/202449762
