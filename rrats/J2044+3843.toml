@@ -1,0 +1,24 @@
+title = "J2044+3843"
+
+[Name]
+value = "J2044+3843"
+error = false
+ref = "https://doi.org/10.1088/1674-4527/ada3b7"
+
+[RA]
+value = "20:44:31.2" #hh:mm:ss.ss
+error = false
+ref = "https://doi.org/10.1088/1674-4527/ada3b7"
+
+[Dec]
+value = "+38:43" #(sign)dd:mm:ss.ss
+error = false
+ref = "https://doi.org/10.1088/1674-4527/ada3b7"
+
+[DM]
+value =  230.0 #pc/cc
+error = false
+ref = "https://doi.org/10.1088/1674-4527/ada3b7"
+
+
+#Han et al. 2025: https://doi.org/10.1088/1674-4527/ada3b7

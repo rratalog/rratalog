@@ -1,0 +1,28 @@
+title = "J2129+4106"
+
+[Name]
+value = "J2129+4106"
+error = false
+ref = "https://doi.org/10.1088/1674-4527/ada3b7"
+
+[RA]
+value = "21:29:09.3" #hh:mm:ss.ss
+error = false
+ref = "https://doi.org/10.1088/1674-4527/ada3b7"
+
+[Dec]
+value = "+41:06" #(sign)dd:mm:ss.ss
+error = false
+ref = "https://doi.org/10.1088/1674-4527/ada3b7"
+
+[DM]
+value =  73.5 #pc/cc
+error = false
+ref = "https://doi.org/10.1088/1674-4527/ada3b7"
+
+[Period]
+value = 3.26074
+error = false
+ref = "https://doi.org/10.1088/1674-4527/ada3b7"
+
+#Han et al. 2025: https://doi.org/10.1088/1674-4527/ada3b7

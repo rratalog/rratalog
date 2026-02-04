@@ -1,0 +1,24 @@
+title = "J1905+1200"
+
+[Name]
+value = "J1905+1200"
+error = false
+ref = "https://doi.org/10.1088/1674-4527/ada3b7"
+
+[RA]
+value = "19:05:07.3" #hh:mm:ss.ss
+error = false
+ref = "https://doi.org/10.1088/1674-4527/ada3b7"
+
+[Dec]
+value = "+12:00" #(sign)dd:mm:ss.ss
+error = false
+ref = "https://doi.org/10.1088/1674-4527/ada3b7"
+
+[DM]
+value =  183.5 #pc/cc
+error = false
+ref = "https://doi.org/10.1088/1674-4527/ada3b7"
+
+
+#Han et al. 2025: https://doi.org/10.1088/1674-4527/ada3b7

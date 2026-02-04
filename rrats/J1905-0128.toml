@@ -1,0 +1,29 @@
+title = "J1905-0128"
+
+[Name]
+value = "J1905-0128"
+error = false
+ref = "https://doi.org/10.1088/1674-4527/ada3b7"
+
+[RA]
+value = "19:05:33.2" #hh:mm:ss.ss
+error = false
+ref = "https://doi.org/10.1088/1674-4527/ada3b7"
+
+[Dec]
+value = "-01:28" #(sign)dd:mm:ss.ss
+error = false
+ref = "https://doi.org/10.1088/1674-4527/ada3b7"
+
+[DM]
+value =  100.3 #pc/cc
+error = false
+ref = "https://doi.org/10.1088/1674-4527/ada3b7"
+
+[Period]
+value = 1.07099 #s
+error = false
+ref = "https://doi.org/10.1088/1674-4527/ada3b7"
+
+
+#Han et al. 2025: https://doi.org/10.1088/1674-4527/ada3b7
