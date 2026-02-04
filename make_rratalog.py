@@ -29,9 +29,14 @@ def error_string_dec(value,err):
             zeroflag=0
         value = float(value)
 
-    if err > 1:
+    if err > 1 and err == int(err) and value == int(value): #both whole numbers
+        n_err = int(err)
+        err_string = str(int(value)) + '(' + str(n_err) + ')'
+    
+    elif err >= 1:
         n_err = err
-        err_string = str(np.round(value,int(-1*n_sigfigs)+1)) + '(' + str(n_err) + ')'
+        err_string = str(value) + '(' + str(n_err) + ')'
+        
     else:
         n_err = int(np.round(err / (10 ** np.floor(power_err)),0))
         err_string = str(np.round(value,int(-1*n_sigfigs)))
@@ -430,7 +435,7 @@ if __name__ == "__main__":
     val_err_keys = ["RA", "Dec", "DM", "Period", "Pdot", "Frequency", "Fdot"]
     table_keys_2 = []
     units_2 = []
-    # we don't modify the values for some calumns...
+    # we don't modify the values for some columns...
     unit_map = { "Pdot": "s/s", "Fdot": "Hz/s" }
     for i,k in enumerate(table_keys):
         # grab the units to use
