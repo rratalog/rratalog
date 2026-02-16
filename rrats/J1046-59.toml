@@ -1,0 +1,24 @@
+title = "J1046-59"
+
+[Name]
+value = "J1046-59"
+error = false
+ref = "https://doi.org/10.1093/mnras/staf1827"
+
+[RA]
+value = "10:46:46" #hh:mm:ss.ss
+error = false
+ref = "https://doi.org/10.1093/mnras/staf1827"
+
+[Dec]
+value = "-59:19:26" #(sign)dd:mm:ss.ss
+error = false
+ref = "https://doi.org/10.1093/mnras/staf1827"
+
+[DM]
+value = 101.1 #pc/cm^3
+error = 0.7
+ref = "https://doi.org/10.1093/mnras/staf1827"
+
+#Tian et al. 2025: https://doi.org/10.1093/mnras/staf1827
+#MTP0051

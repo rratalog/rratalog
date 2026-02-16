@@ -1,0 +1,39 @@
+title = "J1817-1932"
+
+[Name]
+value = "J1817-1932"
+error = false
+ref = "https://doi.org/10.1093/mnras/staf1827"
+
+[RA]
+value = "18:17:12.6" #hh:mm:ss.ss
+error = "00:00:00.1"
+ref = "https://doi.org/10.1093/mnras/staf1827"
+
+[Dec]
+value = "-19:32:48" #(sign)dd:mm:ss.ss
+error = "00:00:02"
+ref = "https://doi.org/10.1093/mnras/staf1827"
+
+[DM]
+value = 214.5 #pc/cm^3
+error = 0.2
+ref = "https://doi.org/10.1093/mnras/staf1827"
+
+[Period]
+value = 1.22912
+error = 0.00002
+ref = "https://doi.org/10.1093/mnras/staf1827"
+
+[Pepoch]
+value = 59769.876545
+error = false
+ref = "https://doi.org/10.1093/mnras/staf1827"
+
+[Pdot]
+value = 1e-15
+error = 5e-15
+ref = "https://doi.org/10.1093/mnras/staf1827"
+
+#Tian et al. 2025: https://doi.org/10.1093/mnras/staf1827
+#MTP0063

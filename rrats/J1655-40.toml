@@ -1,0 +1,24 @@
+title = "J1655-40"
+
+[Name]
+value = "J1655-40"
+error = false
+ref = "https://doi.org/10.1093/mnras/staf1827"
+
+[RA]
+value = "16:55:43" #hh:mm:ss.ss
+error = false
+ref = "https://doi.org/10.1093/mnras/staf1827"
+
+[Dec]
+value = "-40:49:09" #(sign)dd:mm:ss.ss
+error = false
+ref = "https://doi.org/10.1093/mnras/staf1827"
+
+[DM]
+value = 92 #pc/cm^3
+error = 1
+ref = "https://doi.org/10.1093/mnras/staf1827"
+
+#Tian et al. 2025: https://doi.org/10.1093/mnras/staf1827
+#MTP0054

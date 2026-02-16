@@ -1,0 +1,24 @@
+title = "J1303-4713"
+
+[Name]
+value = "J1303-4713"
+error = false
+ref = "https://doi.org/10.1093/mnras/staf1827"
+
+[RA]
+value = "13:03:32" #hh:mm:ss.ss
+error = false
+ref = "https://doi.org/10.1093/mnras/staf1827"
+
+[Dec]
+value = "-47:13:12" #(sign)dd:mm:ss.ss
+error = false
+ref = "https://doi.org/10.1093/mnras/staf1827"
+
+[DM]
+value = 82.6 #pc/cm^3
+error = 0.1
+ref = "https://doi.org/10.1093/mnras/staf1827"
+
+#Tian et al. 2025: https://doi.org/10.1093/mnras/staf1827
+#MTP0075

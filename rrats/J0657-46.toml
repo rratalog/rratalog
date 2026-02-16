@@ -1,0 +1,24 @@
+title = "J0657-46"
+
+[Name]
+value = "J0657-46"
+error = false
+ref = "https://doi.org/10.1093/mnras/staf1827"
+
+[RA]
+value = "06:57:26" #hh:mm:ss.ss
+error = false
+ref = "https://doi.org/10.1093/mnras/staf1827"
+
+[Dec]
+value = "-46:58:49" #(sign)dd:mm:ss.ss
+error = false
+ref = "https://doi.org/10.1093/mnras/staf1827"
+
+[DM]
+value = 148.4 #pc/cm^3
+error = 0.4
+ref = "https://doi.org/10.1093/mnras/staf1827"
+
+#Tian et al. 2025: https://doi.org/10.1093/mnras/staf1827
+#MTP0066

@@ -1,0 +1,24 @@
+title = "J1909+0310"
+
+[Name]
+value = "J1909+0310"
+error = false
+ref = "https://doi.org/10.1093/mnras/staf1827"
+
+[RA]
+value = "19:09:49" #hh:mm:ss.ss
+error = false
+ref = "https://doi.org/10.1093/mnras/staf1827"
+
+[Dec]
+value = "+03:10:34" #(sign)dd:mm:ss.ss
+error = false
+ref = "https://doi.org/10.1093/mnras/staf1827"
+
+[DM]
+value = 110.7 #pc/cm^3
+error = 0.4
+ref = "https://doi.org/10.1093/mnras/staf1827"
+
+#Tian et al. 2025: https://doi.org/10.1093/mnras/staf1827
+#MTP0070

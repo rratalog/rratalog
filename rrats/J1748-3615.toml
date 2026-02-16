@@ -1,0 +1,34 @@
+title = "J1748-3615"
+
+[Name]
+value = "J1748-3615"
+error = false
+ref = "https://doi.org/10.1093/mnras/staf1827"
+
+[RA]
+value = "17:48:14.12" #hh:mm:ss.ss
+error = false
+ref = "https://doi.org/10.1093/mnras/staf1827"
+
+[Dec]
+value = "-36:15:50.7" #(sign)dd:mm:ss.ss
+error = false
+ref = "https://doi.org/10.1093/mnras/staf1827"
+
+[DM]
+value = 266.6 #pc/cm^3
+error = 0.5
+ref = "https://doi.org/10.1093/mnras/staf1827"
+
+[Period]
+value = 7.62348
+error = 0.00005
+ref = "https://doi.org/10.1093/mnras/staf1827"
+
+[Pepoch]
+value = 59747.903975
+error = false
+ref = "https://doi.org/10.1093/mnras/staf1827"
+
+#Tian et al. 2025: https://doi.org/10.1093/mnras/staf1827
+#MTP0065
