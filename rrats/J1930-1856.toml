@@ -1,0 +1,39 @@
+title = "J1930-1856"
+
+[Name]
+value = "J1930-1856"
+error = false
+ref = "https://doi.org/10.1093/mnras/staf098"
+
+[RA]
+value = "19:30:41.88" #hh:mm:ss.ss
+error = "00:00:00.09"
+ref = "https://doi.org/10.1093/mnras/staf098"
+
+[Dec]
+value = "-18:56:28.5" #(sign)dd:mm:ss.ss
+error = "00:00:00.12"
+ref = "https://doi.org/10.1093/mnras/staf098"
+
+[DM]
+value = 63.143 #pc/cm^3
+error = 0.009
+ref = "https://doi.org/10.1093/mnras/staf098"
+
+[Period]
+value = 1.76083292621 #s
+error = 0.00000000003
+ref = "https://doi.org/10.1093/mnras/staf098"
+
+[Pdot]
+value = 0.593e-15
+error = 0.007e-15
+ref = "https://doi.org/10.1093/mnras/staf098"
+
+[Pepoch]
+value = 59581.5
+error = false
+ref = "https://doi.org/10.1093/mnras/staf098"
+
+#Turner et al. 2025: https://doi.org/10.1093/mnras/staf098
+#MTP0020

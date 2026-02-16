@@ -1,0 +1,39 @@
+title = "J1911-2020"
+
+[Name]
+value = "J1911-2020"
+error = false
+ref = "https://doi.org/10.1093/mnras/staf098"
+
+[RA]
+value = "19:11:16.05" #hh:mm:ss.ss
+error = "00:00:00.08"
+ref = "https://doi.org/10.1093/mnras/staf098"
+
+[Dec]
+value = "-20:20:02" #(sign)dd:mm:ss.ss
+error = "00:00:09"
+ref = "https://doi.org/10.1093/mnras/staf098"
+
+[DM]
+value = 71.30 #pc/cm^3
+error = 0.03
+ref = "https://doi.org/10.1093/mnras/staf098"
+
+[Period]
+value = 4.4679211203 #s
+error = 0.0000000002
+ref = "https://doi.org/10.1093/mnras/staf098"
+
+[Pdot]
+value = 6.726e-15
+error = 0.008e-15
+ref = "https://doi.org/10.1093/mnras/staf098"
+
+[Pepoch]
+value = 60098
+error = false
+ref = "https://doi.org/10.1093/mnras/staf098"
+
+#Turner et al. 2025: https://doi.org/10.1093/mnras/staf098
+#MTP0014

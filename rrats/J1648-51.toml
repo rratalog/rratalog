@@ -1,0 +1,24 @@
+title = "J1648-51"
+
+[Name]
+value = "J1648-51"
+error = false
+ref = "https://doi.org/10.1093/mnras/staf098"
+
+[RA]
+value = "16:48:36.46" #hh:mm:ss.ss
+error = false
+ref = "https://doi.org/10.1093/mnras/staf098"
+
+[Dec]
+value = "-51:42:46.5" #(sign)dd:mm:ss.ss
+error = false
+ref = "https://doi.org/10.1093/mnras/staf098"
+
+[DM]
+value = 201.4 #pc/cm^3
+error = 0.2
+ref = "https://doi.org/10.1093/mnras/staf098"
+
+#Turner et al. 2025: https://doi.org/10.1093/mnras/staf098
+#MTP0029

@@ -1,0 +1,34 @@
+title = "J1525-2322"
+
+[Name]
+value = "J1525-2322"
+error = false
+ref = "https://doi.org/10.1093/mnras/staf098"
+
+[RA]
+value = "15:25:06.4" #hh:mm:ss.ss
+error = false
+ref = "https://doi.org/10.1093/mnras/staf098"
+
+[Dec]
+value = "-23:22:19" #(sign)dd:mm:ss.ss
+error = false
+ref = "https://doi.org/10.1093/mnras/staf098"
+
+[DM]
+value = 41.2 #pc/cm^3
+error = 0.3
+ref = "https://doi.org/10.1093/mnras/staf098"
+
+[Period]
+value = 5.5719 #s
+error = 0.0002
+ref = "https://doi.org/10.1093/mnras/staf098"
+
+[Pepoch]
+value = 59208.083669
+error = false
+ref = "https://doi.org/10.1093/mnras/staf098"
+
+#Turner et al. 2025: https://doi.org/10.1093/mnras/staf098
+#MTP0016

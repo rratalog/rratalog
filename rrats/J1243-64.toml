@@ -1,0 +1,24 @@
+title = "J1243-64"
+
+[Name]
+value = "J1243-64"
+error = false
+ref = "https://doi.org/10.1093/mnras/staf098"
+
+[RA]
+value = "12:43:41.07" #hh:mm:ss.ss
+error = false
+ref = "https://doi.org/10.1093/mnras/staf098"
+
+[Dec]
+value = "-64:23:07.2" #(sign)dd:mm:ss.ss
+error = false
+ref = "https://doi.org/10.1093/mnras/staf098"
+
+[DM]
+value = 342 #pc/cm^3
+error = 2
+ref = "https://doi.org/10.1093/mnras/staf098"
+
+#Turner et al. 2025: https://doi.org/10.1093/mnras/staf098
+#MTP0022
