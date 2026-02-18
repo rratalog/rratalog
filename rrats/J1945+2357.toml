@@ -1,29 +1,29 @@
-title = "J1946+24"
+title = "J1945+2357"
 
 [Name]
-value = "J1946+24"
+value = "J1945+2357"
 error = false
 ref = "https://doi.org/10.1088/0004-637X/703/2/2259"
 
 [RA]
-value = "19:46:00" #hh:mm:ss.ss
-error = "00:00:07"
-ref = "https://doi.org/10.1088/0004-637X/703/2/2259"
+value = "19:45:48" #hh:mm:ss.ss
+error = false
+ref = "https://doi.org/10.1088/1674-4527/accc76"
 
 [Dec]
-value = "+23:58" #(sign)dd:mm:ss.ss
-error = "00:02"
-ref = "https://doi.org/10.1088/0004-637X/703/2/2259"
+value = "+23:57" #(sign)dd:mm:ss.ss
+error = false
+ref = "https://doi.org/10.1088/1674-4527/accc76"
 
 [DM]
-value = 96 #pc/cc
+value = 87.5 #pc/cc
 error = false
-ref = "https://doi.org/10.1088/0004-637X/703/2/2259"
+ref = "https://doi.org/10.1088/1674-4527/accc76"
 
 [Period]
-value = 4.729 #seconds
+value = 4.717624 #seconds
 error = false
-ref = "https://doi.org/10.1088/0004-637X/703/2/2259"
+ref = "https://doi.org/10.1088/1674-4527/accc76"
 
 [Flux]
 
