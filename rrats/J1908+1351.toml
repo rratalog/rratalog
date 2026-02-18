@@ -1,0 +1,36 @@
+title = "J1908+1351"
+
+[Name]
+value = "J1908+1351"
+error = false
+ref = "https://palfa.nanograv.org/"
+
+[RA]
+value = "19:08:36" #hh:mm:ss.ss
+error = false
+ref = "https://doi.org/10.1088/1674-4527/accc76"
+
+[Dec]
+value = "+13:51" #(sign)dd:mm:ss.ss
+error = false
+ref = "https://doi.org/10.1088/1674-4527/accc76"
+
+[DM]
+value = 180.4 #pc/cm^3
+error = false
+ref = "https://doi.org/10.1088/1674-4527/accc76"
+
+[Period]
+value = 3.175110 #s
+error = false
+ref = "https://doi.org/10.1088/1674-4527/accc76"
+
+[Width]
+
+    [Width.1400]
+  value = 31.0 #ms
+  frequency = 1400 #MHz
+  error = false
+  ref = "https://doi.org/10.1088/1674-4527/accc76"
+
+#Zhou et al. 2023: https://doi.org/10.1088/1674-4527/accc76
