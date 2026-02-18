@@ -6,24 +6,24 @@ error = false
 ref = "https://doi.org/10.3847/0004-637X/821/1/10"
 
 [RA]
-value = "17:20:55" #hh:mm:ss.ss
-error = "00:01:53"
-ref = "https://doi.org/10.3847/0004-637X/821/1/10"
+value = "17:20:32" #hh:mm:ss.ss
+error = false
+ref = "https://doi.org/10.1088/1674-4527/accc76"
 
 [Dec]
 value = "+00:40" #(sign)dd:mm:ss.ss
-error = "00:08"
-ref = "https://doi.org/10.3847/0004-637X/821/1/10"
+error = false
+ref = "https://doi.org/10.1088/1674-4527/accc76"
 
 [DM]
-value = 46.2 #pc/cc
+value = 46.0 #pc/cc
 error = false
-ref = "https://doi.org/10.3847/0004-637X/821/1/10"
+ref = "https://doi.org/10.1088/1674-4527/accc76"
 
 [Period]
-value = 3.357 #seconds
+value = 3.356875 #seconds
 error = false
-ref = "https://doi.org/10.3847/0004-637X/821/1/10"
+ref = "https://doi.org/10.1088/1674-4527/accc76"
 
 [Flux]
 
