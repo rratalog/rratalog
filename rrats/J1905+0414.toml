@@ -6,9 +6,9 @@ error = false
 ref = "https://doi.org/10.3847/1538-4357/aaee65"
 
 [RA]
-value = "19:05" #hh:mm:ss.ss
+value = "19:05:11" #hh:mm:ss.ss
 error = false
-ref = "https://doi.org/10.3847/1538-4357/aaee65"
+ref = "https://doi.org/10.1088/1674-4527/accc76"
 
 [Dec]
 value = "+04:14" #(sign)dd:mm:ss.ss
@@ -16,9 +16,14 @@ error = false
 ref = "https://doi.org/10.3847/1538-4357/aaee65"
 
 [DM]
-value = 383 #pc/cc
-error = 1
-ref = "https://doi.org/10.3847/1538-4357/aaee65"
+value = 383.0 #pc/cc
+error = false
+ref = "https://doi.org/10.1088/1674-4527/accc76"
+
+[Period]
+value = 0.894124 #s
+error = false
+ref = "https://doi.org/10.1088/1674-4527/accc76"
 
 [Flux]
 
