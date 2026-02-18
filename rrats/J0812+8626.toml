@@ -1,0 +1,25 @@
+title = "J0812+8626"
+
+[Name]
+value = "J0812+8626"
+error = false
+ref = "https://doi.org/10.1134/S1063772921120088"
+
+[RA]
+value = "08:12:30" #hh:mm:ss.ss
+error = "00:02:30"
+ref = "https://doi.org/10.1134/S1063772921120088"
+
+[Dec]
+value = "+86:26" #(sign)dd:mm:ss.ss
+error = "00:15"
+ref = "https://doi.org/10.1134/S1063772921120088"
+
+[DM]
+value = 40.25 #pc/cm^3
+error = 0.25
+ref = "https://doi.org/10.1134/S1063772921120088"
+
+
+
+#Tyul'bashev et al. 2021: https://doi.org/10.1134/S1063772921120088

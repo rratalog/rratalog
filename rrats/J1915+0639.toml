@@ -1,0 +1,38 @@
+title = "J1915+0639"
+
+[Name]
+value = "J1915+0639"
+error = false
+ref = "https://doi.org/10.3847/1538-4357/ac375d"
+
+[RA]
+value = "19:15:54.327" #hh:mm:ss.ss
+error = "00:00:00.002"
+ref = "https://doi.org/10.3847/1538-4357/ac375d"
+
+[Dec]
+value = "+06:39:46.21" #(sign)dd:mm:ss.ss
+error = "00:00:00.04"
+ref = "https://doi.org/10.3847/1538-4357/ac375d"
+
+[DM]
+value = 212.32 #pc/cm^3
+error = 0.05
+ref = "https://doi.org/10.3847/1538-4357/ac375d"
+
+[Period]
+value = 0.64414015325
+error = 0.00000000003
+ref = "https://doi.org/10.3847/1538-4357/ac375d"
+
+[Pdot]
+value = 1.8435e-15
+error = 0.0004e-15
+ref = "https://doi.org/10.3847/1538-4357/ac375d"
+
+[Pepoch]
+value = 57374
+error = false
+ref = "https://doi.org/10.3847/1538-4357/ac375d"
+
+#Parent et al. 2022: https://doi.org/10.3847/1538-4357/ac375d
