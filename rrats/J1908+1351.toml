@@ -27,9 +27,9 @@ ref = "https://doi.org/10.1088/1674-4527/accc76"
 
 [Width]
 
-    [Width.1400]
+    [Width.1250]
   value = 31.0 #ms
-  frequency = 1400 #MHz
+  frequency = 1250 #MHz
   error = false
   ref = "https://doi.org/10.1088/1674-4527/accc76"
 

@@ -1,36 +1,37 @@
-title = "J1924+1006"
+title = "J1857+0719"
 
 [Name]
-value = "J1924+1006"
+value = "J1857+0719"
 error = false
-ref = "https://palfa.nanograv.org/"
+ref = "https://doi.org/10.3847/1538-4357/aaee65"
 
 [RA]
-value = "19:24:29" #hh:mm:ss.ss
+value = "18:57:20" #hh:mm:ss.ss
 error = false
 ref = "https://doi.org/10.1088/1674-4527/accc76"
 
 [Dec]
-value = "+10:06" #(sign)dd:mm:ss.ss
+value = "+07:19" #(sign)dd:mm:ss.ss
 error = false
 ref = "https://doi.org/10.1088/1674-4527/accc76"
 
 [DM]
-value = 178.1 #pc/cm^3
+value = 308.1 #pc/cm^3
 error = false
 ref = "https://doi.org/10.1088/1674-4527/accc76"
 
 [Period]
-value = 4.619757 #s
+value = 1.070639 #s
 error = false
 ref = "https://doi.org/10.1088/1674-4527/accc76"
 
 [Width]
 
     [Width.1250]
-  value = 20.3 #ms
+  value = 23.0 #ms
   frequency = 1250 #MHz
   error = false
   ref = "https://doi.org/10.1088/1674-4527/accc76"
 
+#Patel eet al. 2018: https://doi.org/10.3847/1538-4357/aaee65
 #Zhou et al. 2023: https://doi.org/10.1088/1674-4527/accc76
