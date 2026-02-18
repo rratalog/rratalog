@@ -16,14 +16,14 @@ error = "00:02"
 ref = "https://doi.org/10.1088/0004-637X/703/2/2259"
 
 [DM]
-value = 113 #pc/cc
+value = 113.0 #pc/cc
 error = false
-ref = "https://doi.org/10.1088/0004-637X/703/2/2259"
+ref = "https://doi.org/10.1088/1674-4527/accc76"
 
 [Period]
-value = 2.180 #seconds
+value = 2.180066 #seconds
 error = false
-ref = "https://doi.org/10.1088/0004-637X/703/2/2259"
+ref = "https://doi.org/10.1088/1674-4527/accc76"
 
 [Flux]
 
