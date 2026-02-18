@@ -20,6 +20,11 @@ value =  27.5 #pc/cc
 error = false
 ref = "https://doi.org/10.3847/0004-637X/821/1/10"
 
+[Period]
+value = 1.359077 #s
+error = false
+ref = "https://doi.org/10.1088/1674-4527/accc76"
+
 [BurstRate]
 
     [BurstRate.Discovery]
