@@ -6,27 +6,27 @@ error = false
 ref = "https://doi.org/10.1111/j.1365-2966.2009.15965.x"
 
 [RA]
-value = "12:26:46.628" #hh:mm:ss.ss
+value = "12:26:46.628"  # hh:mm:ss.ss
 error = "00:00:00.040"
 ref = "https://doi.org/10.3847/1538-4357/aa88c3"
 
 [Dec]
-value = "-32:23:01" #(sign)dd:mm:ss.ss
+value = "-32:23:01"  # (sign)dd:mm:ss.ss
 error = "00:00:01"
 ref = "https://doi.org/10.3847/1538-4357/aa88c3"
 
 [DM]
-value = 36.7  #pc/cc
+value = 36.7  # pc/cc
 error = false
 ref = "https://doi.org/10.3847/1538-4357/aa6aa9"
 
 [Period]
-value = 6.1930040852  #seconds
+value = 6.1930040852  # seconds
 error = 0.0000000005
 ref = "https://doi.org/10.3847/1538-4357/aa88c3"
 
 [Pdot]
-value = 7.05e-15 #s/s
+value = 7.05e-15  # s/s
 error = 0.01e-15
 ref = "https://doi.org/10.3847/1538-4357/aa88c3"
 
@@ -36,49 +36,44 @@ error = false
 ref = "https://doi.org/10.3847/1538-4357/aa88c3"
 
 [Flux]
-
-    [Flux.1400]
-  value = 270 #mJy
-  error = false
-  frequency = 1400 #MHz
-  ref = "https://doi.org/10.1111/j.1365-2966.2009.15965.x"
+[Flux.1400]
+value = 270  # mJy
+error = false
+frequency = 1400  # MHz
+ref = "https://doi.org/10.1111/j.1365-2966.2009.15965.x"
 
 [Width]
-
-    [Width.1400]
-  value = 34 #ms
-  error = false
-  frequency = 1400 #MHz
-  ref = "https://doi.org/10.3847/1538-4357/aa88c3"
+[Width.1400]
+value = 34  # ms
+error = false
+frequency = 1400  # MHz
+ref = "https://doi.org/10.3847/1538-4357/aa88c3"
 
 [BurstRate]
+[BurstRate.Discovery]
+value = 40.9  # hour^-1
+error = false
+frequency = 1400  # MHz
+telescope = "Parkes"
+minflux = 40  # mJy
+ref = "https://doi.org/10.1111/j.1365-2966.2009.15965.x"
 
-    [BurstRate.Discovery]
-  value= 40.9 #hour^-1
-  error= false
-  frequency= 1400 #MHz
-  telescope= "Parkes"
-  minflux= 40 #mJy
-  ref = "https://doi.org/10.1111/j.1365-2966.2009.15965.x"
+[BurstRate.Cui]
+value = 41.26  # hour^-1
+error = false
+frequency = 1400  # MHz
+telescope = "Parkes"
+minflux = 40  # mJy
+ref = "https://doi.org/10.3847/1538-4357/aa6aa9"
 
-    [BurstRate.Cui]
-  value= 41.26 #hour^-1
-  error= false
-  frequency= 1400 #MHz
-  telescope= "Parkes"
-  minflux= 40 #mJy
-  ref = "https://doi.org/10.3847/1538-4357/aa6aa9"
+[BurstRate.Jiang]
+value = 49.3  # hour^-1
+error = false
+frequency = 1400  # MHz
+telescope = "Parkes"
+minflux = 40  # mJy
+ref = "https://doi.org/10.3847/1538-4357/aa88c3"
 
-    [BurstRate.Jiang]
-  value= 49.3 #hour^-1
-  error= false
-  frequency= 1400 #MHz
-  telescope= "Parkes"
-  minflux= 40 #mJy
-  ref = "https://doi.org/10.3847/1538-4357/aa88c3"
-
-
-#Burke-Spolaor & Bailes 2010: https://doi.org/10.1111/j.1365-2966.2009.15965.x
-#Jiang et al 2017: https://doi.org/10.3847/1538-4357/aa88c3
-#Cui et al 2017: https://doi.org/10.3847/1538-4357/aa6aa9
-
+# Burke-Spolaor & Bailes 2010: https://doi.org/10.1111/j.1365-2966.2009.15965.x
+# Jiang et al 2017: https://doi.org/10.3847/1538-4357/aa88c3
+# Cui et al 2017: https://doi.org/10.3847/1538-4357/aa6aa9

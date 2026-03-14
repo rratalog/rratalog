@@ -6,17 +6,17 @@ error = false
 ref = "https://doi.org/10.1051/0004-6361/201833102"
 
 [RA]
-value = "11:32:50" #hh:mm:ss.ss
+value = "11:32:50"  # hh:mm:ss.ss
 error = "00:00:30"
 ref = "https://doi.org/10.1051/0004-6361/201833102"
 
 [Dec]
-value = "+25:15" #(sign)dd:mm:ss.ss
+value = "+25:15"  # (sign)dd:mm:ss.ss
 error = "00:15"
 ref = "https://doi.org/10.1051/0004-6361/201833102"
 
 [DM]
-value = 24.2 #pc/cc
+value = 24.2  # pc/cc
 error = 0.1
 ref = "http://doi.org/10.3847/1538-4357/ab75e2"
 
@@ -26,20 +26,18 @@ error = 0.003
 ref = "https://doi.org/10.1051/0004-6361/201833102"
 
 [Flux]
-
-    [Flux.111]
-  value = 6200 #mJy
-  error = false
-  frequency = 111 #MHz
-  ref = "https://doi.org/10.1051/0004-6361/201833102"
+[Flux.111]
+value = 6200  # mJy
+error = false
+frequency = 111  # MHz
+ref = "https://doi.org/10.1051/0004-6361/201833102"
 
 [Width]
+[Width.111]
+value = 20  # ms
+error = false
+frequency = 111  # MHz
+ref = "https://doi.org/10.1051/0004-6361/201833102"
 
-    [Width.111]
-  value = 20 #ms
-  error = false
-  frequency = 111 #MHz
-  ref = "https://doi.org/10.1051/0004-6361/201833102"
-
-#Tyul'bashev+18b: https://doi.org/10.1051/0004-6361/201833102
-#McEwen+20: http://doi.org/10.3847/1538-4357/ab75e2
+# Tyul'bashev+18b: https://doi.org/10.1051/0004-6361/201833102
+# McEwen+20: http://doi.org/10.3847/1538-4357/ab75e2

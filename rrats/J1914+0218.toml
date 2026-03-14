@@ -6,17 +6,17 @@ error = false
 ref = "https://doi.org/10.1093/mnras/staf1827"
 
 [RA]
-value = "19:14:46" #hh:mm:ss.ss
+value = "19:14:46"  # hh:mm:ss.ss
 error = "00:00:02"
 ref = "https://doi.org/10.1093/mnras/staf1827"
 
 [Dec]
-value = "+02:18:13" #(sign)dd:mm:ss.ss
+value = "+02:18:13"  # (sign)dd:mm:ss.ss
 error = "00:00:30"
 ref = "https://doi.org/10.1093/mnras/staf1827"
 
 [DM]
-value = 161 #pc/cm^3
+value = 161  # pc/cm^3
 error = 1
 ref = "https://doi.org/10.1093/mnras/staf1827"
 
@@ -30,5 +30,5 @@ value = 60292.481327
 error = false
 ref = "https://doi.org/10.1093/mnras/staf1827"
 
-#Tian et al. 2025: https://doi.org/10.1093/mnras/staf1827
-#MTP0078
+# Tian et al. 2025: https://doi.org/10.1093/mnras/staf1827
+# MTP0078

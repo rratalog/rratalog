@@ -6,49 +6,46 @@ error = false
 ref = "https://doi.org/10.3847/0004-637X/821/1/10"
 
 [RA]
-value = "17:20:32" #hh:mm:ss.ss
+value = "17:20:32"  # hh:mm:ss.ss
 error = false
 ref = "https://doi.org/10.1088/1674-4527/accc76"
 
 [Dec]
-value = "+00:40" #(sign)dd:mm:ss.ss
+value = "+00:40"  # (sign)dd:mm:ss.ss
 error = false
 ref = "https://doi.org/10.1088/1674-4527/accc76"
 
 [DM]
-value = 46.0 #pc/cc
+value = 46.0  # pc/cc
 error = false
 ref = "https://doi.org/10.1088/1674-4527/accc76"
 
 [Period]
-value = 3.356875 #seconds
+value = 3.356875  # seconds
 error = false
 ref = "https://doi.org/10.1088/1674-4527/accc76"
 
 [Flux]
-
-    [Flux.327]
-  value = 200 #mJy
-  error = false 
-  frequency = 327 #MHz
-  ref = "https://doi.org/10.3847/0004-637X/821/1/10"
+[Flux.327]
+value = 200  # mJy
+error = false
+frequency = 327  # MHz
+ref = "https://doi.org/10.3847/0004-637X/821/1/10"
 
 [Width]
-
-    [Width.327]
-  value = 7.2 #ms
-  error = false
-  frequency = 327 #MHz
-  ref = "https://doi.org/10.3847/0004-637X/821/1/10"
+[Width.327]
+value = 7.2  # ms
+error = false
+frequency = 327  # MHz
+ref = "https://doi.org/10.3847/0004-637X/821/1/10"
 
 [BurstRate]
+[BurstRate.Discovery]
+value = 33  # hour^-1
+error = false
+frequency = 327  # MHz
+telescope = "Arecibo"
+minflux = 105  # mJy
+ref = "https://doi.org/10.3847/0004-637X/821/1/10"
 
-    [BurstRate.Discovery]
-  value= 33 #hour^-1
-  error= false
-  frequency= 327 #MHz
-  telescope= "Arecibo"
-  minflux= 105 #mJy
-  ref = "https://doi.org/10.3847/0004-637X/821/1/10"
-
-#Deneva et al 2016: https://doi.org/10.3847/0004-637X/821/1/10
+# Deneva et al 2016: https://doi.org/10.3847/0004-637X/821/1/10

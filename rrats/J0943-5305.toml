@@ -6,22 +6,22 @@ error = false
 ref = "http://doi.org/10.1093/mnras/stac579"
 
 [RA]
-value = "09:43:08" #hh:mm:ss.ss
+value = "09:43:08"  # hh:mm:ss.ss
 error = false
 ref = "http://doi.org/10.1093/mnras/stac579"
 
 [Dec]
-value = "-53:05:17" #(sign)dd:mm:ss.ss
+value = "-53:05:17"  # (sign)dd:mm:ss.ss
 error = false
 ref = "http://doi.org/10.1093/mnras/stac579"
 
 [DM]
-value = 174 #pc/cc
+value = 174  # pc/cc
 error = false
 ref = "http://doi.org/10.1093/mnras/stac579"
 
 [Period]
-value = 1.734 #seconds
+value = 1.734  # seconds
 error = false
 ref = "http://doi.org/10.1093/mnras/stac579"
 
@@ -30,5 +30,5 @@ value = 58925.72795
 error = false
 ref = "http://doi.org/10.1093/mnras/stac579"
 
-#References go here
-#Bezuidenhout+22: http://doi.org/10.1093/mnras/stac579
+# References go here
+# Bezuidenhout+22: http://doi.org/10.1093/mnras/stac579

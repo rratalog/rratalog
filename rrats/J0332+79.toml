@@ -6,59 +6,56 @@ error = false
 ref = "https://doi.org/10.1088/0004-637X/809/1/67"
 
 [RA]
-value = "03:32:45" #hh:mm:ss.ss
+value = "03:32:45"  # hh:mm:ss.ss
 error = "00:00:20"
 ref = "https://doi.org/10.1088/0004-637X/809/1/67"
 
 [Dec]
-value = "+79:10" #(sign)dd:mm:ss.ss
+value = "+79:10"  # (sign)dd:mm:ss.ss
 error = "00:05"
 ref = "https://doi.org/10.1088/0004-637X/809/1/67"
 
 [DM]
-value =  16.67 #pc/cc
+value = 16.67  # pc/cc
 error = 0.02
 ref = "https://doi.org/10.1088/0004-637X/809/1/67"
 
 [Period]
-value = 2.05621 #seconds
+value = 2.05621  # seconds
 error = 0.00006
 ref = "https://doi.org/10.1088/0004-637X/809/1/67"
 
 [BurstRate]
+[BurstRate.Discovery]
+value = 30
+error = 30
+frequency = 350
+telescope = "GBT"
+minflux = 160  # mJy
+ref = "https://doi.org/10.1088/0004-637X/809/1/67"
 
-    [BurstRate.Discovery]
-  value= 30
-  error= 30
-  frequency= 350
-  telescope= 'GBT'
-  minflux= 160 #mJy
-  ref = "https://doi.org/10.1088/0004-637X/809/1/67"
+[BurstRate.GBT350]
+value = 65
+error = 12
+frequency = 350
+telescope = "GBT"
+minflux = 160  # mJy
+ref = "https://doi.org/10.1088/0004-637X/809/1/67"
 
-    [BurstRate.GBT350]
-  value= 65
-  error= 12
-  frequency= 350
-  telescope= 'GBT'
-  minflux= 160 #mJy
-  ref = "https://doi.org/10.1088/0004-637X/809/1/67"
+[BurstRate.GBT820]
+value = 66
+error = 10
+frequency = 820
+telescope = "GBT"
+minflux = 45  # mJy
+ref = "https://doi.org/10.1088/0004-637X/809/1/67"
 
-    [BurstRate.GBT820]
-  value= 66
-  error= 10
-  frequency= 820
-  telescope= 'GBT'
-  minflux= 45 #mJy
-  ref = "https://doi.org/10.1088/0004-637X/809/1/67"
+[BurstRate.LOFAR]
+value = 14
+error = 3
+frequency = 150
+telescope = "LOFAR"
+minflux = 80  # mJy
+ref = "https://doi.org/10.1088/0004-637X/809/1/67"
 
-    [BurstRate.LOFAR]
-  value= 14
-  error= 3
-  frequency= 150
-  telescope= 'LOFAR'
-  minflux= 80 #mJy
-  ref = "https://doi.org/10.1088/0004-637X/809/1/67"
-
-
-
-#Karako-Argaman et al 2015: https://doi.org/10.1088/0004-637X/809/1/67
+# Karako-Argaman et al 2015: https://doi.org/10.1088/0004-637X/809/1/67

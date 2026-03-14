@@ -6,22 +6,22 @@ error = false
 ref = "https://doi.org/10.1111/j.1365-2966.2011.18521.x"
 
 [RA]
-value = "17:09:47" #hh:mm:ss.ss
+value = "17:09:47"  # hh:mm:ss.ss
 error = "00:00:39"
 ref = "https://doi.org/10.1111/j.1365-2966.2011.18521.x"
 
 [Dec]
-value = "-43:54:43" #(sign)dd:mm:ss.ss
+value = "-43:54:43"  # (sign)dd:mm:ss.ss
 error = "00:07"
 ref = "https://doi.org/10.1111/j.1365-2966.2011.18521.x"
 
 [DM]
-value = 228 #pc/cc
+value = 228  # pc/cc
 error = 20
 ref = "https://doi.org/10.1111/j.1365-2966.2011.18521.x"
 
 [Period]
-value = 0.8968609868 #s
+value = 0.8968609868  # s
 error = false
 ref = "https://doi.org/10.1088/1674-4527/ad2dbe"
 
@@ -36,30 +36,27 @@ error = false
 ref = "https://doi.org/10.1088/1674-4527/ad2dbe"
 
 [Flux]
-
-    [Flux.1400]
-  value = 240 #mJy
-  error = false
-  frequency = 1400 #MHz
-  ref = "https://doi.org/10.1111/j.1365-2966.2011.18521.x"
+[Flux.1400]
+value = 240  # mJy
+error = false
+frequency = 1400  # MHz
+ref = "https://doi.org/10.1111/j.1365-2966.2011.18521.x"
 
 [Width]
-
-    [Width.1400]
-  value = 3 #ms
-  error = false
-  frequency = 1400 #MHz
-  ref = "https://doi.org/10.1111/j.1365-2966.2011.18521.x"
+[Width.1400]
+value = 3  # ms
+error = false
+frequency = 1400  # MHz
+ref = "https://doi.org/10.1111/j.1365-2966.2011.18521.x"
 
 [BurstRate]
+[BurstRate.Discovery]
+value = 7  # hour^-1
+error = false
+frequency = 1400  # MHz
+telescope = "Parkes"
+minflux = 43  # mJy
+ref = "https://doi.org/10.1111/j.1365-2966.2011.18521.x"
 
-    [BurstRate.Discovery]
-  value= 7 #hour^-1
-  error= false
-  frequency= 1400 #MHz
-  telescope= "Parkes"
-  minflux= 43 #mJy
-  ref = "https://doi.org/10.1111/j.1365-2966.2011.18521.x"
-
-#Burke-Spolaor et al 2011: https://doi.org/10.1111/j.1365-2966.2011.18521.x
-#Ren et al 2024: https://doi.org/10.1088/1674-4527/ad2dbe
+# Burke-Spolaor et al 2011: https://doi.org/10.1111/j.1365-2966.2011.18521.x
+# Ren et al 2024: https://doi.org/10.1088/1674-4527/ad2dbe

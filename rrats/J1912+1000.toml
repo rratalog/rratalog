@@ -6,21 +6,21 @@ error = false
 ref = "https://doi.org/10.1088/1674-4527/accc76"
 
 [RA]
-value = "19:12:46" #hh:mm:ss.ss
+value = "19:12:46"  # hh:mm:ss.ss
 error = false
 ref = "https://doi.org/10.1088/1674-4527/accc76"
 
 [Dec]
-value = "+10:00" #(sign)dd:mm:ss.ss
+value = "+10:00"  # (sign)dd:mm:ss.ss
 error = false
 ref = "https://doi.org/10.1088/1674-4527/accc76"
 
 [DM]
-value = 147 #pc/cc
+value = 147  # pc/cc
 error = 4
 ref = "https://doi.org/10.1088/1674-4527/accc76"
 
 [Period]
-value = 3.053 #seconds
+value = 3.053  # seconds
 error = 0.004
 ref = "https://doi.org/10.1088/1674-4527/accc76"
