@@ -1,121 +1,187 @@
-import toml, glob, jinja2
+from math import floor, log10
+import subprocess
+import datetime
+import logging
+import toml
+import glob
+import jinja2
+
+logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")
+logger = logging.getLogger(__name__)
 import pandas as pd
-from pprint import pprint as print
 from astropy import units as u
 from astropy.coordinates import SkyCoord
 import numpy as np
+import sigfig
 
-make_html = True #if True, will save rratalog.html
-make_csv = True #if True, will save rratalog.csv
-make_tex = False #if True, will save rratalog.tex
+make_html = True  # if True, will save index.html
+make_csv = True  # if True, will save rratalog.csv
+make_tex = False  # if True, will save rratalog.tex
 
 ##########
-#Define functions
+# Define functions
 ##########
 
-def error_string_dec(value,err):
-    zeroflag=0
 
-    if type(err)==str:
-        err = float(err)
-    power_err = np.log10(err)
-    n_sigfigs = np.floor(power_err)
+def error_string_dec(value, err):
+    """Format a value with its uncertainty in parenthetical notation.
 
-    if type(value)==str:
-        #If the number in the n_sigfigs place after the zero is a decimal, add a zero
-        if value.split('.')[-1][-1*int(n_sigfigs)-1]=='0' and not len(value.split('.')[-1])==1:
-            zeroflag = 1
-        else:
-            zeroflag=0
-        value = float(value)
+    Uses sigfig module for clean significant figure handling.
+    The error is expressed as 1 significant figure, and the value
+    is rounded to match the precision of the error.
+    e.g. 1.23456 +/- 0.003 -> '1.235(3)'
+    """
+    err = float(err)
+    value = float(value)
 
-    if err > 1 and err == int(err) and value == int(value): #both whole numbers
-        n_err = int(err)
-        err_string = str(int(value)) + '(' + str(n_err) + ')'
-    
-    elif err >= 1:
-        n_err = err
-        err_string = str(value) + '(' + str(n_err) + ')'
-        
+    if err == 0:
+        return str(value)
+
+    # Order of magnitude of the error (which decimal place it lives in)
+    err_exponent = floor(log10(abs(err)))
+
+    # Round error to 1 significant figure
+    err_rounded = sigfig.round_(err, 1)
+    # The digit(s) to show in parentheses
+    err_digit = int(round(err / (10**err_exponent)))
+
+    # Number of decimal places to show (negative means round before decimal)
+    decimals = -err_exponent
+
+    if decimals >= 0:
+        # Error is < 1, value needs decimal places
+        rounded_val = round(value, decimals)
+        # Format value with exactly the right number of decimal places
+        val_str = f"{rounded_val:.{decimals}f}"
     else:
-        n_err = int(np.round(err / (10 ** np.floor(power_err)),0))
-        err_string = str(np.round(value,int(-1*n_sigfigs)))
-        if zeroflag==1:
-            err_string += '0'
-        err_string += '(' + str(n_err) + ')'
+        # Error is >= 10, round value to nearest 10/100/etc
+        rounded_val = round(value, decimals)
+        val_str = str(int(rounded_val))
+        err_digit = int(err_rounded)
+
+    return val_str + "(" + str(err_digit) + ")"
 
 
-    if len(str(float(err)).partition('.')[0]) > 1 and not 'e' in str(float(err)).partition('.')[0]: #if error is > 10
-        n_err = err
-        err_string = str(value) + '(' + str(n_err) + ')'
-
-    return err_string
-
-def error_string_coords(coord,err):
+def error_string_coords(coord, err):
 
     if "00:00:" in err:
-        #error is on the order of arcsecs, use error_string_dec
+        # error is on the order of arcsecs, use error_string_dec
         c_zeroflag = 1
-        new_value = coord.split(':')[-1]
-        new_error = err.split(':')[-1]
-        beginval = coord.split(':')[0] + ':' + coord.split(':')[1]
-        if '.' in new_error:
-            end_new_error = new_error.split('.')[-1]
+        new_value = coord.split(":")[-1]
+        new_error = err.split(":")[-1]
+        beginval = coord.split(":")[0] + ":" + coord.split(":")[1]
+        if "." in new_error:
+            end_new_error = new_error.split(".")[-1]
             if int(end_new_error) >= 10:
-                #truncate leading zeroes of new_new_error
-                end_new_error=end_new_error.lstrip('0')
-                endstring = new_value + '(' + end_new_error + ')'
+                # truncate leading zeroes of new_new_error
+                end_new_error = end_new_error.lstrip("0")
+                endstring = new_value + "(" + end_new_error + ")"
                 c_zeroflag = 0
             else:
-                endstring = error_string_dec(new_value,new_error)
+                endstring = error_string_dec(new_value, new_error)
         else:
-            endstring = error_string_dec(int(new_value),int(new_error))
+            endstring = error_string_dec(int(new_value), int(new_error))
 
-        errstring = beginval + ':'
-        if new_value.startswith('0') and c_zeroflag==1:
-            errstring += '0'
+        errstring = beginval + ":"
+        if new_value.startswith("0") and c_zeroflag == 1:
+            errstring += "0"
         errstring += endstring
 
-    elif '00:' in err and ':' in coord:
-        if len(err.split(':')) >= 3:
-            #error is on the order of arcsecs
-            beginval = coord.split(':')[0] + ':' + coord.split(':')[1] + ':' + coord.split(':')[2]
-            errstr = err.partition(':')[-1]
-            errstring = beginval + '(' + errstr + ')'
+    elif "00:" in err and ":" in coord:
+        if len(err.split(":")) >= 3:
+            # error is on the order of arcsecs
+            beginval = (
+                coord.split(":")[0]
+                + ":"
+                + coord.split(":")[1]
+                + ":"
+                + coord.split(":")[2]
+            )
+            errstr = err.partition(":")[-1]
+            errstring = beginval + "(" + errstr + ")"
         else:
-            #error is on the order of arcmins
-            errstr = err.partition(':')[-1]
-            if errstr.startswith('0'):
-                beginval = coord.split(':')[0]
-                endstring = error_string_dec(int(coord.split(':')[1]),int(errstr))
-                if coord.split(':')[1].startswith('0'):
-                    errstring = beginval + ':0' + endstring
+            # error is on the order of arcmins
+            errstr = err.partition(":")[-1]
+            if errstr.startswith("0"):
+                beginval = coord.split(":")[0]
+                endstring = error_string_dec(int(coord.split(":")[1]), int(errstr))
+                if coord.split(":")[1].startswith("0"):
+                    errstring = beginval + ":0" + endstring
                 else:
-                    errstring = beginval + ':' + endstring
+                    errstring = beginval + ":" + endstring
             else:
-                beginval = coord.split(':')[0] + ':' + coord.split(':')[1]
-                errstring = beginval + '(' + errstr + ')'
+                beginval = coord.split(":")[0] + ":" + coord.split(":")[1]
+                errstring = beginval + "(" + errstr + ")"
     else:
-        errstring=coord
+        errstring = coord
 
     return errstring
 
+
 ##########
-#Make rratalog
+# Make rratalog
 ##########
 
-table_keys = ["Name","RA", "Dec", "DM", "Period", "Pdot", "Pepoch", "Frequency", "Fdot", "Bsurf", "Edot", "Tau", "l", "b", "BurstRate", "Flux", "Width"]
-units = ["","hh:mm:ss.ss","dd:mm:ss.ss","pc cm^-3", "s", "10^-15 s/s", "", "Hz", "10^-15 Hz/s", "10^12 G", "10^31 erg/s", "Myr", "deg", "deg","hr^-1","mJy","ms"]
-df_keys = table_keys + [x+"_ref" for x in table_keys]
+table_keys = [
+    "Name",
+    "RA",
+    "Dec",
+    "DM",
+    "Period",
+    "Pdot",
+    "Pepoch",
+    "Frequency",
+    "Fdot",
+    "Bsurf",
+    "Edot",
+    "Tau",
+    "l",
+    "b",
+    "BurstRate",
+    "Flux",
+    "Width",
+]
+units = [
+    "",
+    "hh:mm:ss.ss",
+    "dd:mm:ss.ss",
+    "pc cm<sup>−3</sup>",
+    "s",
+    "10<sup>−15</sup> s/s",
+    "",
+    "Hz",
+    "10<sup>−15</sup> Hz/s",
+    "10<sup>12</sup> G",
+    "10<sup>31</sup> erg/s",
+    "Myr",
+    "deg",
+    "deg",
+    "hr<sup>−1</sup>",
+    "mJy",
+    "ms",
+]
+df_keys = table_keys + [x + "_ref" for x in table_keys]
 
 null_value = "--"
 
-unit_keys=[]
+display_names = {
+    "Pdot": "P\u0307",  # P with combining dot above
+    "Pepoch": "P<sub>epoch</sub>",
+    "Fdot": "F\u0307",  # F with combining dot above
+    "Bsurf": "B<sub>surf</sub>",
+    "Edot": "E\u0307",  # E with combining dot above
+    "Tau": "\u03c4",  # Greek tau
+    "BurstRate": "Burst Rate",
+    "Flux": "S<sub>1400</sub>",
+}
+
+unit_keys = []
 for i in range(len(table_keys)):
+    name = display_names.get(table_keys[i], table_keys[i])
     if len(units[i]) > 0:
-        unit_keys.append(table_keys[i] + '   (' + units[i] + ')')
+        unit_keys.append(name + "   (" + units[i] + ")")
     else:
-        unit_keys.append(table_keys[i])
+        unit_keys.append(name)
 
 if __name__ == "__main__":
     list_of_rrats = glob.glob("rrats/J*.toml")
@@ -127,34 +193,33 @@ if __name__ == "__main__":
         display_dict[key] = []
         rrat_dict[key] = []
 
-
     full_display_df = pd.DataFrame(rrat_dict)
-    #print(full_display_df.columns)
+    # print(full_display_df.columns)
 
     for rrat in list_of_rrats:
-        display_dict={}
+        display_dict = {}
         for key in table_keys:
             display_dict[key] = []
-            display_dict[key+"_ref"] = []
-            display_dict[key+"_val"] = []
-            display_dict[key+"_err"] = []
+            display_dict[key + "_ref"] = []
+            display_dict[key + "_val"] = []
+            display_dict[key + "_err"] = []
         try:
             rrat_toml = toml.load(rrat)
 
-            #Calculate positions, period/frequency, and derivatives up here so we don't have to do it in the for loop
+            # Calculate positions, period/frequency, and derivatives up here so we don't have to do it in the for loop
             try:
                 p0 = rrat_toml["Period"]["value"]
                 p0_error = rrat_toml["Period"]["error"]
-                f0 = 1./p0
-                f0_error = p0_error/(p0**2.)
+                f0 = 1.0 / p0
+                f0_error = p0_error / (p0**2.0)
             except KeyError:
                 pass
 
             try:
                 p1 = rrat_toml["Pdot"]["value"]
                 p1_error = rrat_toml["Pdot"]["error"]
-                f1 = (-1.*p1)/(p0**2)
-                f1_error = abs((p1_error*f1)/(p1))
+                f1 = (-1.0 * p1) / (p0**2)
+                f1_error = abs((p1_error * f1) / (p1))
             except KeyError:
                 pass
 
@@ -163,15 +228,26 @@ if __name__ == "__main__":
             c_gal = c.galactic
 
             for key in table_keys:
-
                 # Omit computed keys...
-                if key not in ["Frequency", "Fdot", "Tau", "Bsurf", "Edot", "l", "b",
-                               "BurstRate", "Width", "Flux"]:
+                if key not in [
+                    "Frequency",
+                    "Fdot",
+                    "Tau",
+                    "Bsurf",
+                    "Edot",
+                    "l",
+                    "b",
+                    "BurstRate",
+                    "Width",
+                    "Flux",
+                ]:
                     # Grab the value of the parameter (or null if missing)
                     try:
                         display_dict[key + "_val"].append(rrat_toml[key]["value"])
                     except KeyError:
-                        print('%s: No value for %s' % (rrat_toml["Name"]["value"], key))
+                        logger.info(
+                            "%s: No value for %s", rrat_toml["Name"]["value"], key
+                        )
                         display_dict[key + "_val"].append(null_value)
 
                     # Grab the uncertainty on the parameter (or null if "False" or missing)
@@ -180,288 +256,311 @@ if __name__ == "__main__":
                         if err is False:
                             display_dict[key + "_err"].append(null_value)
                         else:
-                            display_dict[key+"_err"].append(err)
+                            display_dict[key + "_err"].append(err)
                     except KeyError:
                         display_dict[key + "_err"].append(null_value)
 
-                if key =="Name":
+                if key == "Name":
                     if "value" in rrat_toml[key]:
                         display_dict[key].append(rrat_toml[key]["value"])
                         if "ref" in rrat_toml[key]:
-                            display_dict[key+"_ref"].append(rrat_toml[key]["ref"])
+                            display_dict[key + "_ref"].append(rrat_toml[key]["ref"])
                         else:
                             display_dict[key + "_ref"].append(null_value)
                     else:
                         pass
 
-                elif key=="RA" or key=="Dec":
+                elif key == "RA" or key == "Dec":
                     try:
                         z = rrat_toml[key]
                         if rrat_toml[key]["error"] == False:
                             display_dict[key].append(rrat_toml[key]["value"])
-                            display_dict[key+"_ref"].append(rrat_toml[key]["ref"])
+                            display_dict[key + "_ref"].append(rrat_toml[key]["ref"])
                         else:
-                            err_string = error_string_coords(rrat_toml[key]["value"],rrat_toml[key]["error"])
+                            err_string = error_string_coords(
+                                rrat_toml[key]["value"], rrat_toml[key]["error"]
+                            )
                             display_dict[key].append(err_string)
-                            display_dict[key+"_ref"].append(rrat_toml[key]["ref"])
+                            display_dict[key + "_ref"].append(rrat_toml[key]["ref"])
                     except KeyError:
                         display_dict[key].append(null_value)
-                        display_dict[key+"_ref"].append(null_value)
+                        display_dict[key + "_ref"].append(null_value)
 
-                elif key=="DM":
+                elif key == "DM":
                     try:
                         z = rrat_toml[key]
                         if rrat_toml[key]["error"] == False:
                             display_dict[key].append(rrat_toml[key]["value"])
-                            display_dict[key+"_ref"].append(rrat_toml[key]["ref"])
+                            display_dict[key + "_ref"].append(rrat_toml[key]["ref"])
                         else:
-                            err_string = error_string_dec(rrat_toml[key]["value"],rrat_toml[key]["error"])
+                            err_string = error_string_dec(
+                                rrat_toml[key]["value"], rrat_toml[key]["error"]
+                            )
                             display_dict[key].append(err_string)
-                            display_dict[key+"_ref"].append(rrat_toml[key]["ref"])
+                            display_dict[key + "_ref"].append(rrat_toml[key]["ref"])
                     except KeyError:
                         display_dict[key].append(null_value)
-                        display_dict[key+"_ref"].append(null_value)
+                        display_dict[key + "_ref"].append(null_value)
 
-                elif key=="Period":
+                elif key == "Period":
                     try:
                         z = rrat_toml[key]
                         if rrat_toml[key]["error"] == False:
                             display_dict[key].append(p0)
-                            display_dict[key+"_ref"].append(rrat_toml[key]["ref"])
+                            display_dict[key + "_ref"].append(rrat_toml[key]["ref"])
                         else:
-                            err_string = error_string_dec(p0,p0_error)
+                            err_string = error_string_dec(p0, p0_error)
                             display_dict[key].append(err_string)
-                            display_dict[key+"_ref"].append(rrat_toml[key]["ref"])
+                            display_dict[key + "_ref"].append(rrat_toml[key]["ref"])
                     except KeyError:
                         display_dict[key].append(null_value)
-                        display_dict[key+"_ref"].append(null_value)
+                        display_dict[key + "_ref"].append(null_value)
 
-                elif key=="Pdot":
+                elif key == "Pdot":
                     try:
-                       z = rrat_toml[key]
-                       if rrat_toml[key]["error"] == False:
-                           display_dict[key].append(np.round(p1*1e15,3))
-                           display_dict[key+"_ref"].append(rrat_toml["Pdot"]["ref"])
-                           print(rrat_toml["Name"]["value"])
-                       else:
-                            if len(str(p1).partition('.')[2]) > 10:
-                                p1round = np.round(p1,10)
-                                #multiplying by 1e15 introduces weird rounding errors; this truncates them
-                                err_string = error_string_dec(p1round*1e15,p1_error*1e15)
+                        z = rrat_toml[key]
+                        if rrat_toml[key]["error"] == False:
+                            display_dict[key].append(np.round(p1 * 1e15, 3))
+                            display_dict[key + "_ref"].append(rrat_toml["Pdot"]["ref"])
+                            logger.debug(
+                                "%s: Pdot has no error", rrat_toml["Name"]["value"]
+                            )
+                        else:
+                            if len(str(p1).partition(".")[2]) > 10:
+                                p1round = np.round(p1, 10)
+                                # multiplying by 1e15 introduces weird rounding errors; this truncates them
+                                err_string = error_string_dec(
+                                    p1round * 1e15, p1_error * 1e15
+                                )
                             else:
-                                err_string = error_string_dec(p1*1e15,p1_error*1e15)
+                                err_string = error_string_dec(
+                                    p1 * 1e15, p1_error * 1e15
+                                )
                             display_dict[key].append(err_string)
-                            display_dict[key+"_ref"].append(rrat_toml[key]["ref"])
+                            display_dict[key + "_ref"].append(rrat_toml[key]["ref"])
                     except KeyError:
                         display_dict[key].append(null_value)
-                        display_dict[key+"_ref"].append(null_value)
+                        display_dict[key + "_ref"].append(null_value)
 
-                elif key=="Pepoch":
+                elif key == "Pepoch":
                     try:
                         z = rrat_toml[key]
                         display_dict[key].append(z["value"])
-                        display_dict[key+"_ref"].append(rrat_toml[key]["ref"])
+                        display_dict[key + "_ref"].append(rrat_toml[key]["ref"])
                     except KeyError:
                         display_dict[key].append(null_value)
-                        display_dict[key+"_ref"].append(null_value)
+                        display_dict[key + "_ref"].append(null_value)
 
-                elif key=="Frequency":
+                elif key == "Frequency":
                     display_dict[key + "_val"].append(f0)
                     display_dict[key + "_err"].append(f0_error)
                     try:
                         z = rrat_toml["Period"]
                         if rrat_toml["Period"]["error"] == False:
-                            #If there's no period error, there's no frequency error
-                            #Truncate the frequency at the same place the period is truncated at
-                            n_sigfigs = len(str(p0).partition('.')[-1])
-                            f0 = np.round(f0,n_sigfigs)
+                            # If there's no period error, there's no frequency error
+                            # Truncate the frequency at the same place the period is truncated at
+                            n_sigfigs = len(str(p0).partition(".")[-1])
+                            f0 = np.round(f0, n_sigfigs)
                             display_dict[key].append(f0)
-                            display_dict[key+"_ref"].append(rrat_toml["Period"]["ref"])
+                            display_dict[key + "_ref"].append(
+                                rrat_toml["Period"]["ref"]
+                            )
                         else:
-                            err_string = error_string_dec(f0,f0_error)
+                            err_string = error_string_dec(f0, f0_error)
                             display_dict[key].append(err_string)
-                            display_dict[key+"_ref"].append(rrat_toml["Period"]["ref"])
+                            display_dict[key + "_ref"].append(
+                                rrat_toml["Period"]["ref"]
+                            )
                     except KeyError:
                         display_dict[key].append(null_value)
-                        display_dict[key+"_ref"].append(null_value)
+                        display_dict[key + "_ref"].append(null_value)
 
-                elif key=="Fdot":
+                elif key == "Fdot":
                     try:
                         z = rrat_toml["Pdot"]
                         if rrat_toml["Pdot"]["error"] == False:
-                            display_dict[key].append(np.round(f1*1e15,3))
-                            display_dict[key+"_ref"].append(rrat_toml["Pdot"]["ref"])
+                            display_dict[key].append(np.round(f1 * 1e15, 3))
+                            display_dict[key + "_ref"].append(rrat_toml["Pdot"]["ref"])
                         else:
-                            if len(str(f1).partition('.')[2]) > 10:
-                                f1round = np.round(f1*1e15,10)
-                                err_string = error_string_dec(f1round,f1_error*1e15)
+                            if len(str(f1).partition(".")[2]) > 10:
+                                f1round = np.round(f1 * 1e15, 10)
+                                err_string = error_string_dec(f1round, f1_error * 1e15)
                             else:
-                                err_string = error_string_dec(f1*1e15,f1_error*1e15)
+                                err_string = error_string_dec(
+                                    f1 * 1e15, f1_error * 1e15
+                                )
                             display_dict[key].append(err_string)
-                            display_dict[key+"_ref"].append(rrat_toml["Pdot"]["ref"])
-                        display_dict[key+"_val"].append(f1)
-                        display_dict[key+"_err"].append(f1_error)
+                            display_dict[key + "_ref"].append(rrat_toml["Pdot"]["ref"])
+                        display_dict[key + "_val"].append(f1)
+                        display_dict[key + "_err"].append(f1_error)
                     except KeyError:
                         display_dict[key].append(null_value)
-                        display_dict[key+"_ref"].append(null_value)
-                        display_dict[key+"_val"].append(null_value)
-                        display_dict[key+"_err"].append(null_value)
+                        display_dict[key + "_ref"].append(null_value)
+                        display_dict[key + "_val"].append(null_value)
+                        display_dict[key + "_err"].append(null_value)
 
-                #Timing derived parameters from P/Pdot
+                # Timing derived parameters from P/Pdot
 
-                elif key=="Tau":
+                elif key == "Tau":
                     try:
                         z = rrat_toml["Pdot"]
-                        tau = p0/(2*p1)*(3.171e-14)
-                        display_dict[key].append(np.round(tau,1))
-                        display_dict[key+"_ref"].append(rrat_toml["Pdot"]["ref"])
-                        #error probably not relevant- much larger than calculated
-                        display_dict[key+"_val"].append(tau)
-                        display_dict[key+"_err"].append(null_value)
+                        tau = p0 / (2 * p1) * (3.171e-14)
+                        display_dict[key].append(np.round(tau, 1))
+                        display_dict[key + "_ref"].append(rrat_toml["Pdot"]["ref"])
+                        # error probably not relevant- much larger than calculated
+                        display_dict[key + "_val"].append(tau)
+                        display_dict[key + "_err"].append(null_value)
                     except KeyError:
                         display_dict[key].append(null_value)
-                        display_dict[key+"_ref"].append(null_value)
-                        display_dict[key+"_val"].append(null_value)
-                        display_dict[key+"_err"].append(null_value)
+                        display_dict[key + "_ref"].append(null_value)
+                        display_dict[key + "_val"].append(null_value)
+                        display_dict[key + "_err"].append(null_value)
 
-                elif key=="Bsurf":
+                elif key == "Bsurf":
                     try:
-                        z= rrat_toml["Pdot"]
-                        bsurf = (3.2e19)*( (p0*p1)**0.5 )*(1e-12)
-                        display_dict[key].append(np.round(bsurf,1))
-                        display_dict[key+"_ref"].append(rrat_toml["Pdot"]["ref"])
-                        display_dict[key+"_val"].append(bsurf)
-                        display_dict[key+"_err"].append(null_value)
+                        z = rrat_toml["Pdot"]
+                        bsurf = (3.2e19) * ((p0 * p1) ** 0.5) * (1e-12)
+                        display_dict[key].append(np.round(bsurf, 1))
+                        display_dict[key + "_ref"].append(rrat_toml["Pdot"]["ref"])
+                        display_dict[key + "_val"].append(bsurf)
+                        display_dict[key + "_err"].append(null_value)
                     except KeyError:
                         display_dict[key].append(null_value)
-                        display_dict[key+"_ref"].append(null_value)
-                        display_dict[key+"_val"].append(null_value)
-                        display_dict[key+"_err"].append(null_value)
+                        display_dict[key + "_ref"].append(null_value)
+                        display_dict[key + "_val"].append(null_value)
+                        display_dict[key + "_err"].append(null_value)
 
-                elif key=="Edot":
+                elif key == "Edot":
                     try:
-                        z= rrat_toml["Pdot"]
-                        edot = (3.95)*(p1/1e-15)*( (1/p0)**3 )
-                        display_dict[key].append(np.round(edot,1))
-                        display_dict[key+"_ref"].append(rrat_toml["Pdot"]["ref"])
-                        display_dict[key+"_val"].append(edot)
-                        display_dict[key+"_err"].append(null_value)
+                        z = rrat_toml["Pdot"]
+                        edot = (3.95) * (p1 / 1e-15) * ((1 / p0) ** 3)
+                        display_dict[key].append(np.round(edot, 1))
+                        display_dict[key + "_ref"].append(rrat_toml["Pdot"]["ref"])
+                        display_dict[key + "_val"].append(edot)
+                        display_dict[key + "_err"].append(null_value)
                     except KeyError:
                         display_dict[key].append(null_value)
-                        display_dict[key+"_ref"].append(null_value)
-                        display_dict[key+"_val"].append(null_value)
-                        display_dict[key+"_err"].append(null_value)
+                        display_dict[key + "_ref"].append(null_value)
+                        display_dict[key + "_val"].append(null_value)
+                        display_dict[key + "_err"].append(null_value)
 
+                # Derived parameters from position (and DM)
 
-                #Derived parameters from position (and DM)
-
-                elif key=="l":
-                    display_dict[key+"_val"].append(c_gal.l.deg)
-                    display_dict[key+"_err"].append(null_value)
-                    l_val = np.round(c_gal.l.deg,2)
-                    if len(str(l_val).split('.')[-1]) < 2:
-                        l_str = str(l_val) + '0'
+                elif key == "l":
+                    display_dict[key + "_val"].append(c_gal.l.deg)
+                    display_dict[key + "_err"].append(null_value)
+                    l_val = np.round(c_gal.l.deg, 2)
+                    if len(str(l_val).split(".")[-1]) < 2:
+                        l_str = str(l_val) + "0"
                     else:
                         l_str = str(l_val)
                     display_dict[key].append(l_str)
-                    display_dict[key+"_ref"].append(rrat_toml["RA"]["ref"])
+                    display_dict[key + "_ref"].append(rrat_toml["RA"]["ref"])
 
-                elif key=="b":
-                    display_dict[key+"_val"].append(c_gal.b.deg)
-                    display_dict[key+"_err"].append(null_value)
-                    b_val = np.round(c_gal.b.deg,2)
-                    if len(str(b_val).split('.')[-1]) < 2:
-                        b_str = str(b_val) + '0'
+                elif key == "b":
+                    display_dict[key + "_val"].append(c_gal.b.deg)
+                    display_dict[key + "_err"].append(null_value)
+                    b_val = np.round(c_gal.b.deg, 2)
+                    if len(str(b_val).split(".")[-1]) < 2:
+                        b_str = str(b_val) + "0"
                     else:
                         b_str = str(b_val)
                     display_dict[key].append(b_str)
-                    display_dict[key+"_ref"].append(rrat_toml["Dec"]["ref"])
+                    display_dict[key + "_ref"].append(rrat_toml["Dec"]["ref"])
 
-                #Nested dictionaries
+                # Nested dictionaries
 
-                elif key=="BurstRate":
+                elif key == "BurstRate":
                     try:
-                        z=rrat_toml[key]
+                        z = rrat_toml[key]
                         try:
-                            z=rrat_toml[key]["Discovery"]["value"]
+                            z = rrat_toml[key]["Discovery"]["value"]
                             display_dict[key].append(z)
-                            display_dict[key+"_ref"].append(rrat_toml[key]["Discovery"]["ref"])
-                            display_dict[key+"_val"].append(z)
-                            display_dict[key+"_err"].append(null_value)
+                            display_dict[key + "_ref"].append(
+                                rrat_toml[key]["Discovery"]["ref"]
+                            )
+                            display_dict[key + "_val"].append(z)
+                            display_dict[key + "_err"].append(null_value)
                         except:
-                            print('One entry in BurstRate needs to be Discovery!')
+                            logger.warning(
+                                "One entry in BurstRate needs to be Discovery!"
+                            )
                     except KeyError:
                         display_dict[key].append(null_value)
-                        display_dict[key+"_ref"].append(null_value)
-                        display_dict[key+"_val"].append(null_value)
-                        display_dict[key+"_err"].append(null_value)
+                        display_dict[key + "_ref"].append(null_value)
+                        display_dict[key + "_val"].append(null_value)
+                        display_dict[key + "_err"].append(null_value)
 
-                elif key=="Width" or key=="Flux":
+                elif key == "Width" or key == "Flux":
                     try:
                         z = rrat_toml[key]["1400"]["value"]
                         display_dict[key].append(z)
-                        display_dict[key+"_ref"].append(rrat_toml[key]["1400"]["ref"])
-                        display_dict[key+"_val"].append(z)
-                        display_dict[key+"_err"].append(null_value)
+                        display_dict[key + "_ref"].append(rrat_toml[key]["1400"]["ref"])
+                        display_dict[key + "_val"].append(z)
+                        display_dict[key + "_err"].append(null_value)
 
                     except KeyError:
                         display_dict[key].append(null_value)
-                        display_dict[key+"_ref"].append(null_value)
-                        display_dict[key+"_val"].append(null_value)
-                        display_dict[key+"_err"].append(null_value)
+                        display_dict[key + "_ref"].append(null_value)
+                        display_dict[key + "_val"].append(null_value)
+                        display_dict[key + "_err"].append(null_value)
 
                 else:
                     display_dict[key].append(null_value)
                     display_dict[key + "_ref"].append(null_value)
 
             display_df = pd.DataFrame(display_dict)
-            full_display_df = pd.concat([full_display_df,display_df],ignore_index=True)
+            full_display_df = pd.concat(
+                [full_display_df, display_df], ignore_index=True
+            )
 
         except toml.decoder.TomlDecodeError as exc:
-            print(rrat)
-            print(exc)
+            logger.error("%s: %s", rrat, exc)
             pass
 
-    #print(full_display_df)
+    # print(full_display_df)
 
-##########
-#Output
-##########
+    ##########
+    # Output
+    ##########
 
-    if make_csv==True:
-        full_display_df.to_csv('rratalog.csv',columns=df_keys)
+    if make_csv == True:
+        # Machine-readable CSV with separate value and error columns
+        val_err_keys = ["RA", "Dec", "DM", "Period", "Pdot", "Frequency", "Fdot"]
+        csv_keys = []
+        unit_map = {"Pdot": "s/s", "Fdot": "Hz/s"}
+        for i, k in enumerate(table_keys):
+            if k in val_err_keys:
+                csv_keys.append(k + "_val")
+                csv_keys.append(k + "_err")
+            else:
+                csv_keys.append(k)
+        csv_keys += [x + "_ref" for x in table_keys]
+        full_display_df.to_csv("rratalog.csv", columns=csv_keys)
 
-    # Create the rratalog2.csv file, with separate columns for the errors
-    val_err_keys = ["RA", "Dec", "DM", "Period", "Pdot", "Frequency", "Fdot"]
-    table_keys_2 = []
-    units_2 = []
-    # we don't modify the values for some columns...
-    unit_map = { "Pdot": "s/s", "Fdot": "Hz/s" }
-    for i,k in enumerate(table_keys):
-        # grab the units to use
-        u = units[i]
-        if k in unit_map:
-            u = unit_map[k]
-
-        if k in val_err_keys:
-            table_keys_2.append(k + "_val")
-            table_keys_2.append(k + "_err")
-            units_2.append(u)
-            units_2.append(u)
-        else:
-            table_keys_2.append(k)
-            units_2.append(u)
-    df_keys_2 = table_keys_2 + [x+"_ref" for x in table_keys]
-    full_display_df.to_csv('rratalog2.csv', columns=df_keys_2)
-
-    if make_html==True:
-        display_df = full_display_df.drop(full_display_df.iloc[:,17:],axis=1)
-        templateLoader = jinja2.FileSystemLoader(searchpath='./')
-        env = jinja2.Environment(loader=templateLoader,trim_blocks=True,lstrip_blocks=True)
-        template = env.get_template('templates/template.html')
-        with open("rratalog.html", "w") as fh:
-            out = template.render(header=unit_keys, tableinfo=table_keys, df=full_display_df)
+    if make_html == True:
+        display_df = full_display_df.drop(full_display_df.iloc[:, 17:], axis=1)
+        templateLoader = jinja2.FileSystemLoader(searchpath="./")
+        env = jinja2.Environment(
+            loader=templateLoader, trim_blocks=True, lstrip_blocks=True
+        )
+        template = env.get_template("templates/template.html")
+        with open("index.html", "w") as fh:
+            build_date = datetime.date.today().isoformat()
+            try:
+                commit_sha = subprocess.check_output(
+                    ["git", "rev-parse", "HEAD"], text=True
+                ).strip()
+            except Exception:
+                commit_sha = "unknown"
+            out = template.render(
+                header=unit_keys,
+                tableinfo=table_keys,
+                df=full_display_df,
+                build_date=build_date,
+                commit_sha=commit_sha,
+            )
             fh.write(out)
 
-    if make_tex==True:
-        full_display_df.to_latex(buf='rratalog.tex',index=False)
+    if make_tex == True:
+        full_display_df.to_latex(buf="rratalog.tex", index=False)

@@ -1,38 +1,245 @@
-<html>
-<title>RRATalog</title>
-<h1>RRATalog</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RRATalog</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+    <style>
+        :root {
+            --bg: #fafafa;
+            --bg-header: #1a1a2e;
+            --bg-row-odd: #ffffff;
+            --bg-row-even: #f0f2f5;
+            --bg-row-hover: #e3e8ef;
+            --text: #1a1a2e;
+            --text-header: #f0f0f0;
+            --text-intro: #c0c0c8;
+            --accent: #e8491d;
+            --link: #2a5a8a;
+            --link-header: #7eb8da;
+            --border: #ddd;
+            --highlight: #fff3cd;
+        }
+        html.dark {
+            --bg: #121220;
+            --bg-header: #0d0d1a;
+            --bg-row-odd: #1a1a2e;
+            --bg-row-even: #22223a;
+            --bg-row-hover: #2e2e4a;
+            --text: #e0e0e8;
+            --text-header: #f0f0f0;
+            --text-intro: #9999a8;
+            --accent: #e8491d;
+            --link: #7eb8da;
+            --link-header: #7eb8da;
+            --border: #333;
+            --highlight: #4a3f00;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.5;
+            color: var(--text);
+            background: var(--bg);
+        }
+        .header {
+            background: var(--bg-header);
+            color: var(--text-header);
+            padding: 32px 32px 28px;
+            border-bottom: 3px solid var(--accent);
+        }
+        .header h1 {
+            font-size: 2rem;
+            margin: 0 0 16px 0;
+            letter-spacing: -0.02em;
+            color: #fff;
+            display: inline-block;
+        }
+        .header p {
+            margin: 0 0 12px 0;
+            font-size: 0.95rem;
+            color: var(--text-intro);
+        }
+        .header a {
+            color: var(--link-header);
+        }
+        .dark-toggle {
+            float: right;
+            background: transparent;
+            border: 1px solid var(--text-intro);
+            color: var(--text-header);
+            padding: 4px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            margin-top: 4px;
+        }
+        .dark-toggle:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+        .table-wrap {
+            padding: 24px 32px;
+        }
+        table.dataTable th:first-child,
+        table.dataTable td:first-child {
+            position: sticky !important;
+            left: 0 !important;
+            z-index: 1;
+        }
+        table.dataTable thead th:first-child,
+        table.dataTable tfoot th:first-child {
+            z-index: 2;
+            background: var(--bg-header) !important;
+            color: var(--text-header) !important;
+        }
+        table.dataTable tbody tr:nth-child(odd) td:first-child {
+            background: var(--bg-row-odd);
+        }
+        table.dataTable tbody tr:nth-child(even) td:first-child {
+            background: var(--bg-row-even);
+        }
+        table.dataTable tbody tr:hover td:first-child {
+            background: var(--bg-row-hover);
+        }
+        table.dataTable thead th,
+        table.dataTable tfoot th {
+            background: var(--bg-header);
+            color: var(--text-header);
+            border-bottom: 2px solid var(--accent);
+        }
+        table.dataTable tbody tr:nth-child(odd) {
+            background: var(--bg-row-odd);
+        }
+        table.dataTable tbody tr:nth-child(even) {
+            background: var(--bg-row-even);
+        }
+        table.dataTable tbody tr:hover {
+            background: var(--bg-row-hover);
+        }
+        table.dataTable td {
+            font-variant-numeric: tabular-nums;
+            font-family: "SF Mono", "Cascadia Code", "Consolas", "Liberation Mono", monospace;
+            font-size: 0.82rem;
+            color: var(--text);
+        }
+        table.dataTable th {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            white-space: nowrap;
+        }
+        .table-wrap a {
+            color: var(--link);
+            text-decoration: none;
+        }
+        .table-wrap a:hover {
+            color: var(--accent);
+            text-decoration: underline;
+        }
+        table.dataTable {
+            font-size: 0.875rem;
+        }
+        /* Search highlighting */
+        mark.highlight {
+            background: var(--highlight);
+            color: inherit;
+            padding: 0 1px;
+            border-radius: 2px;
+        }
+        /* DataTables input styling for dark mode */
+        html.dark .dt-search input,
+        html.dark .dt-length select {
+            background: var(--bg-row-even);
+            color: var(--text);
+            border-color: var(--border);
+        }
+        /* Footer */
+        .footer {
+            background: var(--bg-header);
+            color: var(--text-intro);
+            padding: 20px 32px;
+            font-size: 0.85rem;
+            border-top: 2px solid var(--accent);
+            margin-top: 24px;
+        }
+        .footer a {
+            color: var(--link-header);
+        }
+        .footer p {
+            margin: 0 0 6px 0;
+        }
+    </style>
+    <!-- jQuery -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <!-- DataTables 2.3.7 core -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/2.3.7/css/dataTables.dataTables.min.css"/>
+    <script type="text/javascript" src="https://cdn.datatables.net/2.3.7/js/dataTables.min.js"></script>
+    <!-- FixedHeader 4.0.6 -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/fixedheader/4.0.6/css/fixedHeader.dataTables.min.css"/>
+    <script type="text/javascript" src="https://cdn.datatables.net/fixedheader/4.0.6/js/dataTables.fixedHeader.min.js"></script>
+    <!-- Mark.js for search highlighting -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mark.js@8.11.1/dist/jquery.mark.min.js"></script>
+    <script>
+        // Dark mode: system preference, overridable by button
+        function applyDark(isDark) {
+            document.documentElement.classList.toggle('dark', isDark);
+            document.getElementById('dark-btn').textContent = isDark ? 'Light Mode' : 'Dark Mode';
+        }
+        function toggleDark() {
+            var isDark = !document.documentElement.classList.contains('dark');
+            localStorage.setItem('rratalog-dark', isDark ? '1' : '0');
+            applyDark(isDark);
+        }
+        // Init: check localStorage first, then system preference
+        (function() {
+            var stored = localStorage.getItem('rratalog-dark');
+            if (stored !== null) {
+                if (stored === '1') document.documentElement.classList.add('dark');
+            } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                document.documentElement.classList.add('dark');
+            }
+        })();
 
-The RRATalog is a comprehensive catalog of radio pulsars categorized as Rotating Radio Transients (RRATs). 
-For clarity, we only include published pulsars which were discovered through their single pulses rather than a periodicity search.
-This site contains the web version of the RRATalog-- each parameter contains a hyperlink
-to the paper which published that value. 
-The <a href="https://github.com/rratalog/rratalog"> GitHub repository</a> also contains a machine-readable CSV
-version of the RRATalog, as well as human-readable TOML files for each RRAT.
-The RRATalog generation code at that site also allows for the creation of a TeX-style table of the RRATalog.
+        $(document).ready(function() {
+            // Set button text on load
+            var isDark = document.documentElement.classList.contains('dark');
+            document.getElementById('dark-btn').textContent = isDark ? 'Light Mode' : 'Dark Mode';
 
-<p>
-The RRATalog is maintained by Evan Lewis (efl0003 (at) mix.wvu.edu) and Maura McLaughlin (maura.mclaughlin (at) mail.wvu.edu). 
-We welcome additions, updates, and corrections to the RRATalog-- either in the form of GitHub pull requests, or you can email the maintainers.
-If you use the RRATalog, please acknowledge this URL and cite Agarwal et al. (in prep).  
+            var table = $('#example').DataTable( {
+                "scrollX": true, "paging": false,
+                "fixedHeader": true
+            } );
 
-<p>
-Note that currently, the "Flux" column only displays the peak single-pulse flux measured at 1.4 GHz. Flux measurements at other frequencies, when available, are present in the TOML files.
+            // Search highlighting with mark.js
+            table.on('draw', function() {
+                var body = $(table.table().body());
+                body.unmark();
+                var searchTerm = table.search();
+                if (searchTerm) {
+                    body.mark(searchTerm, { element: 'mark', className: 'highlight' });
+                }
+            });
+        } );
+    </script>
+</head>
+<body>
+    <div class="header">
+    <button class="dark-toggle" id="dark-btn" onclick="toggleDark()">Dark Mode</button>
+    <h1>RRATalog</h1>
 
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/se-2.2.13/jq-3.3.1/jszip-2.5.0/dt-1.10.23/af-2.3.5/b-1.6.5/b-colvis-1.6.5/b-flash-1.6.5/b-html5-1.6.5/b-print-1.6.5/cr-1.5.3/fh-3.1.7/kt-2.5.3/r-2.2.7/rg-1.1.2/sc-2.0.3/sb-1.0.1/sp-1.2.2/sl-1.3.1/datatables.min.css"/> 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
-<script type="text/javascript" src="https://cdn.datatables.net/scroller/2.0.5/js/dataTables.scroller.min.js"></script>
-<script type="text/javascript" src="https://cdn.datatables.net/fixedheader/3.2.2/js/dataTables.fixedHeader.min.js"></script>
-<script type="text/javascript" src="https://cdn.datatables.net/v/se-2.2.13/jq-3.3.1/jszip-2.5.0/dt-1.10.23/af-2.3.5/b-1.6.5/b-colvis-1.6.5/b-flash-1.6.5/b-html5-1.6.5/b-print-1.6.5/cr-1.5.3/fh-3.1.7/kt-2.5.3/r-2.2.7/rg-1.1.2/sc-2.0.3/sb-1.0.1/sp-1.2.2/sl-1.3.1/datatables.min.js"></script>
-            <script>
-                $(document).ready(function() {
-    $('#example').DataTable( {
-      "scrollX": true, "paging": false
-    } );
-} );
-            </script>
+    <p>The RRATalog is a comprehensive catalog of radio pulsars categorized as Rotating Radio Transients (RRATs).
+    For clarity, we only include published pulsars which were discovered through their single pulses rather than a periodicity search.
+    This site contains the web version of the RRATalog-- each parameter contains a hyperlink
+    to the paper which published that value.
+    The <a href="https://github.com/rratalog/rratalog">GitHub repository</a> also contains a machine-readable CSV
+    version of the RRATalog, as well as human-readable TOML files for each RRAT.
+    The RRATalog generation code at that site also allows for the creation of a TeX-style table of the RRATalog.</p>
+
+    </div>
+
+    <div class="table-wrap">
     <table id="example" class="ui celled table" style="width:100%">
-
         <thead>
             <tr>
             {% for item in header %}
@@ -56,7 +263,7 @@ Note that currently, the "Flux" column only displays the peak single-pulse flux 
                           {% set dataorder = dataorder.split(':')[0]|float - (dataorder.split(':')[1]|float/60) %}
                         {% else %}
                           {% set dataorder = dataorder.split(':')[0]|float + (dataorder.split(':')[1]|float/60) %}
-                        {% endif %}                      
+                        {% endif %}
                       {% else %}
                         {% set dataorder = dataorder.split(':')[0]|float %}
                       {% endif %}
@@ -75,7 +282,7 @@ Note that currently, the "Flux" column only displays the peak single-pulse flux 
             </tr>
         {%- endfor %}
         </tbody>
-            <tfoot>
+        <tfoot>
             <tr>
             {% for item in header %}
                  <th>{{ item }}</th>
@@ -83,4 +290,16 @@ Note that currently, the "Flux" column only displays the peak single-pulse flux 
             </tr>
         </tfoot>
     </table>
+    </div>
+
+    <footer class="footer">
+        <p>Maintained by Evan Lewis (efl0003 (at) mix.wvu.edu) and Maura McLaughlin (maura.mclaughlin (at) mail.wvu.edu).</p>
+        <p>If you use the RRATalog, please acknowledge this URL and cite Agarwal et al. (in prep).</p>
+        <hr style="border-color: var(--border); margin: 12px 0;">
+        <p><strong>Notes:</strong></p>
+        <p>Values in parentheses denote the 1&sigma; uncertainty in the last digit(s) of the preceding value, e.g. 1.235(3) means 1.235 &pm; 0.003.</p>
+        <p>S<sub>1400</sub> is the peak single-pulse flux density measured at 1.4 GHz. Flux measurements at other frequencies, when available, are in the TOML files.</p>
+        <p>Last updated: {{ build_date }} &middot; Commit: <a href="https://github.com/rratalog/rratalog/commit/{{ commit_sha }}"><code>{{ commit_sha[:7] }}</code></a></p>
+    </footer>
+</body>
 </html>

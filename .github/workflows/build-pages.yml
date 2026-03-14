@@ -5,9 +5,11 @@ on:
     branches: [ main ]
     paths:
       - 'make_rratalog.py'
+      - 'sigfig.py'
       - 'rrats/**'
       - 'templates/**'
-      - 'requirements.txt'
+      - 'pyproject.toml'
+      - 'uv.lock'
       - '.github/workflows/build-pages.yml'
   workflow_dispatch:
 
@@ -24,29 +26,17 @@ jobs:
         with:
           persist-credentials: true
 
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.10'
-
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install toml pandas jinja2 astropy numpy
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v4
 
       - name: Run rratalog generator
         run: |
-          python make_rratalog.py
-
-      - name: Put generated HTML where Pages expects it
-        run: |
-          # copy generated HTML into the repository root as index.html
-          cp rratalog.html index.html
+          uv run python make_rratalog.py
 
       - name: Commit and push generated files
         uses: EndBug/add-and-commit@v9
         with:
-          add: 'index.html rratalog.html rratalog.csv rratalog2.csv'
+          add: 'index.html rratalog.csv'
           message: 'Regenerate site: update generated HTML (dev-pages)'
           author_name: 'github-actions[bot]'
           author_email: '41898282+github-actions[bot]@users.noreply.github.com'
