@@ -1,7 +1,11 @@
 [project]
 name = "rratalog"
 version = "0.1.0"
-description = "Add your description here"
+description = "A comprehensive catalog of Rotating Radio Transients (RRATs), including published parameters, machine-readable data, and an interactive web interface."
+authors = [
+    { name = "Devansh Agarwal", email = "devansh.kv@gmail.com" },
+    { name = "Evan Lewis", email = "efl0003@mix.wvu.edu" },
+]
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
@@ -11,4 +15,10 @@ dependencies = [
     "pandas>=3.0.1",
     "rich>=14.3.3",
     "toml>=0.10.2",
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.11.12",
+    "tombi>=0.9.0",
 ]
