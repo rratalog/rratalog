@@ -16,19 +16,14 @@ error = "00:00:30"
 ref = "https://doi.org/10.1093/mnras/staf1827"
 
 [DM]
-value = 161  # pc/cm^3
-error = 1
-ref = "https://doi.org/10.1093/mnras/staf1827"
+value = 161.4  # pc/cc
+error = false
+ref = "https://doi.org/10.1088/1674-4527/ada3b7"
 
 [Period]
-value = 2.02
+value = 2.01819
 error = false
-ref = "https://doi.org/10.1093/mnras/staf1827"
+ref = "https://doi.org/10.1088/1674-4527/ada3b7"
 
-[Pepoch]
-value = 60292.481327
-error = false
-ref = "https://doi.org/10.1093/mnras/staf1827"
-
-# Tian et al. 2025: https://doi.org/10.1093/mnras/staf1827
-# MTP0078
+# Tian et al. 2025 (MTP0078): https://doi.org/10.1093/mnras/staf1827
+# Han et al. 2025: https://doi.org/10.1088/1674-4527/ada3b7
