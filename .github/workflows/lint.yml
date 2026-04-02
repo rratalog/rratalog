@@ -21,3 +21,6 @@ jobs:
 
       - name: Check TOML formatting with tombi
         run: uvx tombi format --check rrats/*.toml
+
+      - name: Validate RRAT TOML schema
+        run: uv run python validate_rrats.py rrats/*.toml
