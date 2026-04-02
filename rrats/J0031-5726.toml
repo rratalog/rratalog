@@ -1,0 +1,51 @@
+title = "J0031-5726"
+
+[Name]
+value = "J0031-5726"
+error = false
+ref = "https://doi.org/10.3847/1538-4357/adb27f"
+
+[RA]
+value = "00:31:31.8"  # hh:mm:ss.ss
+error = 0.0006
+ref = "https://doi.org/10.3847/1538-4357/adb27f"
+
+[Dec]
+value = "-57:26:37"  # (sign)dd:mm:ss.ss
+error = 0.0006
+ref = "https://doi.org/10.3847/1538-4357/adb27f"
+
+[DM]
+value = 6.755  # pc/cc
+error = 0.032
+ref = "https://doi.org/10.3847/1538-4357/adb27f"
+
+[Period]
+value = 1.570328  # seconds
+error = 0.000001
+ref = "https://doi.org/10.3847/1538-4357/adb27f"
+
+[BurstRate]
+[BurstRate.Discovery]
+value = 60  # hour^-1
+error = 30
+frequency = 154  # MHz
+telescope = "MWA"
+minflux = 2000  # mJy
+ref = "https://doi.org/10.3847/1538-4357/adb27f"
+
+[Flux]
+[Flux.154]
+value = 20  # mJy
+frequency = 154  # MHz
+error = 10
+ref = "https://doi.org/10.3847/1538-4357/adb27f"
+
+[Width]
+[Width.154]
+value = 30  # ms
+frequency = 154  # MHz
+error = 10
+ref = "https://doi.org/10.3847/1538-4357/adb27f"
+
+# McSweeney et al 2025: https://doi.org/10.3847/1538-4357/adb27f
