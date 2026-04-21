@@ -60,6 +60,12 @@ error = 0.03
 frequency = 1532  # MHz
 ref = "https://doi.org/10.1093/mnras/stz2997"
 
+[Flux.150]
+value = 4.5  # mJy
+error = 2.25
+frequency = 150  # MHz
+ref = "https://doi.org/10.1093/mnras/stad2900"
+
 [Width]
 [Width.135]
 value = 45  # ms
@@ -85,6 +91,22 @@ error = false
 frequency = 1532  # MHz
 ref = "https://doi.org/10.1093/mnras/stz2997"
 
+[Width.150]
+value = 41  # ms
+error = 12
+frequency = 150  # MHz
+ref = "https://doi.org/10.1093/mnras/stad2900"
+
+[BurstRate]
+[BurstRate.Discovery]
+value = 2.1  # hour^-1
+error = 0.3
+frequency = 150  # MHz
+telescope = "I-LOFAR"
+minflux = false  # mJy
+ref = "https://doi.org/10.1093/mnras/stad2900"
+
 # Michilli et al 2018: https://doi.org/10.1093/mnras/sty2072
 # Sanidas et al 2019: https://doi.org/10.1051/0004-6361/201935609
 # Michilli et al 2020: https://doi.org/10.1093/mnras/stz2997
+# McKenna et al 2024: https://doi.org/10.1093/mnras/stad2900

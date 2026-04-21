@@ -1,29 +1,39 @@
-title = "J0054+66"
+title = "J0054+6650"
 
 [Name]
-value = "J0054+66"
+value = "J0054+6650"
 error = false
-ref = "https://doi.org/10.1063/1.2900310"
+ref = "https://doi.org/10.1093/mnras/stad2900"
 
 [RA]
-value = "00:54"  # hh:mm:ss.ss
-error = false
-ref = "https://doi.org/10.1063/1.2900310"
+value = "00:54:55.412"  # hh:mm:ss.ss
+error = "00:00:00.014"
+ref = "https://doi.org/10.1093/mnras/stad2900"
 
 [Dec]
-value = "+66:00"  # (sign)dd:mm:ss.ss
-error = false
-ref = "https://doi.org/10.1063/1.2900310"
+value = "+66:50:23.81"  # (sign)dd:mm:ss.ss
+error = "00:00:00.08"
+ref = "https://doi.org/10.1093/mnras/stad2900"
 
 [DM]
-value = 14.554  # pc/cc
-error = 0.007
-ref = "https://doi.org/10.3847/0004-637X/831/2/140"
+value = 14.560  # pc/cc
+error = 0.002
+ref = "https://doi.org/10.1093/mnras/stad2900"
 
 [Period]
-value = 1.3903  # seconds
+value = 1.390218110074  # seconds
+error = 0.000000000008
+ref = "https://doi.org/10.1093/mnras/stad2900"
+
+[Pdot]
+value = 5.5532e-15  # s/s
+error = 0.0008e-15
+ref = "https://doi.org/10.1093/mnras/stad2900"
+
+[Pepoch]
+value = 59478
 error = false
-ref = "https://doi.org/10.1063/1.2900310"
+ref = "https://doi.org/10.1093/mnras/stad2900"
 
 [BurstRate]
 [BurstRate.Discovery]
@@ -34,19 +44,34 @@ telescope = "LWA1"
 minflux = 60  # mJy
 ref = "https://doi.org/10.3847/0004-637X/831/2/140"
 
+[BurstRate.LOFAR150]
+value = 9.0  # hour^-1
+error = 0.5
+frequency = 150  # MHz
+telescope = "I-LOFAR"
+minflux = false  # mJy
+ref = "https://doi.org/10.1093/mnras/stad2900"
+
 [Flux]
 [Flux.57]
 value = 600  # mJy
-frequency = 57  # MHz
 error = 300
+frequency = 57  # MHz
 ref = "https://doi.org/10.3847/0004-637X/831/2/140"
 
 [Width]
 [Width.57]
 value = 11  # ms
-frequency = 57  # MHz
 error = 2
+frequency = 57  # MHz
 ref = "https://doi.org/10.3847/0004-637X/831/2/140"
+
+[Width.150]
+value = 14  # ms
+error = 6
+frequency = 150  # MHz
+ref = "https://doi.org/10.1093/mnras/stad2900"
 
 # Hessels et al 2008: https://doi.org/10.1063/1.2900310
 # Taylor et al 2018: https://doi.org/10.3847/0004-637X/831/2/140
+# McKenna et al 2024: https://doi.org/10.1093/mnras/stad2900

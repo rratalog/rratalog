@@ -68,5 +68,28 @@ telescope = "FAST"
 minflux = 15  # mJy
 ref = "https://doi.org/10.1007/s11433-018-9372-7"
 
+[BurstRate.LOFAR150]
+value = 9.7  # hour^-1
+error = 0.5
+frequency = 150  # MHz
+telescope = "I-LOFAR"
+minflux = false  # mJy
+ref = "https://doi.org/10.1093/mnras/stad2900"
+
+[Flux]
+[Flux.150]
+value = 4.3  # mJy
+error = 2.15
+frequency = 150  # MHz
+ref = "https://doi.org/10.1093/mnras/stad2900"
+
+[Width]
+[Width.150]
+value = 9  # ms
+error = 6
+frequency = 150  # MHz
+ref = "https://doi.org/10.1093/mnras/stad2900"
+
 # Karako-Argaman et al 2015: https://doi.org/10.1088/0004-637X/809/1/67
 # Lu et al 2019: https://doi.org/10.1007/s11433-018-9372-7
+# McKenna et al 2024: https://doi.org/10.1093/mnras/stad2900

@@ -1,24 +1,48 @@
-title = "J1400+21"
+title = "J1400+2125"
 
 [Name]
-value = "J1400+21"
+value = "J1400+2125"
 error = false
-ref = "https://doi.org/10.1051/0004-6361/201833102"
+ref = "https://doi.org/10.1093/mnras/stad2900"
 
 [RA]
-value = "14:00:18"  # hh:mm:ss.ss
-error = "00:00:30"
-ref = "https://doi.org/10.1051/0004-6361/201833102"
+value = "14:00:14.19"  # hh:mm:ss.ss
+error = "00:00:00.03"
+ref = "https://doi.org/10.1093/mnras/stad2900"
 
 [Dec]
-value = "+21:27"  # (sign)dd:mm:ss.ss
-error = "00:15"
-ref = "https://doi.org/10.1051/0004-6361/201833102"
+value = "+21:25:40.0"  # (sign)dd:mm:ss.ss
+error = "00:00:00.5"
+ref = "https://doi.org/10.1093/mnras/stad2900"
 
 [DM]
-value = 10.5  # pc/cc
-error = 1
-ref = "https://doi.org/10.1051/0004-6361/201833102"
+value = 11.214  # pc/cc
+error = 0.003
+ref = "https://doi.org/10.1093/mnras/stad2900"
+
+[Period]
+value = 1.85546492484  # seconds
+error = 0.00000000006
+ref = "https://doi.org/10.1093/mnras/stad2900"
+
+[Pdot]
+value = 1.358e-15  # s/s
+error = 0.007e-15
+ref = "https://doi.org/10.1093/mnras/stad2900"
+
+[Pepoch]
+value = 59481
+error = false
+ref = "https://doi.org/10.1093/mnras/stad2900"
+
+[BurstRate]
+[BurstRate.Discovery]
+value = 0.50  # hour^-1
+error = 0.08
+frequency = 150  # MHz
+telescope = "I-LOFAR"
+minflux = false  # mJy
+ref = "https://doi.org/10.1093/mnras/stad2900"
 
 [Flux]
 [Flux.111]
@@ -34,4 +58,11 @@ error = false
 frequency = 111  # MHz
 ref = "https://doi.org/10.1051/0004-6361/201833102"
 
+[Width.150]
+value = 17  # ms
+error = 6
+frequency = 150  # MHz
+ref = "https://doi.org/10.1093/mnras/stad2900"
+
 # Tyul'bashev+18b: https://doi.org/10.1051/0004-6361/201833102
+# McKenna et al 2024: https://doi.org/10.1093/mnras/stad2900

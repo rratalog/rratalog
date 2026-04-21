@@ -16,9 +16,9 @@ error = "00:20"
 ref = "https://doi.org/10.1051/0004-6361/201833102"
 
 [DM]
-value = 34.5  # pc/cc
-error = 1.5
-ref = "http://doi.org/10.1093/mnras/stae070"
+value = 34.47  # pc/cc
+error = 0.03
+ref = "https://doi.org/10.1093/mnras/stad2900"
 
 [Period]
 value = 3.5297
@@ -32,6 +32,12 @@ error = false
 frequency = 111  # MHz
 ref = "https://doi.org/10.1051/0004-6361/201833102"
 
+[Flux.150]
+value = 3.8  # mJy
+error = 1.9
+frequency = 150  # MHz
+ref = "https://doi.org/10.1093/mnras/stad2900"
+
 [Width]
 [Width.111]
 value = 35  # ms
@@ -39,6 +45,13 @@ error = false
 frequency = 111  # MHz
 ref = " http://doi.org/10.1093/mnras/stac2404"
 
+[Width.150]
+value = 187  # ms
+error = false
+frequency = 150  # MHz
+ref = "https://doi.org/10.1093/mnras/stad2900"
+
 # Tyul'bashev+18b: https://doi.org/10.1051/0004-6361/201833102
 # Tyul'bashev+22: http://doi.org/10.1093/mnras/stac2404
 # Tyul'bashev+24: http://doi.org/10.1093/mnras/stae070
+# McKenna et al 2024: https://doi.org/10.1093/mnras/stad2900

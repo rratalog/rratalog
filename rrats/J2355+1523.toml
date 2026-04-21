@@ -16,9 +16,9 @@ error = "00:00:02"
 ref = "https://doi.org/10.1093/mnras/stad2012"
 
 [DM]
-value = 26  # pc/cc
-error = 1
-ref = "https://doi.org/10.1093/mnras/stad2012"
+value = 26.924  # pc/cc
+error = 0.016
+ref = "https://doi.org/10.1093/mnras/stad2900"
 
 [Period]
 value = 1.09439626467  # seconds
@@ -44,5 +44,20 @@ telescope = "CHIME"
 minflux = false  # mJy
 ref = "https://doi.org/10.1093/mnras/stad2012"
 
-# References go here
+[BurstRate.LOFAR150]
+value = 0.27  # hour^-1
+error = 0.07
+frequency = 150  # MHz
+telescope = "I-LOFAR"
+minflux = false  # mJy
+ref = "https://doi.org/10.1093/mnras/stad2900"
+
+[Width]
+[Width.150]
+value = 17  # ms
+error = 8
+frequency = 150  # MHz
+ref = "https://doi.org/10.1093/mnras/stad2900"
+
 # Dong et al 2023 https://doi.org/10.1093/mnras/stad2012
+# McKenna et al 2024: https://doi.org/10.1093/mnras/stad2900

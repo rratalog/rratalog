@@ -16,9 +16,9 @@ error = "00:00:04"
 ref = "https://doi.org/10.1088/0004-637X/809/1/67"
 
 [DM]
-value = 14.966  # pc/cc
-error = 0.007
-ref = "https://doi.org/10.1088/0004-637X/809/1/67"
+value = 14.9580  # pc/cc
+error = 0.0008
+ref = "https://doi.org/10.1093/mnras/stad2900"
 
 [Period]
 value = 0.868735115026  # seconds
@@ -42,12 +42,28 @@ error = false
 frequency = 350  # MHz
 ref = "https://doi.org/10.3847/1538-4357/ab75e2"
 
+[Width.150]
+value = 10  # ms
+error = 3
+frequency = 150  # MHz
+ref = "https://doi.org/10.1093/mnras/stad2900"
+
+# Karako-Argaman et al 2015: https://doi.org/10.1088/0004-637X/809/1/67
+# McEwen et al 2020: https://doi.org/10.3847/1538-4357/ab75e2
+# McKenna et al 2024: https://doi.org/10.1093/mnras/stad2900
+
 [Flux]
 [Flux.350]
 value = 1.3  # mJy
 error = 0.2
 frequency = 350  # MHz
 ref = "https://doi.org/10.3847/1538-4357/ab75e2"
+
+[Flux.150]
+value = 7.5  # mJy
+error = 3.75
+frequency = 150  # MHz
+ref = "https://doi.org/10.1093/mnras/stad2900"
 
 [BurstRate]
 [BurstRate.Discovery]
@@ -74,5 +90,10 @@ telescope = "LOFAR"
 minflux = 80  # mJy
 ref = "https://doi.org/10.1088/0004-637X/809/1/67"
 
-# Karako-Argaman et al 2015: https://doi.org/10.1088/0004-637X/809/1/67
-# McEwen et al 2020: https://doi.org/10.3847/1538-4357/ab75e2
+[BurstRate.LOFAR150]
+value = 46  # hour^-1
+error = 3
+frequency = 150  # MHz
+telescope = "I-LOFAR"
+minflux = false  # mJy
+ref = "https://doi.org/10.1093/mnras/stad2900"

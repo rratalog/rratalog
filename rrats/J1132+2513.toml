@@ -1,9 +1,9 @@
-title = "J1132+25"
+title = "J1132+2513"
 
 [Name]
-value = "J1132+25"
+value = "J1132+2513"
 error = false
-ref = "https://doi.org/10.1051/0004-6361/201833102"
+ref = "https://doi.org/10.1093/mnras/stad2900"
 
 [RA]
 value = "11:32:50"  # hh:mm:ss.ss
@@ -32,6 +32,12 @@ error = false
 frequency = 111  # MHz
 ref = "https://doi.org/10.1051/0004-6361/201833102"
 
+[Flux.150]
+value = 7.6  # mJy
+error = 3.8
+frequency = 150  # MHz
+ref = "https://doi.org/10.1093/mnras/stad2900"
+
 [Width]
 [Width.111]
 value = 20  # ms
@@ -39,5 +45,12 @@ error = false
 frequency = 111  # MHz
 ref = "https://doi.org/10.1051/0004-6361/201833102"
 
+[Width.150]
+value = 17  # ms
+error = false
+frequency = 150  # MHz
+ref = "https://doi.org/10.1093/mnras/stad2900"
+
 # Tyul'bashev+18b: https://doi.org/10.1051/0004-6361/201833102
 # McEwen+20: http://doi.org/10.3847/1538-4357/ab75e2
+# McKenna et al 2024: https://doi.org/10.1093/mnras/stad2900

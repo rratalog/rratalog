@@ -54,5 +54,21 @@ error = 1
 frequency = 1532  # MHz
 ref = "https://doi.org/10.1093/mnras/stz2997"
 
+[Width.150]
+value = 13  # ms
+error = 6
+frequency = 150  # MHz
+ref = "https://doi.org/10.1093/mnras/stad2900"
+
+[BurstRate]
+[BurstRate.Discovery]
+value = 9.4  # hour^-1
+error = 0.8
+frequency = 150  # MHz
+telescope = "I-LOFAR"
+minflux = false  # mJy
+ref = "https://doi.org/10.1093/mnras/stad2900"
+
 # Tyul'bashev et al 2018:  https://doi.org/10.1134/S1063772918010079
 # Michilli et al 2019: https://doi.org/10.1093/mnras/stz2997
+# McKenna et al 2024: https://doi.org/10.1093/mnras/stad2900
