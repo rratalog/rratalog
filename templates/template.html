@@ -177,6 +177,49 @@
         .footer p {
             margin: 0 0 6px 0;
         }
+        .bibtex-block {
+            margin-top: 6px;
+            margin-bottom: 4px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            overflow: hidden;
+            font-size: 0.82em;
+        }
+        .bibtex-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--bg-row-hover);
+            padding: 4px 12px;
+            border-bottom: 1px solid var(--border);
+        }
+        .bibtex-header span {
+            color: var(--text-intro);
+            font-family: "SF Mono", "Cascadia Code", "Consolas", monospace;
+        }
+        .copy-btn {
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--link-header);
+            border-radius: 4px;
+            padding: 2px 10px;
+            cursor: pointer;
+            font-size: 0.85em;
+            transition: border-color 0.15s, color 0.15s;
+        }
+        .copy-btn:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+        .bibtex-pre {
+            margin: 0;
+            padding: 12px;
+            background: var(--bg-row-even);
+            white-space: pre;
+            overflow-x: auto;
+            font-family: "SF Mono", "Cascadia Code", "Consolas", "Liberation Mono", monospace;
+            color: var(--text);
+        }
     </style>
     <!-- jQuery -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
@@ -208,6 +251,14 @@
                 document.documentElement.classList.add('dark');
             }
         })();
+
+        function copyBibtex(btn) {
+            var text = document.getElementById('bibtex-text').textContent;
+            navigator.clipboard.writeText(text).then(function() {
+                btn.textContent = 'Copied!';
+                setTimeout(function() { btn.textContent = 'Copy'; }, 2000);
+            });
+        }
 
         $(document).ready(function() {
             // Set button text on load
@@ -302,7 +353,25 @@
 
     <footer class="footer">
         <p>Maintained by Evan Lewis (efl0003 (at) mix.wvu.edu) and Maura McLaughlin (maura.mclaughlin (at) mail.wvu.edu).</p>
-        <p>If you use the RRATalog, please acknowledge this URL and cite Agarwal et al. (in prep).</p>
+        <p>If you use the RRATalog, please acknowledge this URL and cite <a href="https://doi.org/10.1093/mnras/stag787">Agarwal et al. (2026)</a>.</p>
+        <div class="bibtex-block">
+            <div class="bibtex-header">
+                <span>bibtex</span>
+                <button class="copy-btn" onclick="copyBibtex(this)">Copy</button>
+            </div>
+            <pre class="bibtex-pre" id="bibtex-text">@article{10.1093/mnras/stag787,
+    author = {Agarwal, Devansh and Lewis, Evan F and Lorimer, Duncan R and McLaughlin, Maura A and Cui, Bingyi and Turner, Anna and McMann, Natasha},
+    title = {The RRATalog: a Galactic census of rotating radio transients},
+    journal = {Monthly Notices of the Royal Astronomical Society},
+    pages = {stag787},
+    year = {2026},
+    month = {04},
+    issn = {0035-8711},
+    doi = {10.1093/mnras/stag787},
+    url = {https://doi.org/10.1093/mnras/stag787},
+    eprint = {https://academic.oup.com/mnras/advance-article-pdf/doi/10.1093/mnras/stag787/68156439/stag787.pdf},
+}</pre>
+        </div>
         <hr style="border-color: var(--border); margin: 12px 0;">
         <p><strong>Notes:</strong></p>
         <p>Values in parentheses denote the 1&sigma; uncertainty in the last digit(s) of the preceding value, e.g. 1.235(3) means 1.235 &pm; 0.003.</p>

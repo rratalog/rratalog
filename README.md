@@ -90,7 +90,24 @@ We welcome additions, updates, and corrections — either as GitHub pull request
 
 ## Citation
 
-If you use the RRATalog, please acknowledge https://rratalog.github.io/rratalog/ and cite Agarwal et al. (in prep).
+If you use the RRATalog, please acknowledge https://rratalog.github.io/rratalog/ and cite:
+
+Agarwal et al. (2026), *The RRATalog: a Galactic census of rotating radio transients*, MNRAS. https://doi.org/10.1093/mnras/stag787
+
+```bibtex
+@article{10.1093/mnras/stag787,
+    author = {Agarwal, Devansh and Lewis, Evan F and Lorimer, Duncan R and McLaughlin, Maura A and Cui, Bingyi and Turner, Anna and McMann, Natasha},
+    title = {The RRATalog: a Galactic census of rotating radio transients},
+    journal = {Monthly Notices of the Royal Astronomical Society},
+    pages = {stag787},
+    year = {2026},
+    month = {04},
+    issn = {0035-8711},
+    doi = {10.1093/mnras/stag787},
+    url = {https://doi.org/10.1093/mnras/stag787},
+    eprint = {https://academic.oup.com/mnras/advance-article-pdf/doi/10.1093/mnras/stag787/68156439/stag787.pdf},
+}
+```
 
 ## Maintainers
 
