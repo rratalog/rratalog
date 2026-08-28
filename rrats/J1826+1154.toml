@@ -1,0 +1,25 @@
+title = "J1826+1154"
+
+[Name]
+value = "J1826+1154"
+error = false
+ref = "https://doi.org/10.1093/mnras/stag1538"
+
+[RA]
+value = "18:26:22.8"  # hh:mm:ss.ss
+error = "00:00:00.3"
+ref = "https://doi.org/10.1093/mnras/stag1538"
+
+[Dec]
+value = "+11:54:36.7"  # (sign)dd:mm:ss.ss
+error = "00:00:03.3"
+ref = "https://doi.org/10.1093/mnras/stag1538"
+
+[DM]
+value = 78.0  # pc/cm^3
+error = 0.4
+ref = "https://doi.org/10.1093/mnras/stag1538"
+
+# Singh et al 2026: https://doi.org/10.1093/mnras/stag1538
+# MTP0097
+# Single pulse detected; no period and no burst rate available.

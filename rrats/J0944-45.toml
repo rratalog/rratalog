@@ -1,0 +1,26 @@
+title = "J0944-45"
+
+[Name]
+value = "J0944-45"
+error = false
+ref = "https://doi.org/10.1093/mnras/stag1538"
+
+[RA]
+value = "09:44:28.7"  # hh:mm:ss.ss
+error = false
+ref = "https://doi.org/10.1093/mnras/stag1538"
+
+[Dec]
+value = "-45:47:50"  # (sign)dd:mm:ss.ss
+error = false
+ref = "https://doi.org/10.1093/mnras/stag1538"
+
+[DM]
+value = 40.6  # pc/cm^3
+error = 0.1
+ref = "https://doi.org/10.1093/mnras/stag1538"
+
+# Singh et al 2026: https://doi.org/10.1093/mnras/stag1538
+# MTP0103
+# Position from the discovery incoherent beam (~1 degree); no imaging localization.
+# One pulse in 30.8 h of observing: highly intermittent emission.

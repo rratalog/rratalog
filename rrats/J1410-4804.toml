@@ -1,0 +1,27 @@
+title = "J1410-4804"
+
+[Name]
+value = "J1410-4804"
+error = false
+ref = "https://doi.org/10.1093/mnras/stag1538"
+
+[RA]
+value = "14:10:20.7"  # hh:mm:ss.ss
+error = "00:00:00.1"
+ref = "https://doi.org/10.1093/mnras/stag1538"
+
+[Dec]
+value = "-48:04:37.0"  # (sign)dd:mm:ss.ss
+error = "00:00:00.3"
+ref = "https://doi.org/10.1093/mnras/stag1538"
+
+[DM]
+value = 63.84  # pc/cm^3
+error = 0.04
+ref = "https://doi.org/10.1093/mnras/stag1538"
+
+# Singh et al 2026: https://doi.org/10.1093/mnras/stag1538
+# MTP0108
+# Prototype RRAT: no periodic emission found in the Murriyang follow-up, only rare bright broadband pulses.
+# Two follow-up pulses had peak fluxes of 685+/-45 and 925+/-45 mJy over 704-4032 MHz.
+# The paper quotes an approximate burst rate of ~2 pulses per hour, but calls it non-robust (3 pulses total), so it is not recorded here.

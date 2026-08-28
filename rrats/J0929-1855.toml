@@ -1,0 +1,26 @@
+title = "J0929-1855"
+
+[Name]
+value = "J0929-1855"
+error = false
+ref = "https://doi.org/10.1093/mnras/stag1538"
+
+[RA]
+value = "09:29:14.1"  # hh:mm:ss.ss
+error = "00:00:00.1"
+ref = "https://doi.org/10.1093/mnras/stag1538"
+
+[Dec]
+value = "-18:55:23.9"  # (sign)dd:mm:ss.ss
+error = "00:00:00.3"
+ref = "https://doi.org/10.1093/mnras/stag1538"
+
+[DM]
+value = 52.0  # pc/cm^3
+error = 0.5
+ref = "https://doi.org/10.1093/mnras/stag1538"
+
+# Singh et al 2026: https://doi.org/10.1093/mnras/stag1538
+# MTP0111
+# Discovered in an incoherent beam and localized in the image domain.
+# Single pulse detected, showing multiple components; no period and no burst rate available.

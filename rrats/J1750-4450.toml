@@ -1,0 +1,47 @@
+title = "J1750-4450"
+
+[Name]
+value = "J1750-4450"
+error = false
+ref = "https://doi.org/10.1093/mnras/stag1538"
+
+[RA]
+value = "17:50:20.4"  # hh:mm:ss.ss
+error = "00:00:00.1"
+ref = "https://doi.org/10.1093/mnras/stag1538"
+
+[Dec]
+value = "-44:50:25.8"  # (sign)dd:mm:ss.ss
+error = "00:00:00.5"
+ref = "https://doi.org/10.1093/mnras/stag1538"
+
+[DM]
+value = 130.8  # pc/cm^3
+error = 0.3
+ref = "https://doi.org/10.1093/mnras/stag1538"
+
+[Period]
+value = 2.195311081  # seconds
+error = 0.000000006
+ref = "https://doi.org/10.1093/mnras/stag1538"
+
+[Pepoch]
+value = 60774.9  # MJD
+error = false
+ref = "https://doi.org/10.1093/mnras/stag1538"
+
+[BurstRate]
+[BurstRate.Discovery]
+value = 49  # hour^-1
+error = false
+frequency = 816  # MHz
+telescope = "MeerKAT"
+minflux = false  # mJy
+ref = "https://doi.org/10.1093/mnras/stag1538"
+
+# Singh et al 2026: https://doi.org/10.1093/mnras/stag1538
+# MTP0110
+# Burst rate is a lower limit: these sources were not targeted, they fell in the MeerTRAP IB/CB by chance.
+# Period and Pepoch from the tempo2 timing solution (Table 3), which supersedes the rratsolve period in Table 2.
+# The 160-day timing baseline could not constrain Pdot (Table 3 quotes 1.2(9)e-15 s/s as an upper limit only), so no Pdot is recorded.
+# Bimodal timing residuals indicate a two-component profile.
