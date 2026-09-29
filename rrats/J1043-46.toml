@@ -1,0 +1,35 @@
+title = "J1043-46"
+
+[Name]
+value = "J1043-46"
+error = false
+ref = "https://doi.org/10.1093/mnras/stag1538"
+
+[RA]
+value = "10:43:13.94"  # hh:mm:ss.ss
+error = false
+ref = "https://doi.org/10.1093/mnras/stag1538"
+
+[Dec]
+value = "-46:09:02"  # (sign)dd:mm:ss.ss
+error = false
+ref = "https://doi.org/10.1093/mnras/stag1538"
+
+[DM]
+value = 105.7  # pc/cm^3
+error = 0.7
+ref = "https://doi.org/10.1093/mnras/stag1538"
+
+[BurstRate]
+[BurstRate.Discovery]
+value = 0.6  # hour^-1
+error = false
+frequency = 1284  # MHz
+telescope = "MeerKAT"
+minflux = false  # mJy
+ref = "https://doi.org/10.1093/mnras/stag1538"
+
+# Singh et al 2026: https://doi.org/10.1093/mnras/stag1538
+# MTP0112
+# Burst rate is a lower limit: these sources were not targeted, they fell in the MeerTRAP IB/CB by chance.
+# Position from the discovery coherent beam (~1 arcmin); no imaging localization.

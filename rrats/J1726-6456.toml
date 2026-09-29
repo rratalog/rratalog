@@ -1,0 +1,62 @@
+title = "J1726-6456"
+
+[Name]
+value = "J1726-6456"
+error = false
+ref = "https://doi.org/10.1093/mnras/stag1538"
+
+[RA]
+value = "17:26:18.5"  # hh:mm:ss.ss
+error = "00:00:00.1"
+ref = "https://doi.org/10.1093/mnras/stag1538"
+
+[Dec]
+value = "-64:56:33.0"  # (sign)dd:mm:ss.ss
+error = "00:00:01.2"
+ref = "https://doi.org/10.1093/mnras/stag1538"
+
+[DM]
+value = 75  # pc/cm^3
+error = 1
+ref = "https://doi.org/10.1093/mnras/stag1538"
+
+[Period]
+value = 1.6543954814  # seconds
+error = 0.0000000002
+ref = "https://doi.org/10.1093/mnras/stag1538"
+
+[Pdot]
+value = 2.94e-15  # s/s
+error = 0.02e-15
+ref = "https://doi.org/10.1093/mnras/stag1538"
+
+[Pepoch]
+value = 60031.9  # MJD
+error = false
+ref = "https://doi.org/10.1093/mnras/stag1538"
+
+[Flux]
+[Flux.2368]
+value = 0.138  # mJy
+error = 0.008
+frequency = 2368  # MHz
+ref = "https://doi.org/10.1093/mnras/stag1538"
+
+[BurstRate]
+[BurstRate.Discovery]
+value = 63  # hour^-1
+error = false
+frequency = 1284  # MHz
+telescope = "MeerKAT"
+minflux = false  # mJy
+ref = "https://doi.org/10.1093/mnras/stag1538"
+
+# Singh et al 2026: https://doi.org/10.1093/mnras/stag1538
+# MTP0083
+# Burst rate is a lower limit: these sources were not targeted, they fell in the MeerTRAP IB/CB by chance.
+# Period, Pdot and Pepoch are from the tempo2 timing solution (Table 3), which supersedes the rratsolve period in Table 2.
+# Table 2 gives 1.65428(4) s from rratsolve; Table 3 gives 1.6543954814(2) s from tempo2.
+# The Table 3 period is paired with the Table 3 epoch (MJD 60031.9).
+# Table 2 gives a Dec uncertainty of 1.2 arcsec; Table 3 gives 0.1 arcsec. The Table 2 value is used.
+# Flux is the phase-averaged flux density from the Murriyang UWL follow-up (Table 4), 1120-1536 MHz.
+# Table 4 duty cycle is not used to populate [Width].

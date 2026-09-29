@@ -1,0 +1,25 @@
+title = "J1324-6145"
+
+[Name]
+value = "J1324-6145"
+error = false
+ref = "https://doi.org/10.1093/mnras/stag1538"
+
+[RA]
+value = "13:24:00.8"  # hh:mm:ss.ss
+error = "00:00:00.1"
+ref = "https://doi.org/10.1093/mnras/stag1538"
+
+[Dec]
+value = "-61:45:14.6"  # (sign)dd:mm:ss.ss
+error = "00:00:00.7"
+ref = "https://doi.org/10.1093/mnras/stag1538"
+
+[DM]
+value = 134  # pc/cm^3
+error = 1
+ref = "https://doi.org/10.1093/mnras/stag1538"
+
+# Singh et al 2026: https://doi.org/10.1093/mnras/stag1538
+# MTP0106
+# Only ~5 minutes of observing time; a single pulse was detected.

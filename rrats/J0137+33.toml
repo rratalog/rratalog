@@ -1,0 +1,26 @@
+title = "J0137+33"
+
+[Name]
+value = "J0137+33"
+error = false
+ref = "https://doi.org/10.1093/mnras/stag1538"
+
+[RA]
+value = "01:37:41"  # hh:mm:ss.ss
+error = false
+ref = "https://doi.org/10.1093/mnras/stag1538"
+
+[Dec]
+value = "+33:09:35.1"  # (sign)dd:mm:ss.ss
+error = false
+ref = "https://doi.org/10.1093/mnras/stag1538"
+
+[DM]
+value = 34.9  # pc/cm^3
+error = 0.7
+ref = "https://doi.org/10.1093/mnras/stag1538"
+
+# Singh et al 2026: https://doi.org/10.1093/mnras/stag1538
+# MTP0093
+# Position from the discovery incoherent beam (~1 degree); no imaging localization.
+# One wide (~100 ms) two-component pulse in 23.4 h of observing: highly intermittent emission.

@@ -1,0 +1,26 @@
+title = "J1646-54"
+
+[Name]
+value = "J1646-54"
+error = false
+ref = "https://doi.org/10.1093/mnras/stag1538"
+
+[RA]
+value = "16:46:42"  # hh:mm:ss.ss
+error = false
+ref = "https://doi.org/10.1093/mnras/stag1538"
+
+[Dec]
+value = "-54:07:18"  # (sign)dd:mm:ss.ss
+error = false
+ref = "https://doi.org/10.1093/mnras/stag1538"
+
+[DM]
+value = 192  # pc/cm^3
+error = 1
+ref = "https://doi.org/10.1093/mnras/stag1538"
+
+# Singh et al 2026: https://doi.org/10.1093/mnras/stag1538
+# MTP0099
+# Position from the discovery coherent beam (~1 arcmin); no imaging localization.
+# Single pulse detected; no period and no burst rate available.

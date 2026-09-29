@@ -1,0 +1,59 @@
+title = "J1811-1740"
+
+[Name]
+value = "J1811-1740"
+error = false
+ref = "https://doi.org/10.1093/mnras/stag1538"
+
+[RA]
+value = "18:11:30.9"  # hh:mm:ss.ss
+error = "00:00:00.1"
+ref = "https://doi.org/10.1093/mnras/stag1538"
+
+[Dec]
+value = "-17:40:52.9"  # (sign)dd:mm:ss.ss
+error = "00:00:01.5"
+ref = "https://doi.org/10.1093/mnras/stag1538"
+
+[DM]
+value = 399  # pc/cm^3
+error = 3
+ref = "https://doi.org/10.1093/mnras/stag1538"
+
+[Period]
+value = 1.8065860258  # seconds
+error = 0.0000000004
+ref = "https://doi.org/10.1093/mnras/stag1538"
+
+[Pdot]
+value = 159.89e-15  # s/s
+error = 0.03e-15
+ref = "https://doi.org/10.1093/mnras/stag1538"
+
+[Pepoch]
+value = 60075.05  # MJD
+error = false
+ref = "https://doi.org/10.1093/mnras/stag1538"
+
+[Flux]
+[Flux.2368]
+value = 0.029  # mJy
+error = 0.002
+frequency = 2368  # MHz
+ref = "https://doi.org/10.1093/mnras/stag1538"
+
+[BurstRate]
+[BurstRate.Discovery]
+value = 4  # hour^-1
+error = false
+frequency = 2406  # MHz
+telescope = "MeerKAT"
+minflux = false  # mJy
+ref = "https://doi.org/10.1093/mnras/stag1538"
+
+# Singh et al 2026: https://doi.org/10.1093/mnras/stag1538
+# MTP0086
+# Burst rate is a lower limit: these sources were not targeted, they fell in the MeerTRAP IB/CB by chance.
+# Period, Pdot and Pepoch from the tempo2 timing solution (Table 3), which supersedes the rratsolve period in Table 2.
+# Detected in both the S and L bands; the burst rate is over the total discovery-mode observing time.
+# Flux is the phase-averaged flux density from the Murriyang UWL follow-up (Table 4), 704-4032 MHz.

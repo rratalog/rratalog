@@ -1,0 +1,25 @@
+title = "J1639-27"
+
+[Name]
+value = "J1639-27"
+error = false
+ref = "https://doi.org/10.1093/mnras/stag1538"
+
+[RA]
+value = "16:39:59.34"  # hh:mm:ss.ss
+error = false
+ref = "https://doi.org/10.1093/mnras/stag1538"
+
+[Dec]
+value = "-27:34:59"  # (sign)dd:mm:ss.ss
+error = false
+ref = "https://doi.org/10.1093/mnras/stag1538"
+
+[DM]
+value = 117.21  # pc/cm^3
+error = 0.07
+ref = "https://doi.org/10.1093/mnras/stag1538"
+
+# Singh et al 2026: https://doi.org/10.1093/mnras/stag1538
+# MTP0105
+# Position from the discovery coherent beam (~1 arcmin); no imaging localization.

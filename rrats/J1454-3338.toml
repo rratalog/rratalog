@@ -1,0 +1,51 @@
+title = "J1454-3338"
+
+[Name]
+value = "J1454-3338"
+error = false
+ref = "https://doi.org/10.1093/mnras/stag1538"
+
+[RA]
+value = "14:54:56.4"  # hh:mm:ss.ss
+error = "00:00:00.1"
+ref = "https://doi.org/10.1093/mnras/stag1538"
+
+[Dec]
+value = "-33:38:10.7"  # (sign)dd:mm:ss.ss
+error = "00:00:01.9"
+ref = "https://doi.org/10.1093/mnras/stag1538"
+
+[DM]
+value = 51.5  # pc/cm^3
+error = 0.4
+ref = "https://doi.org/10.1093/mnras/stag1538"
+
+[Period]
+value = 2.9409767754  # seconds
+error = 0.0000000006
+ref = "https://doi.org/10.1093/mnras/stag1538"
+
+[Pdot]
+value = 2.46e-15  # s/s
+error = 0.02e-15
+ref = "https://doi.org/10.1093/mnras/stag1538"
+
+[Pepoch]
+value = 60301.5  # MJD
+error = false
+ref = "https://doi.org/10.1093/mnras/stag1538"
+
+[BurstRate]
+[BurstRate.Discovery]
+value = 0.45  # hour^-1
+error = false
+frequency = 1284  # MHz
+telescope = "MeerKAT"
+minflux = false  # mJy
+ref = "https://doi.org/10.1093/mnras/stag1538"
+
+# Singh et al 2026: https://doi.org/10.1093/mnras/stag1538
+# MTP0095
+# Burst rate is a lower limit: these sources were not targeted, they fell in the MeerTRAP IB/CB by chance.
+# Period, Pdot and Pepoch from the tempo2 timing solution (Table 3), which supersedes the rratsolve period in Table 2.
+# Detected in the L band on the first three epochs and in UHF on the last two.

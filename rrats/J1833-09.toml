@@ -1,0 +1,26 @@
+title = "J1833-09"
+
+[Name]
+value = "J1833-09"
+error = false
+ref = "https://doi.org/10.1093/mnras/stag1538"
+
+[RA]
+value = "18:33:09.61"  # hh:mm:ss.ss
+error = false
+ref = "https://doi.org/10.1093/mnras/stag1538"
+
+[Dec]
+value = "-09:03:42"  # (sign)dd:mm:ss.ss
+error = false
+ref = "https://doi.org/10.1093/mnras/stag1538"
+
+[DM]
+value = 224  # pc/cm^3
+error = 6
+ref = "https://doi.org/10.1093/mnras/stag1538"
+
+# Singh et al 2026: https://doi.org/10.1093/mnras/stag1538
+# MTP0100
+# Position from the discovery coherent beam (~1 arcmin); the transient buffer was not triggered, so no imaging localization.
+# One of the first three MeerTRAP Galactic transients found with the S-band receivers.
